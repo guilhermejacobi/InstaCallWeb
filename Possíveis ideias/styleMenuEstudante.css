@@ -17,7 +17,7 @@
                     background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
     height:100%;        
 	overflow:hidden;
-	width:370px; 
+	width:300px; 
 	position:fixed;
 	top:0;
 	left:-320px;
@@ -33,7 +33,7 @@
 }
 
 #lateral:hover:before, #lateral:focus:before {
-    left:-500px
+    left: -500px
 }
 
 #lateral:hover, #lateral:focus,  #lateral:active  {
@@ -66,4 +66,35 @@ Parte que eu sei para a tabela lateral
     position: relative;
     padding: 10%;
     margin-top: -20%;
+}
+
+.fundo2 {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 30px;
+}
+
+.tituloMenu{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.lista{
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 150%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Handlee', cursive;
+    color: rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+}
+
+.sair{
+    margin-left: 60%;
+    position:absolute;
+    bottom: 10;
+    width: 30%;
+    font-size: 20px;
 }
