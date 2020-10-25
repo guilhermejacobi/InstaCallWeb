@@ -90,10 +90,6 @@ Atividades
     width: 100%;
 }
 
-.fonteAtividade{
-
-}
-
 .table1{
     border-style: solid;
     border-top: none;
@@ -118,5 +114,8 @@ Atividades
     border-style: solid;
     border-bottom-width: 80%;
     width: 100%;
-    padding-top:;
+    padding-top: 0;
+}
+#color{
+    color: rgba(63, 63, 63, 0.609);
 }
