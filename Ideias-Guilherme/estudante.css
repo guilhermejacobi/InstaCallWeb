@@ -1,0 +1,121 @@
+/*
+Padrão InstaCall
+*/
+
+.instaCall{
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Cookie', cursive;
+    font-size: 250%;
+}
+
+.instaCall2{
+    color: rgb(2, 2, 2);
+    font-size: 250%;
+    font-family: 'Cookie', cursive;
+}
+
+/*
+Menu
+*/
+
+#boxMenu{
+    background:rgb(240, 240, 240);
+    border: 1px solid black;
+}
+
+#fundoMenu {
+	padding:0 50px 0 0;
+	    -moz-transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+    font-size:1.2em;
+    background:rgba(30, 159, 219, 0.5);
+    background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+        background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+            background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                    background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+}
+
+/*
+Atividades
+*/
+
+.insta{
+    color: rgb(255, 255, 255);
+    font-family: 'Cookie', cursive;
+    font-size: 200%;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.call{
+    color: rgb(0, 0, 0);
+    font-family: 'Cookie', cursive;
+}
+
+#topoInstaCall{
+	    -moz-transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+    font-size:1.2em;
+    background:rgba(30, 159, 219, 0.5);
+    background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+        background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+            background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                    background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+}
+
+#fundoCinza{
+    background-color: rgb(240, 240, 240);
+}
+
+.tabela{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.logoTabela{
+    width: 100%;
+}
+
+.table1{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 10%;
+}
+
+.table2{
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    width: 83%;
+}
+
+.table3{
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;    
+}
+
+.table4{
+    border-style: solid;
+    border-bottom-width: 80%;
+    width: 100%;
+    padding-top: 0;
+}
+#color{
+    color: rgba(63, 63, 63, 0.609);
+}
