@@ -1,10 +1,14 @@
+*{
+    margin: 0;
+
+}
+
 .insta{
     color: rgb(255, 255, 255);
     font-family: 'Cookie', cursive;
     font-size: 200%;
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 10px;
+    position: relative;
+    line-height: 140%;
 }
 
 .call{
@@ -31,4 +35,8 @@ top: 0;
 left: 0;
 right: 0;
 height: 55px;
+}
+
+#fundoCinza{
+    background-color: rgb(240, 240, 240);
 }

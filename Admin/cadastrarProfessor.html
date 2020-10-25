@@ -15,6 +15,11 @@
             <div>
                 <table>
                     <tr>
+                        <td>Matrícula: </td>
+                        <td><input type="text" disabled></td>
+                        <td><button onclick="">Gerar Matrícula</button></td>
+                    </tr>
+                    <tr>
                         <td>Nome:</td>
                         <td><input type="text" placeholder="Nome"></td>
                     </tr>
@@ -24,30 +29,64 @@
                     </tr>
                     <tr>
                         <td>CPF:</td>
-                        <td><input type="text"><br></td>
+                        <td><input type="text" data-mask="000.000.000-00" data-mask-selectonfocus="true"><br></td>
                     </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <td>CEP: </td>
+                        <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
+                        <td><button onclick="buscaCep()">Buscar</button></td>
+                    </tr>
+                    <tr>
+                        <td>UF: </td>
+                        <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
+                    </tr>
+                    <tr>
+                        <td>Cidade: </td>
+                        <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
+                        <td>Bairro: </td>
+                        <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro: </td>
+                        <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
+                        <td>N°: </td>
+                        <td><input type="text" placeholder="Ex: 1234"></td>
+                    </tr> 
+                </table>
+                <br>           
+                <table>
                     <tr>
                         <td>Formação: </td>
                         <td><input type="text"><br></td>
-                    </tr>
-                    <tr>
-                        <td>Nível: </td>
-                        <td><input type="text"><br></td>
+                        <td><select name="selectCurso">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Bacharelado</option> 
+                            <option value="tipo2">Licenciatura</option>
+                            <option value="tipo3">Tecnólogo</option>
+                            <option value="tipo4">Mestrado</option>
+                            <option value="tipo5">Doutorado</option>
+                            <option value="tipo6">Pós-Graduação</option>
+                        </select>
+                    </td>
                     </tr>
                     <tr>
                         <td>Instituição: </td>
                         <td><input type="text"></td>
                     </tr>
                     <tr>
-                        <td>Login</td>
+                        <td>Login: </td>
                         <td><input type="text"></td>
                     </tr>
                     <tr>
-                        <td>Senha</td>
+                        <td>Senha: </td>
                         <td><input type="text"></td>
                     </tr>
                 </table>
             </div>
         </div>
+        <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>
