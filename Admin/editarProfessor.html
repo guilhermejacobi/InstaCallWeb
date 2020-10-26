@@ -2,33 +2,34 @@
     <link rel="stylesheet" href="admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <head>
-        <title>Matricular Aluno- InstaCall</title>
+        <title>Editar Professor- InstaCall</title>
     </head>
     <body>
         <div id="topoInstaCall">
             <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
-        </div> 
+        </div>
         <div>
             <div>
-                Matricular Aluno
+                Editar Matrícula - Professor
             </div>
-            <br>
             <div>
                 <table>
                     <tr>
                         <td>Matrícula: </td>
-                        <td><input type="text" disabled></td>
-                        <td><button onclick="">Gerar Matrícula</button></td>
+                        <td><input type="text" placeholder="Ex: 000000000"></td>
+                        <td><button onclick="">Buscar Matrícula</button></td>
                     </tr>
                     <tr>
-                        <td>Nome: </td>
+                        <td>Nome:</td>
                         <td><input type="text" placeholder="Nome"></td>
                     </tr>
                     <tr>
-                        <td>CPF: </td>
-                        <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
-                        <td>Nascimento: </td>
-                        <td><input type="text" placeholder="00/00/00"></td>
+                        <td>Data de Nascimento: </td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td>CPF:</td>
+                        <td><input type="text" data-mask="000.000.000-00" data-mask-selectonfocus="true"><br></td>
                     </tr>
                 </table>
                 <br>
@@ -54,30 +55,27 @@
                         <td>N°: </td>
                         <td><input type="text" placeholder="Ex: 1234"></td>
                     </tr> 
-                </table>                            
-                <br>
-                <table>
-                    <tr>
-                        <td>Cuso: </td>
-                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
-                    </tr>
-                    <tr>
-                        <td>Nível: </td>
-                        <td>
-                            <select name="selectCurso">
-                                <option value="tipo0">Selecione</option>
-                                <option value="tipo1">Bacharelado</option> 
-                                <option value="tipo2">Licenciatura</option>
-                                <option value="tipo3">Tecnólogo</option>
-                                <option value="tipo4">Mestrado</option>
-                                <option value="tipo5">Doutorado</option>
-                                <option value="tipo6">Pós-Graduação</option>
-                            </select>
-                        <td></td>
-                    </tr>
                 </table>
-                <br>
+                <br>           
                 <table>
+                    <tr>
+                        <td>Formação: </td>
+                        <td><input type="text" placeholder="Ex: Sistemas De Informação"><br></td>
+                        <td><select name="selectCurso">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Bacharelado</option> 
+                            <option value="tipo2">Licenciatura</option>
+                            <option value="tipo3">Tecnólogo</option>
+                            <option value="tipo4">Mestrado</option>
+                            <option value="tipo5">Doutorado</option>
+                            <option value="tipo6">Pós-Graduação</option>
+                        </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Instituição: </td>
+                        <td><input type="text" placeholder="Ex: UniSociesc"></td>
+                    </tr>
                     <tr>
                         <td>Login: </td>
                         <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
