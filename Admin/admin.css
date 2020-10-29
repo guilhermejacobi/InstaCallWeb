@@ -40,3 +40,14 @@ height: 55px;
 #fundoCinza{
     background-color: rgb(240, 240, 240);
 }
+
+#tabelaPrincipal{
+    text-align: right;
+}
+
+.bordaCimaTabela{
+    margin:2px 0;
+        padding:5px 0;
+        word-wrap:break-word;
+        margin-left:120px;
+}

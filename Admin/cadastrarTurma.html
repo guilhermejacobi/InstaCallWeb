@@ -10,7 +10,7 @@
         </div>
         <div>
             <div>
-                Cadastrar Curso
+                Cadastrar Turma
             </div>
             <div>
                 <table>
@@ -20,12 +20,23 @@
                         <td><button onclick="">Gerar ID</button></td>
                     </tr>
                     <tr>
-                        <td>Instituição: </td>
+                        <td>Curso: </td>
                         <td><input type="text" placeholder="Ex: UniSociesc"></td>
+                        <td><button onclick="">Buscar: </button></td>
                     </tr>
                     <tr>
-                        <td>Curso: </td>
-                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
+                        <td>Turma: </td>
+                        <td><input type="text" disabled></td>
+                        <td><button onclick="">Gerar ID</button></td>
+                    </tr>
+                    <tr>
+                        <td>Turno: </td>
+                        <td><select name="selectTurno">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Matutino</option> 
+                            <option value="tipo2">Vespertino</option>
+                            <option value="tipo3">Noturno</option>
+                        </select></td>
                     </tr>
                 </table>
             </div>

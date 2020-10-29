@@ -14,11 +14,14 @@
             </div>
             <br>
             <div>
-                <table>
-                    <tr>
+                <table id="tabelaPrincipal">
+                    <tr class="bordaCimaTabela">
                         <td>Matrícula: </td>
                         <td><input type="text" disabled></td>
-                        <td><button onclick="">Gerar Matrícula</button></td>
+                        <td><button onclick="" class="bordaBaixoTable">Gerar Matrícula</button></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
                         <td>Nome: </td>
@@ -30,13 +33,13 @@
                         <td>Nascimento: </td>
                         <td><input type="text" placeholder="00/00/00"></td>
                     </tr>
-                </table>
-                <br>
-                <table>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
                     <tr>
                         <td>CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
-                        <td><button onclick="buscaCep()">Buscar</button></td>
+                        <td align="left"><button onclick="buscaCep()">Buscar</button></td>
                     </tr>
                     <tr>
                         <td>UF: </td>
@@ -51,19 +54,19 @@
                     <tr>
                         <td>Logradouro: </td>
                         <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
-                        <td>N°: </td>
+                        <td>Número: </td>
                         <td><input type="text" placeholder="Ex: 1234"></td>
-                    </tr> 
-                </table>                            
-                <br>
-                <table>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
                     <tr>
                         <td>Cuso: </td>
                         <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
                     </tr>
                     <tr>
                         <td>Nível: </td>
-                        <td>
+                        <td align="left">
                             <select name="selectCurso">
                                 <option value="tipo0">Selecione</option>
                                 <option value="tipo1">Bacharelado</option> 
@@ -73,16 +76,18 @@
                                 <option value="tipo5">Doutorado</option>
                                 <option value="tipo6">Pós-Graduação</option>
                             </select>
-                        <td></td>
+                        </td>
                     </tr>
-                </table>
-                <br>
-                <table>
+                    <tr>
+                        <td>Turno: </td>
+                        <td><input type="text" placeholder="Ex: Noturno"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
                     <tr>
                         <td>Login: </td>
                         <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
-                    </tr>
-                    <tr>
                         <td>Senha: </td>
                         <td><input type="text" placeholder="Ex: 123456789"></td>
                     </tr>
@@ -90,6 +95,7 @@
             </div>
         </div>
         <div>
+            <br>
             <button>Salvar</button>
         </div>
         <script type="text/javascript" src="cep.js"></script>
