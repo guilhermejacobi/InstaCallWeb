@@ -34,7 +34,6 @@ function buscaCep(){
             
         }
         
-        
     };
     xhr.send (null);
 

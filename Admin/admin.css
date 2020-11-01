@@ -41,13 +41,19 @@ height: 55px;
     background-color: rgb(240, 240, 240);
 }
 
-#tabelaPrincipal{
+.tabelaPrincipal{
+    margin: 20px auto;
     text-align: right;
 }
 
-.bordaCimaTabela{
-    margin:2px 0;
-        padding:5px 0;
-        word-wrap:break-word;
-        margin-left:120px;
+.centralizarTudo{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.tituloPagina{
+    font-size: 200%;
 }

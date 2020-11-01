@@ -4,99 +4,103 @@
     <head>
         <title>Matricular Aluno- InstaCall</title>
     </head>
-    <body>
+    <header>
         <div id="topoInstaCall">
             <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
         </div> 
-        <div>
-            <div>
+    </header>
+    <body>
+        <div class="centralizarTudo">
+            <h1 class="tituloPagina">
                 Matricular Aluno
-            </div>
+            </h1>
             <br>
+            <table class="tabelaPrincipal">
+                <tr>
+                    <td>Matrícula: </td>
+                    <td><input type="text" disabled></td>
+                    <td><button onclick="" class="botao">Gerar Matrícula</button></td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td>Nome: </td>
+                    <td><input type="text" placeholder="Nome"></td>
+                </tr>
+                <tr>
+                    <td>CPF: </td>
+                    <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
+                    <td>Nascimento: </td>
+                    <td><input type="text" placeholder="00/00/00"></td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td>CEP: </td>
+                    <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
+                    <td align="left"><button onclick="buscaCep()">Buscar</button></td>
+                </tr>
+                <tr>
+                    <td>UF: </td>
+                    <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
+                </tr>
+                <tr>
+                    <td>Cidade: </td>
+                    <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
+                    <td>Bairro: </td>
+                    <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
+                </tr>
+                <tr>
+                    <td>Logradouro: </td>
+                    <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
+                    <td>Número: </td>
+                    <td><input type="text" placeholder="Ex: 1234"></td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td>Cuso: </td>
+                    <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
+                </tr>
+                <tr>
+                    <td>Nível: </td>
+                    <td align="left">
+                        <select name="selectCurso">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Bacharelado</option> 
+                            <option value="tipo2">Licenciatura</option>
+                            <option value="tipo3">Tecnólogo</option>
+                            <option value="tipo4">Mestrado</option>
+                            <option value="tipo5">Doutorado</option>
+                            <option value="tipo6">Pós-Graduação</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Turno: </td>
+                    <td align="left"><select name="selectTurno">
+                        <option value="turno0">Selecione</option>
+                        <option value="turno1">Matutino</option>
+                        <option value="turno2">Verpertino</option>
+                        <option value="turno3">Noturno</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td>Login: </td>
+                    <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
+                    <td>Senha: </td>
+                    <td><input type="text" placeholder="Ex: 123456789"></td>
+                </tr>
+            </table>
             <div>
-                <table id="tabelaPrincipal">
-                    <tr class="bordaCimaTabela">
-                        <td>Matrícula: </td>
-                        <td><input type="text" disabled></td>
-                        <td><button onclick="" class="bordaBaixoTable">Gerar Matrícula</button></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
-                    </tr>
-                    <tr>
-                        <td>Nome: </td>
-                        <td><input type="text" placeholder="Nome"></td>
-                    </tr>
-                    <tr>
-                        <td>CPF: </td>
-                        <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
-                        <td>Nascimento: </td>
-                        <td><input type="text" placeholder="00/00/00"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
-                    </tr>
-                    <tr>
-                        <td>CEP: </td>
-                        <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
-                        <td align="left"><button onclick="buscaCep()">Buscar</button></td>
-                    </tr>
-                    <tr>
-                        <td>UF: </td>
-                        <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
-                    </tr>
-                    <tr>
-                        <td>Cidade: </td>
-                        <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
-                        <td>Bairro: </td>
-                        <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
-                    </tr>
-                    <tr>
-                        <td>Logradouro: </td>
-                        <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
-                        <td>Número: </td>
-                        <td><input type="text" placeholder="Ex: 1234"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
-                    </tr>
-                    <tr>
-                        <td>Cuso: </td>
-                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
-                    </tr>
-                    <tr>
-                        <td>Nível: </td>
-                        <td align="left">
-                            <select name="selectCurso">
-                                <option value="tipo0">Selecione</option>
-                                <option value="tipo1">Bacharelado</option> 
-                                <option value="tipo2">Licenciatura</option>
-                                <option value="tipo3">Tecnólogo</option>
-                                <option value="tipo4">Mestrado</option>
-                                <option value="tipo5">Doutorado</option>
-                                <option value="tipo6">Pós-Graduação</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Turno: </td>
-                        <td><input type="text" placeholder="Ex: Noturno"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
-                    </tr>
-                    <tr>
-                        <td>Login: </td>
-                        <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
-                        <td>Senha: </td>
-                        <td><input type="text" placeholder="Ex: 123456789"></td>
-                    </tr>
-                </table>
+                <button class="salvar">Salvar</button>
             </div>
-        </div>
-        <div>
-            <br>
-            <button>Salvar</button>
         </div>
         <script type="text/javascript" src="cep.js"></script>
     </body>
