@@ -18,7 +18,15 @@
                 </tr>
                 <tr>
                     <th class="table3"></th>
-                    <th class="table4">TABELA</th>
+                    <th class="table4">
+                        <table style="border: 1px solid black">
+                            <tr>
+                                <td class="tabelaId">Aqui vai ficar ID</td>
+                                <td class="tabelaDesc">Aqui vai ficar uma descrição grandinha por isso estou a escrever um pouco mais shre apenas para encher linguiça e depois meter banco de dados e n ficar ruim para entender a situação do que ta acontecendo aqui, por que a nave que caiu em jupter é muito loca e pegou o minério e virou fogo pois o petróleo encontrado no sol virou água</td>
+                                <td class="tabelaData">aqui vai ficar o dia certinho</td>
+                            </tr>
+                        </table>
+                    </th>
                 </tr>
             </table>
         </div>
