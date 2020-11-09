@@ -3,6 +3,34 @@
 
 }
 
+.instaCall{
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Cookie', cursive;
+    font-size: 250%;
+}
+
+.instaCall2{
+    color: rgb(2, 2, 2);
+    font-size: 250%;
+    font-family: 'Cookie', cursive;
+}
+
+#fundoMenu{
+    padding:0 50px 0 0;
+	-moz-transition: all 0.5s ease;
+		-webkit-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+    font-size:1.2em;
+    background:rgb(30, 160, 219);
+        background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 255));
+            background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219), rgb(142, 56, 253));
+                background-image: -o-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+                    background-image: -ms-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+                        background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+}
+
 .insta{
     color: rgb(255, 255, 255);
     font-family: 'Cookie', cursive;
@@ -15,7 +43,6 @@
     color: rgb(0, 0, 0);
     font-family: 'Cookie', cursive;
 }
-
 
 #topoInstaCall{
     -moz-transition: all 0.5s ease;
@@ -56,4 +83,57 @@ height: 55px;
 
 .tituloPagina{
     font-size: 200%;
+}
+
+.botoes{
+    width: 80px;
+}
+
+.botoesMenu{
+    width: 150px;
+    border-radius: 12px;
+    border: 1px solid black;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s; 
+}
+
+.botoesMenu:hover{
+    -moz-transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+        -o-transition: all 1.5s ease;
+            transition: all 1.5s ease;
+    background:rgba(30, 159, 219, 0.5);
+        background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+            background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                    background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                        background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+    
+}
+
+#boxMenu{
+    background:rgb(255, 255, 255);
+    border: 1px solid black;
+    margin: 20px auto;
+    text-align: right;
+    width: 30%;
+    padding: 1%;
+    border-radius: 45px;
+}
+
+.centralizarTudo{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.mudarPagina{
+    text-decoration: none;
+    color: black;
+}
+
+.mudarPagina:hover{
+    color: white;
 }

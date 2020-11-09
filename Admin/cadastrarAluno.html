@@ -1,7 +1,8 @@
 <html>
     <link rel="stylesheet" href="admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <head>
+    <meta charset="utf-8">
+        <head>
         <title>Matricular Aluno- InstaCall</title>
     </head>
     <header>
@@ -14,98 +15,87 @@
             <h1 class="tituloPagina">
                 Matricular Aluno
             </h1>
-            <br>
-            <table class="tabelaPrincipal">
-                <tr>
-                    <td>Matrícula: </td>
-                    <td><input type="text" disabled></td>
-                    <td><button onclick="" class="botao">Gerar Matrícula</button></td>
-                </tr>
-                <tr>
-                    <td><label for="">&nbsp;</label></td>
-                </tr>
-                <tr>
-                    <td>Nome: </td>
-                    <td><input type="text" placeholder="Nome"></td>
-                </tr>
-                <tr>
-                    <td>CPF: </td>
-                    <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
-                    <td>Nascimento: </td>
-                    <td><input type="text" placeholder="00/00/00"></td>
-                </tr>
-                <tr>
-                    <td><label for="">&nbsp;</label></td>
-                </tr>
-                <tr>
-                    <td>CEP: </td>
-                    <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
-                    <td align="left"><button onclick="buscaCep()">Buscar</button></td>
-                </tr>
-                <tr>
-                    <td>UF: </td>
-                    <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
-                </tr>
-                <tr>
-                    <td>Cidade: </td>
-                    <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
-                    <td>Bairro: </td>
-                    <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
-                </tr>
-                <tr>
-                    <td>Logradouro: </td>
-                    <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
-                    <td>Número: </td>
-                    <td><input type="text" placeholder="Ex: 1234"></td>
-                </tr>
-                <tr>
-                    <td><label for="">&nbsp;</label></td>
-                </tr>
-                <tr>
-                    <td>Turma:</td>
-                    <td><input type="text" placeholder="Ex:1234"></td>
-                    <td><div align="left"><button>Buscar</button></div></td>
-                </tr>
-                <tr>
-                    <td>Cuso: </td>
-                    <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
-                </tr>
-                <tr>
-                    <td>Nível: </td>
-                    <td align="left">
-                        <select name="selectCurso">
-                            <option value="tipo0">Selecione</option>
-                            <option value="tipo1">Bacharelado</option> 
-                            <option value="tipo2">Licenciatura</option>
-                            <option value="tipo3">Tecnólogo</option>
-                            <option value="tipo4">Mestrado</option>
-                            <option value="tipo5">Doutorado</option>
-                            <option value="tipo6">Pós-Graduação</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Turno: </td>
-                    <td align="left"><select name="selectTurno">
-                        <option value="turno0">Selecione</option>
-                        <option value="turno1">Matutino</option>
-                        <option value="turno2">Verpertino</option>
-                        <option value="turno3">Noturno</option>
-                    </select></td>
-                </tr>
-                <tr>
-                    <td><label for="">&nbsp;</label></td>
-                </tr>
-                <tr>
-                    <td>Login: </td>
-                    <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
-                    <td>Senha: </td>
-                    <td><input type="text" placeholder="Ex: 123456789"></td>
-                </tr>
-            </table>
-            <div>
-                <button class="salvar">Salvar</button>
-            </div>
+            <form method="POST" action="../Cadastros/cadastrarAluno.php">
+                <div>
+                    <table class="tabelaPrincipal">
+                        <tr>
+                            <td>Matrícula: </td>
+                            <td><input type="text" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>Nome: </td>
+                            <td><input type="text" placeholder="Nome" id="nome" name="nome"></td>
+                        </tr>
+                        <tr>
+                            <td>CPF: </td>
+                            <td><input type="text" placeholder="Ex: 000.000.000-00" id="cpf" name="cpf"></td>
+                            <td>Nascimento: </td>
+                            <td><input type="text" placeholder="00/00/00" id="nascimento" name="nascimento"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>CEP: </td>
+                            <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
+                            <td align="left"><input type="button" onclick="buscaCep()" value="Buscar"></input></td>
+                        </tr>
+                        <tr>
+                            <td>UF: </td>
+                            <td><input type="text" placeholder="Ex: Santa Catarina" id="uf" name="uf"></td>
+                        </tr>
+                        <tr>
+                            <td>Cidade: </td>
+                            <td><input type="text" placeholder="Ex: Joinville" id="cidade" name="cidade"></td>
+                            <td>Bairro: </td>
+                            <td><input type="text" placeholder="Ex: Itaum" id="bairro" name="bairro"></td>
+                        </tr>
+                        <tr>
+                            <td>Logradouro: </td>
+                            <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro"></td>
+                            <td>Número: </td>
+                            <td><input type="text" placeholder="Ex: 1234" id="numero" name="numero"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>Id Turma:</td>
+                            <td><input type="text" placeholder="Ex:1234" id="idTurma" name="idTurma"></td>
+                            <td><div align="left"><button>Buscar</button></div></td>
+                        </tr>
+                        <tr>
+                            <td>Cuso: </td>
+                            <td><input type="text" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Turno:</td>
+                            <td><input type="text" disabled id="turno" name="turno"></td>
+                        </tr>
+                        <tr>
+                            <td>Nível: </td>
+                            <td align="left">
+                                <input type="text" disabled name="nivel" id="nivel">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>Login: </td>
+                            <td><input type="text" placeholder="Ex: aluno@estudante.com" id="email" name="email"></td>
+                            <td>Senha: </td>
+                            <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
+                        </tr>
+                    </table>
+                </div>
+                <input type="submit" class="botoes" value="Salvar">
+                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
+            </form>
+
         </div>
         <script type="text/javascript" src="cep.js"></script>
     </body>

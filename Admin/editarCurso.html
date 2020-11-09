@@ -1,6 +1,7 @@
 <html>
     <link rel="stylesheet" href="admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
     <head>
         <title>Editar Curso- InstaCall</title>
     </head>
@@ -14,26 +15,45 @@
             <h1>
                 Editar Curso
             </h1>
-            <div>
-                <table class="tabelaPrincipal">
-                    <tr>
-                        <td>ID: </td>
-                        <td><input type="text" placeholder="Ex: 000000000"></td>
-                        <td><button onclick="">Buscar ID</button></td>
-                    </tr>
-                    <tr>
-                        <td>Instituição: </td>
-                        <td><input type="text" placeholder="Ex: UniSociesc"></td>
-                    </tr>
-                    <tr>
-                        <td>Curso: </td>
-                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
-                    </tr>
-                </table>
-            </div>
-            <div>
-                <button>Salvar</button>
-            </div>
+            <form method="POST" action="../Cadastros/editarCurso.php">
+                <div>
+                    <table class="tabelaPrincipal">
+                        <tr>
+                            <td>ID Curso: </td>
+                            <td><input type="text" placeholder="Ex: 000000000" id="id" name="id"></td>
+                            <td><button onclick="">Buscar ID</button></td>
+                        </tr>
+                        <tr>
+                            <td>Curso: </td>
+                            <td><input type="text" placeholder="Ex: Sistemas de Informação" id="curso" name="curso"></td>
+                        </tr>
+                        <tr>
+                            <td>Nível: </td>
+                            <td align="left"><select style="width: 100%;" id="nivel" name="nivel">
+                                <option value=""></option>
+                                <option value="Bacharelado">Bacharelado</option> 
+                                <option value="Licenciatura">Licenciatura</option>
+                                <option value="Tecnólogo">Tecnólogo</option>
+                                <option value="Mestrado">Mestrado</option>
+                                <option value="Doutorado">Doutorado</option>
+                                <option value="Pós-Graduação">Pós-Graduação</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID Inst: </td>
+                            <td><input type="text" id="idInst" name="idInst"></td>
+                            <td><button onclick="">Buscar ID</button></td>
+                        </tr>
+                        <tr>
+                            <td>Instituição: </td>
+                            <td><input type="text" placeholder="Ex: UniSociesc" disabled id="instituicao" name="instituicao"></td>
+                        </tr>
+                    </table>
+                </div>
+                    <input type="submit" class="botoes" value="Salvar">
+                    <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
+            </form>
         </div>
     </body>
 </html>

@@ -1,8 +1,10 @@
+<!DOCTYPE HTML>
 <html>
     <link rel="stylesheet" href="admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
     <head>
-        <title>Editar Instituição- InstaCall</title>
+        <title>Cadastrar Instituição- InstaCall</title>
     </head>
     <header>
         <div id="topoInstaCall">
@@ -11,49 +13,55 @@
     </header>
     <body>
         <div class="centralizarTudo">
-            <div>
-                Editar Instituição
-            </div>
-            <div>
-                <table class="tabelaPrincipal">
-                    <tr>
-                        <td>ID: </td>
-                        <td><input type="text" placeholder="Ex: 000000000"></td>
-                        <td><button onclick="">Buscar ID</button></td>
-                    </tr>
-                    <tr>
-                        <td>Instituição:</td>
-                        <td><input type="text" placeholder="Ex: InstaCall"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
-                    </tr>
-                    <tr>
-                        <td>CEP: </td>
-                        <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
-                        <td><button onclick="buscaCep()">Buscar</button></td>
-                    </tr>
-                    <tr>
-                        <td>UF: </td>
-                        <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
-                    </tr>
-                    <tr>
-                        <td>Cidade: </td>
-                        <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
-                        <td>Bairro: </td>
-                        <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
-                    </tr>
-                    <tr>
-                        <td>Logradouro: </td>
-                        <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
-                        <td>N°: </td>
-                        <td><input type="text" placeholder="Ex: 1234"></td>
-                    </tr> 
-                </table>
-            </div>
-            <div>
-                <button>Salvar</button>
-            </div>
+            <h2>
+                Cadastrar Instituição
+            </h2>
+            <form method="POST" action="../Cadastros/editarInstituicao.php">
+                <div>
+                    <table class="tabelaPrincipal">
+                        <tr>
+                            <td>ID: </td>
+                            <td><input type="text" placeholder="Ex: 1234"></td>
+                            <td><button onclick="" class="botoes">Buscar Id</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button style="width: 100%;">Listar Instituições</button></td>
+                        </tr>
+                        <tr>
+                            <td>Instituição:</td>
+                            <td><input type="text" placeholder="Ex: SOCIESC" id="criarNomeInst" name="criarNomeInst"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>CEP: </td>
+                            <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
+                            <td><div align="left"><input type="button" onclick="buscaCep()" class="botoes" value="Buscar"></div></td>
+                        </tr>
+                        <tr>
+                            <td>UF: </td>
+                            <td><input type="text" placeholder="Ex: Santa Catarina" id="uf" name="uf"></td>
+                        </tr>
+                        <tr>
+                            <td>Cidade: </td>
+                            <td><input type="text" placeholder="Ex: Joinville" id="cidade" name="cidade"></td>
+                            <td>Bairro: </td>
+                            <td><input type="text" placeholder="Ex: Itaum" id="bairro" name="bairro"></td>
+                        </tr>
+                        <tr>
+                            <td>Logradouro: </td>
+                            <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro"></td>
+                            <td>N°: </td>
+                            <td><input type="text" placeholder="Ex: 1234" id="criarNumInst" name="criarNumInst"></td>
+                        </tr> 
+                    </table>
+                </div>
+                <input type="submit" class="botoes" value="Salvar"></input>
+                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
+            </form>
         </div>
+        <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>

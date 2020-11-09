@@ -1,5 +1,3 @@
-const { func } = require("prop-types");
-
 function buscaCep(){
 
     let cepDigitado = document.getElementById('cep').value;

@@ -18,12 +18,14 @@ Padrão InstaCall
 /*
 Menu
 */
-
 #boxMenu{
-    background:rgb(240, 240, 240);
+    background:rgb(255, 255, 255);
     border: 1px solid black;
     margin: 20px auto;
     text-align: right;
+    width: 30%;
+    padding: 1%;
+    border-radius: 45px;
 }
 
 
@@ -51,12 +53,12 @@ Tabela
                 -o-transition: all 0.5s ease;
                     transition: all 0.5s ease;
     font-size:1.2em;
-    background:rgba(30, 159, 219, 0.5);
-    background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-        background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-            background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-                background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-                    background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+    background:rgb(30, 160, 219);
+    background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 255));
+        background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219), rgb(142, 56, 253));
+            background-image: -o-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+                background-image: -ms-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+                    background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
 
     position: absolute;
     top: 0;
@@ -114,4 +116,29 @@ Tabela
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+.botoesMenu{
+    width: 300px;
+    height: 100px;
+    font-size: 25px;
+    border-radius: 12px;
+    border: 1px solid black;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.botoesMenu:hover{
+    color: white;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    background:rgba(30, 159, 219, 0.5);
+        background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+            background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                    background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                        background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+    
 }
