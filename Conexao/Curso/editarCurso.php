@@ -2,7 +2,7 @@
 require_once "conexao.php";
 
 if(isset($_POST['idInst']) && isset($_POST['curso']) && isset($_POST['nivel']) && isset($_POST['id'])){
-  if($_POST['idInst'] != "" && $_POST['curso'] !="" && $_POST['nivel'] !="" && $_POST['id'] !=""){
+  if($_POST['instituicao'] !=""){
     
     $parametros = array(
       ':id' => $_POST['id'],
@@ -19,6 +19,8 @@ if(isset($_POST['idInst']) && isset($_POST['curso']) && isset($_POST['nivel']) &
     );
 
     echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro editado com sucesso!');location.href='../Admin/menuADM.html';;</SCRIPT>");
+  
+  } else if($_POST['instituicao'] == "" && $_POST['id'] !="") {
 
   } else {
     echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Campos vazios a serem prenchidos');</SCRIPT>");

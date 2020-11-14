@@ -1,27 +1,29 @@
 <html>
-    <link rel="stylesheet" href="admin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
     <head>
+        <link rel="stylesheet" href="admin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Editar Curso- InstaCall</title>
+        <script src="editar.js"></script>
     </head>
-    <header>
-        <div id="topoInstaCall">
-            <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
-        </div>
-    </header>
     <body>
+        <header>
+            <div id="topoInstaCall">
+                <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
+            </div>
+        </header>
         <div class="centralizarTudo">
             <h1>
                 Editar Curso
             </h1>
-            <form method="POST" action="../Cadastros/editarCurso.php">
+            <!--<form method="POST" action="../Cadastros/editarCurso.php">-->
                 <div>
                     <table class="tabelaPrincipal">
                         <tr>
                             <td>ID Curso: </td>
                             <td><input type="text" placeholder="Ex: 000000000" id="id" name="id"></td>
-                            <td><button onclick="">Buscar ID</button></td>
+                            <td><input type="button" class="botoes" value="Buscar ID" onclick="buscarIdCurso();"></input></td>
                         </tr>
                         <tr>
                             <td>Curso: </td>
@@ -43,17 +45,18 @@
                         <tr>
                             <td>ID Inst: </td>
                             <td><input type="text" id="idInst" name="idInst"></td>
-                            <td><button onclick="">Buscar ID</button></td>
+                            <td><input type="button" class="botoes" value="Buscar ID" onclick=""></input></td>
                         </tr>
                         <tr>
                             <td>Instituição: </td>
                             <td><input type="text" placeholder="Ex: UniSociesc" disabled id="instituicao" name="instituicao"></td>
                         </tr>
                     </table>
-                </div>
                     <input type="submit" class="botoes" value="Salvar">
-                    <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
-            </form>
+                    <input type="button" class="botoes" onclick="window.location.href = 'menuADM.html'" class="botoes" value="Voltar">
+                </div>
+                    
+            <!--</form>-->
         </div>
     </body>
 </html>

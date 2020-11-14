@@ -1,8 +1,11 @@
 <html>
-    <link rel="stylesheet" href="admin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
     <head>
+        <link rel="stylesheet" href="admin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="cadastrar.js"></script>
+
         <title>Cadastrar Curso- InstaCall</title>
     </head>
     <header>
@@ -15,66 +18,62 @@
             <h1>
                 Cadastrar Curso
             </h1>
-            <form method="POST" action="../Cadastros/cadastrarCurso.php">
-                <div>
-                    <table class="tabelaPrincipal">
-                        <tr>
-                            <td>ID Instituição: </td>
-                            <td><input type="text" id="idInst" name="idInst"></td>
-                            <td><button  onclick="" class="botoes">Cadastros</button></td>
-                        </tr>
-                            <td></td>
-                            <td><button onclick="" style="width: 100%;" class="botoes">Buscar Informações</button></td>
-                        <tr>
-                            <td>Instituição: </td>
-                            <td><input type="text" disabled></td>
-                        </tr>
-                        <tr>
-                            <td>CEP: </td>
-                            <td><input type="text" disabled></td>
-                        </tr>
-                        <tr>
-                            <td>UF: </td>
-                            <td><input type="text" disabled id="uf" name="uf"></td>
-                        </tr>
-                        <tr>
-                            <td>Cidade: </td>
-                            <td><input type="text" disabled id="cidade" name="cidade"></td>
-                            <td>Bairro: </td>
-                            <td><input type="text" disabled id="bairro" name="bairro"></td>
-                        </tr>
-                        <tr>
-                            <td>Logradouro: </td>
-                            <td><input type="text" disabled id="logradouro" name="logradouro"></td>
-                            <td>N°: </td>
-                            <td><input type="text" disabled id="criarNumInst" name="criarNumInst"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr>
-                        <tr>
-                            <td>Curso: </td>
-                            <td><input type="text" placeholder="Ex: Sistemas de Informação" id="curso" name="curso"></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Nível: </td>
-                            <td align="left"><select style="width: 100%;" id="nivel" name="nivel">
-                                <option value="dota">Selecione</option>
-                                <option value="Bacharelado">Bacharelado</option> 
-                                <option value="Licenciatura">Licenciatura</option>
-                                <option value="Tecnólogo">Tecnólogo</option>
-                                <option value="Mestrado">Mestrado</option>
-                                <option value="Doutorado">Doutorado</option>
-                                <option value="Pós-Graduação">Pós-Graduação</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <input type="submit" class="botoes" value="Salvar">
-                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
-            </form>
+            <table class="tabelaPrincipal">
+                <tr>
+                    <td>Curso: </td>
+                    <td><input type="text" placeholder="Ex: Sistemas de Informação" id="curso" name="curso"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Nível: </td>
+                    <td align="left"><select style="width: 100%;" id="nivel" name="nivel">
+                        <option value="dota">Selecione</option>
+                        <option value="Bacharelado">Bacharelado</option> 
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Tecnólogo">Tecnólogo</option>
+                        <option value="Mestrado">Mestrado</option>
+                        <option value="Doutorado">Doutorado</option>
+                        <option value="Pós-Graduação">Pós-Graduação</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td>ID Instituição: </td>
+                    <td><input type="text" id="idInst" name="idInst"></td>
+                    <td><input type="button"  onclick="" class="botoes" value="Cadastros"></input></td>
+                </tr>
+                    <td></td>
+                    <td><input  type="button" onclick="" style="width: 100%;" class="botoes" value="Buscar Informações"></input></td>
+                <tr>
+                    <td>Instituição: </td>
+                    <td><input type="text" disabled id="nomeInst" name="nomeInst"></td>
+                </tr>
+                <tr>
+                    <td>CEP: </td>
+                    <td><input type="text" disabled id="cep" name="cep"></td>
+                </tr>
+                <tr>
+                    <td>UF: </td>
+                    <td><input type="text" disabled id="uf" name="uf"></td>
+                </tr>
+                <tr>
+                    <td>Cidade: </td>
+                    <td><input type="text" disabled id="cidade" name="cidade"></td>
+                    <td>Bairro: </td>
+                    <td><input type="text" disabled id="bairro" name="bairro"></td>
+                </tr>
+                <tr>
+                    <td>Logradouro: </td>
+                    <td><input type="text" disabled id="logradouro" name="logradouro"></td>
+                    <td>N°: </td>
+                    <td><input type="text" disabled id="numInst" name="numInst"></td>
+                </tr>
+            </table>
+            <input type="button" class="botoes" onclick="cadastrarCurso()" value="Salvar"></input>
+            <input type="button" class="botoes" value="Voltar"><a href="menuADM.html" class="mudarPagina" value="Voltar"></a></input>
         </div>
     </body>
 </html>

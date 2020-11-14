@@ -5,20 +5,20 @@ if(isset($_POST['nome']) && isset($_POST['nascimento']) && isset($_POST['cpf']) 
     if($_POST['nome'] != "" && $_POST['nascimento'] != "" && $_POST['cpf'] != "" && $_POST['cep'] != "" && $_POST['uf'] != "" && $_POST['cidade'] != "" && $_POST['bairro'] != "" && $_POST['logradouro'] != "" && $_POST['numero'] != "" && $_POST['idTurma'] != "" && $_POST['email'] != "" && $_POST['senha'] != ""){
       
         $parametros = array(
-            ':nome' => $_POST['nome'],
-            ':cpf' => $_POST['cpf'],
-            ':nascimento' => $_POST['nascimento'],
-            ':cep' => $_POST['cep'],
-            ':uf' => $_POST['uf'],
-            ':cidade' => $_POST['cidade'],
-            ':bairro' => $_POST['bairro'],
-            ':logradouro' => $_POST['logradouro'],
-            ':numero' => $_POST['numero'],
-            ':idTurma' => $_POST['idTurma'],
-            ':email' => $_POST['email'],
-            ':senha' => $_POST['senha']
+          ':nome' => $_POST['nome'],
+          ':cpf' => $_POST['cpf'],
+          ':nascimento' => $_POST['nascimento'],
+          ':cep' => $_POST['cep'],
+          ':uf' => $_POST['uf'],
+          ':cidade' => $_POST['cidade'],
+          ':bairro' => $_POST['bairro'],
+          ':logradouro' => $_POST['logradouro'],
+          ':numero' => $_POST['numero'],
+          ':idTurma' => $_POST['idTurma'],
+          ':email' => $_POST['email'],
+          ':senha' => $_POST['senha']
         );
-  
+        
         $stmt = $conn->prepare("INSERT INTO aluno (nomeAluno, cpfAluno, nascAluno, cepAluno, ufAluno, cidadeAluno, bairroAluno, logradouroAluno, numAluno, idTurma , loginAluno, senhaAluno)
                                                 VALUES (:nome, :cpf, :nascimento, :cep, :uf, :cidade, :bairro, :logradouro, :numero, :idTurma, :email, :senha)");
         $stmt->execute($parametros);
@@ -27,9 +27,9 @@ if(isset($_POST['nome']) && isset($_POST['nascimento']) && isset($_POST['cpf']) 
       'status' => $stmt,
     );
 
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro realizado com sucesso!');location.href='../Admin/menuADM.html';</SCRIPT>");
+    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro realizado com sucesso!');</SCRIPT>");
   
 } else {
-    echo "<script type='text/javascript'>window.alert('Prencher todos os campos');location.href='../Admin/cadastrarInstituicao.html';</script>";
+    echo "<script type='text/javascript'>window.alert('Prencher todos os campos');</script>";
   }
 }
