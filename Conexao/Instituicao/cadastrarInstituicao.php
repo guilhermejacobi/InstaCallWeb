@@ -14,8 +14,12 @@ if(isset($_POST['nomeInst']) && isset($_POST['cep']) && isset($_POST['uf']) && i
       ':numInst' => $_POST['numInst']
     );
 
-    $stmt = $conn->prepare("INSERT INTO instituicao (nomeInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
-    $stmt->execute($parametros);
+    try {
+      $stmt = $conn->prepare("INSERT INTO instituicao (nomeInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
+      $stmt->execute($parametros);
+    } catch (PDOException $e) {
+      echo ('Erro' . $e->getMessage());
+    }
 
     $retorno = array(
       'status' => $stmt,

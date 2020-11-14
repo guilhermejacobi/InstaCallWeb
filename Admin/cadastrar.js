@@ -11,25 +11,23 @@ function cadastrarInstituicao(){
         data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), criarNumInst: $('#numInst').val()},
 
         success: function (result, textstatus) {
-            console.log(result);
-            //resultParciado = JSON.parse(result);
+            console.log(result + "SE APARECEU SÓ ISSO TA ERRADO")
             //console.log(resultParciado.status);
-
-           /* if(resultParciado) {
+            console.log(result.length)
+           if(result > 0) {
                 window.alert("Cadastro realizado com sucesso!")
                 location.href= "menuADM.html";
             } else {
                 window.alert('Falha ao salvar, favor rever informações.');
             }
-            */ 
-        },
+        }
     })
 }
 
 /*
 cadastrar curso
 */
-/*
+
 function cadastrarCurso(){
     jQuery.ajax({
         type: 'POST',
