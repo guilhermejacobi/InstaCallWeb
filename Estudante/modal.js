@@ -1,5 +1,5 @@
 $(document).ready( function (e) {
-    $('.botoesMenu').click(function(){
+    $('.botaoChamada').click(function(){
         $('#chamadaModal').fadeIn(500);
     });
 

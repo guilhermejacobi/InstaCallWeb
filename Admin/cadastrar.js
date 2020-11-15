@@ -2,26 +2,29 @@
 /*
 cadastrar instituicao
 */
+function transformarInt(string){
+    var int = parseInt($('#cep').val());
+
+    console.log(int.typeof)
+}
 
 function cadastrarInstituicao(){
-    jQuery.ajax({
-        type: 'POST',
-        url: '../Conexao/Instituicao/cadastrarInstituicao.php',
-        datatype: 'json',
-        data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), criarNumInst: $('#numInst').val()},
 
-        success: function (result, textstatus) {
-            console.log(result + "SE APARECEU SÓ ISSO TA ERRADO")
-            //console.log(resultParciado.status);
-            console.log(result.length)
-           if(result > 0) {
+        jQuery.ajax({
+            type: 'POST',
+            url: '../Conexao/Instituicao/cadastrarInstituicao.php',
+            datatype: 'json',
+            data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+
+            success: function (result, textstatus) {
+
+                resultParciado = JSON.parse(result);
+                console.log(resultParciado.status);
+
                 window.alert("Cadastro realizado com sucesso!")
-                location.href= "menuADM.html";
-            } else {
-                window.alert('Falha ao salvar, favor rever informações.');
+            // window.location.href= "menuADM.html";
             }
-        }
-    })
+        })
 }
 
 /*

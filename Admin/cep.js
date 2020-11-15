@@ -40,7 +40,4 @@ function buscaCep(){
         alert("CEP inválido")
         
     }
-
-
-
 }
