@@ -1,10 +1,17 @@
 <!DOCTYPE HTML>
 <html>
-    <link rel="stylesheet" href="admin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
+    
     <head>
-        <title>Cadastrar Instituição- InstaCall</title>
+        <link rel="stylesheet" href="admin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script type="text/javascript" src="cadastrar.js"></script>
+        <script type="text/javascript" src="mask.js"></script>
+        <script src="editar.js"></script>
+        
+        <title>Editar Instituição- InstaCall</title>
     </head>
     <header>
         <div id="topoInstaCall">
@@ -14,53 +21,54 @@
     <body>
         <div class="centralizarTudo">
             <h2>
-                Cadastrar Instituição
+               Editar Instituição
             </h2>
-            <form method="POST" action="../Cadastros/editarInstituicao.php">
-                <div>
-                    <table class="tabelaPrincipal">
-                        <tr>
-                            <td>ID: </td>
-                            <td><input type="text" placeholder="Ex: 1234"></td>
-                            <td><button onclick="" class="botoes">Buscar Id</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button style="width: 100%;">Listar Instituições</button></td>
-                        </tr>
-                        <tr>
-                            <td>Instituição:</td>
-                            <td><input type="text" placeholder="Ex: SOCIESC" id="criarNomeInst" name="criarNomeInst"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr>
-                        <tr>
-                            <td>CEP: </td>
-                            <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                            <td><div align="left"><input type="button" onclick="buscaCep()" class="botoes" value="Buscar"></div></td>
-                        </tr>
-                        <tr>
-                            <td>UF: </td>
-                            <td><input type="text" placeholder="Ex: Santa Catarina" id="uf" name="uf"></td>
-                        </tr>
-                        <tr>
-                            <td>Cidade: </td>
-                            <td><input type="text" placeholder="Ex: Joinville" id="cidade" name="cidade"></td>
-                            <td>Bairro: </td>
-                            <td><input type="text" placeholder="Ex: Itaum" id="bairro" name="bairro"></td>
-                        </tr>
-                        <tr>
-                            <td>Logradouro: </td>
-                            <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro"></td>
-                            <td>N°: </td>
-                            <td><input type="text" placeholder="Ex: 1234" id="criarNumInst" name="criarNumInst"></td>
-                        </tr> 
-                    </table>
-                </div>
-                <input type="submit" class="botoes" value="Salvar"></input>
-                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
-            </form>
+            <div>
+
+                <table class="tabelaPrincipal">
+                    <tr>
+                        <td>ID: </td>
+                        <td><input type="text" placeholder="Ex: 1234" id="idInst" name="idInst"></td>
+                        <td><input type="button" onclick="buscarIdInstituicao()" value="Buscar ID" class="botoes"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button style="width: 100%;">Listar Instituições</button></td>
+                    </tr>
+                    <tr>
+                        <td>Instituição:</td>
+                        <td><input type="text" placeholder="Ex: SOCIESC" id="nomeInst" name="nomeInst"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>CEP: </td>
+                        <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
+                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botoes" value="Buscar"></div></td>
+                    </tr>
+                    <tr>
+                        <td>UF: </td>
+                        <td><input type="text" placeholder="Ex: Santa Catarina" disabled id="uf" name="uf"></td>
+                    </tr>
+                    <tr>
+                        <td>Cidade: </td>
+                        <td><input type="text" placeholder="Ex: Joinville" disabled id="cidade" name="cidade"></td>
+                        <td>Bairro: </td>
+                        <td><input type="text" placeholder="Ex: Itaum" id="bairro" disabled name="bairro"></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro: </td>
+                        <td><input type="text" placeholder="Ex: Rua Florianópolis" disabled id="logradouro" name="logradouro"></td>
+                        <td>N°: </td>
+                        <td><input type="text" placeholder="Ex: 1234" id="numInst" name="numInst"></td>
+                    </tr> 
+                </table>
+
+                <input type="button" class="botoes" value="Salvar"></input>
+                <input type="button" class="botoes" value="Voltar"><a href="menuADM.html" class="mudarPagina"></a></button>
+
+            </div>
         </div>
         <script type="text/javascript" src="cep.js"></script>
     </body>

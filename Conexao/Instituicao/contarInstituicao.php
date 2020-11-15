@@ -1,27 +1,26 @@
 <?php
 require_once "../conexao.php";
 
-if(isset($_POST['criarNomeInst']) && isset($_POST['cep']) && isset($_POST['uf']) && isset($_POST['cidade']) && isset($_POST['bairro']) && isset($_POST['logradouro']) && isset($_POST['criarNumInst'])){
-  if($_POST['criarNomeInst'] != "" && $_POST['cep'] != "" && $_POST['uf'] != "" && $_POST['cidade'] != "" && $_POST['bairro'] != "" && $_POST['logradouro'] != "" && $_POST['criarNumInst'] != ""){
+if(isset($_POST['nomeInst']) && isset($_POST['cep']) && isset($_POST['uf']) && isset($_POST['cidade']) && isset($_POST['bairro']) && isset($_POST['logradouro']) && isset($_POST['numInst'])){
+  if($_POST['nomeInst'] != "" && $_POST['cep'] != "" && $_POST['uf'] != "" && $_POST['cidade'] != "" && $_POST['bairro'] != "" && $_POST['logradouro'] != "" && $_POST['numInst'] != ""){
+  
+    $sql = ("SELECT COUNT(*) AS total FROM instituicao WHERE nomeInst = :nomeInst, cepInst = :cep, ufInst = :uf, cidadeInst = :cidade, bairroInst = :bairro, logradouroInst = :logradouro, numInst = :numInst");
+    $query = $conn->prepare($sql);
     
-    $parametros = array(
-      ':criarNomeInst' => $_POST['criarNomeInst'],
-      ':cep' => $_POST['cep'],
-      ':uf' => $_POST['uf'],
-      ':cidade' => $_POST['cidade'],
-      ':bairro' => $_POST['bairro'],
-      ':logradouro' => $_POST['logradouro'],
-      ':criarNumInst' => $_POST['criarNumInst']
-    );
+    $query->bindParam(':nomeInst',$_POST['nomeInst']);
+    $query->bindParam(':cepInst',$_POST['cepInst']);
+    $query->bindParam(':ufInst',$_POST['ufInst']);
+    $query->bindParam(':uf',$_POST['uf']);
+    $query->bindParam(':cidade',$_POST['cidade']);
+    $query->bindParam(':bairro',$_POST['bairro']);
+    $query->bindParam(':logradouro',$_POST['logradouro']);
+    $query->bindParam(':numInst',$_POST['numInst']);
 
-    $stmt = $conn->prepare("INSERT INTO instituicao (nomeInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:criarNomeInst, :cep, :uf, :cidade, :bairro, :logradouro, :criarNumInst)");
-    $stmt->execute($parametros);
+    $query->execute();
 
-    $retorno = array(
-      'status' => $stmt,
-    );
-    echo json_encode(['status'=>true]);
-   // echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro realizado com sucesso!');location.href='../Admin/menuADM.html';</SCRIPT>");
+    $result = $query->fetchObject();
+  
+    echo json_encode($result);
 
   } else {
     echo json_encode(['status'=>false]);

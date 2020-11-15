@@ -13,19 +13,20 @@ if(isset($_POST['nomeInst']) && isset($_POST['cep']) && isset($_POST['uf']) && i
       ':logradouro' => $_POST['logradouro'],
       ':numInst' => $_POST['numInst']
     );
-    echo "Até aqui deu";
     try {
       $stmt = $conn->prepare("INSERT INTO instituicao (nomeInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
       $stmt->execute($parametros);
+
+      $retorno = array(
+        'status' => $stmt,
+      );
+      echo json_encode(['status'=>true]);
+
     } catch (PDOException $e) {
       echo ('Erro' . $e->getMessage());
+
+      echo json_encode(['status'=>false]);
     }
-
-    $retorno = array(
-      'status' => $stmt,
-    );
-    echo json_encode(['status'=>true]);
-
   } else {
     echo json_encode(['status'=>false]);
   }

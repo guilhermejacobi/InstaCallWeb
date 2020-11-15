@@ -1,7 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-    
-    
     <head>
         <link rel="stylesheet" href="admin.css">
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -39,7 +37,6 @@
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="9">
                         <td>CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-000" id="cep" name="cep"></td>
                         <td><div align="left"><input type="button" onclick="buscaCep()" class="botoes" value="Buscar"></div></td>
@@ -58,7 +55,7 @@
                         <td>Logradouro: </td>
                         <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro" disabled></td>
                         <td>N°: </td>
-                        <td><input type="number" placeholder="Ex: 1234" id="numInst" name="numInst"></td>
+                        <td><input type="text" placeholder="Ex: 12345" id="numInst" name="numInst"></td>
                     </tr> 
                 </table>
                 <input type="button" class="botoes" onclick="cadastrarInstituicao()" value="Salvar"></input>

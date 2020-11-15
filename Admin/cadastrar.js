@@ -1,30 +1,74 @@
 
 /*
-cadastrar instituicao
+cadastro de instituicao
 */
-function transformarInt(string){
-    var int = parseInt($('#cep').val());
-
-    console.log(int.typeof)
-}
 
 function cadastrarInstituicao(){
+    var testeNome = $("#nomeInst").val();
+    var testeCep = $("#cep").val();
+    var testeUf = $("#uf").val();
+    var testeCidade = $("#cidade").val();
+    var testeBairro = $("#bairro").val();
+    var testeLogradouro = $("#logradouro").val();
+    var testeNum = $("#numInst").val();
 
-        jQuery.ajax({
-            type: 'POST',
-            url: '../Conexao/Instituicao/cadastrarInstituicao.php',
-            datatype: 'json',
-            data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+    //if (numInst != 0) {
+        if (testeNome != "" && testeCep != "" && testeUf != "" && testeCidade != "" && testeBairro != "" && testeLogradouro != "" && testeNum != ""){
+            
+            //Se campos gerais forem diferente de vazios, começa a ligação com banco de dados
+            jQuery.ajax({
+                type: 'POST',
+                url: '../Conexao/Instituicao/cadastrarInstituicao.php',
+                datatype: 'json',
+                data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+        
+                success: function (result, textstatus) {
+                    console.log(result);
+                    let resultParciado = JSON.parse(result);
+                    console.log(resultParciado.status);
+        
+                    if (resultParciado) {
+                        window.alert("Cadastro realizado com sucesso!")
+                       // window.location.href= "menuADM.html";
+                    } else if (!resultParciado == false) {
+                        window.alert("Falha ao cadastrar, revisar as informações")
+                    }
+                }
+            })
 
-            success: function (result, textstatus) {
+        } else if (testeNome == "" || testeCep == "" || testeNum == ""){
+            //Se campos que são possiveis digitar estiverem vazios, solicita para prencher
+            window.alert("Falha ao cadastrar, campos vazios.");
 
-                resultParciado = JSON.parse(result);
-                console.log(resultParciado.status);
+        } else if (testeUf == "" || testeCidade == "" || testeBairro == "" || testeLogradouro == "") {
+            //Se área do endereço que só consegue buscando o CEP estiver vazia, solicita a validação
+            window.alert("Validação de CEP necessário!");
+        }
+        
+    //} else {
+    //    window.alert("Instituicao idêntica já registrada.")
+   // }
+}
 
-                window.alert("Cadastro realizado com sucesso!")
-            // window.location.href= "menuADM.html";
-            }
-        })
+function contarInst(){
+    jQuery.ajax({
+        type: 'POST',
+        url: '../Conexao/Instituicao/contarInstituicao.php',
+        datatype: 'json',
+        data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+
+        success: function (result, textstatus) {
+            console.log('teste 1:');
+            console.log(result);
+            
+            console.log('teste 2:');
+            let resultado = JSON.parse(result);
+            console.log(resultado);
+
+            console.log('teste 3:');
+            console.log(resultado.total);
+        }
+    })
 }
 
 /*
