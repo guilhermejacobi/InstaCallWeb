@@ -29,7 +29,7 @@ function cadastrarInstituicao(){
         
                     if (resultParciado) {
                         window.alert("Cadastro realizado com sucesso!")
-                       // window.location.href= "menuADM.html";
+                        window.location.href= "menuADM.html";
                     } else if (!resultParciado == false) {
                         window.alert("Falha ao cadastrar, revisar as informações")
                     }

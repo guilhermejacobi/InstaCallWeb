@@ -229,6 +229,10 @@ Tabela
     background-color: white;
 }
 
+/*
+Frequência modal
+*/
+
 #chamadaModal{
     display: none;
     background-color: rgba(0, 0, 0, 0.6);

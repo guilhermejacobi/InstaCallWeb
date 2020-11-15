@@ -10,6 +10,7 @@
         <script type="text/javascript" src="cadastrar.js"></script>
         <script type="text/javascript" src="mask.js"></script>
         <script src="editar.js"></script>
+        <script src="tabela.js"></script>
         
         <title>Editar Instituição- InstaCall</title>
     </head>
@@ -33,7 +34,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><button style="width: 100%;">Listar Instituições</button></td>
+                        <td><input type="button" style="width: 100%;" class="abrirListaInst" id="listarInst" name="listarInst" value="Listar Instituições"></td>
                     </tr>
                     <tr>
                         <td>Instituição:</td>
@@ -65,11 +66,43 @@
                     </tr> 
                 </table>
 
-                <input type="button" class="botoes" value="Salvar"></input>
+                <input type="button" class="botoes" value="Salvar" onclick="editarInstituicao()"></input>
                 <input type="button" class="botoes" value="Voltar"><a href="menuADM.html" class="mudarPagina"></a></button>
 
             </div>
         </div>
+
+        <div id="editarInstModal" class="editarInstModal">
+            <div class="editarInstModalBox">
+                <div class="fundoBranco">
+                    <span class="topoTabelaEditarInst">Pesquisar Nome: <input type="text" name="pesquisarInst" id="pesquisarInst"></span>
+                    <table class="tabelaEditarInstModal">
+                        <tr>
+                            <th class="tableModal">ID</th>
+                            <th class="tableModal">Nome</th>
+                            <th class="tableModal">Logradouro</th>
+                            <th class="tableModal">N°</th>
+                            <th class="tableModal">Bairro</th>
+                            <th class="tableModal">Cidade</th>
+                            <th class="tableModal">Estado</th>
+                            <th class="tableModal">CEP</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="fechar"><a onclick="">X</a></div>
+            </div>
+        </div>
+
         <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>

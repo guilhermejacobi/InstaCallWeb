@@ -1,17 +1,16 @@
 /*
 Editar Insitiuicao
 */
-function buscarIdInstituicao() {
+function buscarIdInstituicao(){
     
     var testeId = $('#idInst').val();
 
     if (testeId != "") {
-        console.log($('#idInst').val());
         jQuery.ajax({
             type: 'POST',
             url: '../Conexao/Instituicao/buscarIdInstituicao.php',
             datatype: 'json',
-            data: {idInst: $('idInst').val()},
+            data: {idInst: $('#idInst').val()},
             
             success: function (result, textstatus) {
 
@@ -48,16 +47,23 @@ function editarInstituicao() {
             type: 'POST',
             url: '../Conexao/Instituicao/editarInstituicao.php',
             datatype: 'json',
-            data: {idInst: $('#idInst').val(), nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+            data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val(), idInst: $('#idInst').val()},
             
             success: function (result, textstatus) {
+                console.log(result);
+                resultado = JSON.parse(result);
+                console.log(resultado);
 
-                
 
             }
         })
-    }
 
+    } else if(testeId == "" || testeNome == "" || testeCep == "" || testeNum == "") {
+        window.alert("Falha na operação, campos ainda vazios.");
+
+    } else if(testeUf == "" || testeCidade == "" || testeBairro == "" || testeLogradouro == "") {
+        window.alert("Validação de CEP necessário!");
+    }
 }
 /*
 Editar Curso
