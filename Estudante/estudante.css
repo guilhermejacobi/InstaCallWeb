@@ -116,7 +116,12 @@ Tabela
     border-style: solid;
     border-bottom-width: 80%;
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(95vh - 150px);
+
+}
+
+.rolagem{
+    overflow: scroll;
 }
 #color{
     color: rgba(63, 63, 63, 0.609);
