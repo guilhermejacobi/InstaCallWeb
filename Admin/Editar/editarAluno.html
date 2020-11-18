@@ -1,0 +1,119 @@
+<html>
+    <head>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <link rel="stylesheet" href="editarAluno.css"> 
+
+        <title>Editar Aluno- InstaCall</title>
+    </head>
+    <header>
+        <div id="topoInstaCall">
+            <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
+        </div> 
+        
+    </header>
+    <body>
+        <div class="centralizarTudo">
+            <h1>
+                Editar Matrícula - Aluno
+            </h1>
+            <br>
+            <div>
+                <table class="tabelaPrincipal">
+                    <tr>
+                        <td>Matrícula: </td>
+                        <td><input type="text"></td>
+                        <td><input type="button" class="botao" value="Buscar Matrícula"></td>
+                    </tr>
+                    <tr>
+                        <td>Nome: </td>
+                        <td><input type="text" placeholder="Nome"></td>
+                    </tr>
+                    <tr>
+                        <td>CPF: </td>
+                        <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
+                        <td>Nascimento: </td>
+                        <td><input type="text" placeholder="00/00/00"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefone/Celular: </td>
+                        <td><input type="text" placeholder="Ex: (47) 9 0000-0000"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>CEP: </td>
+                        <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
+                        <td align="left"><input type="button" value = "Buscar" onclick="buscaCep()" class="botao2"></td>
+                    </tr>
+                    <tr>
+                        <td>UF: </td>
+                        <td><input type="text" placeholder="Ex: Santa Catarina" id="uf"></td>
+                    </tr>
+                    <tr>
+                        <td>Cidade: </td>
+                        <td><input type="text" placeholder="Ex: Joinville" id="cidade"></td>
+                        <td>Bairro: </td>
+                        <td><input type="text" placeholder="Ex: Itaum" id="bairro"></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro: </td>
+
+                        <!-- <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" border-radius:4px -moz-border-radius:4px -webkit-border-radius:4px box-shadow: 1px 1px 2px #333333 -moz-box-shadow: 1px 1px 2px #333333 -webkit-box-shadow: 1px 1px 2px #333333 background: #cccccc  border:1px solid #000000 width:150px textarea border: 1px solid #000000 background:#cccccc width:150px height:100px border-radius:4px -moz-border-radius:4px -webkit-border-radius:4px box-shadow: 1px 1px 2px #333333-moz-box-shadow: 1px 1px 2px #333333 -webkit-box-shadow: 1px 1px 2px #333333 input type="text":hover, textarea:hover      background: #ffffff border:1px solid #990000 input type="submit"        background:#006699        color:#ffffff></td> -->
+                        <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro"></td>
+                        <td>N°: </td>
+                        <td><input type="text" placeholder="Ex: 1234"></td>
+                    </tr> 
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>Turma:</td>
+                        <td><input type="text" placeholder="Ex:1234"></td>
+                        <td align="left"><input type="button" class="botao2" value="Buscar"></td>
+                    </tr>
+                    <tr>
+                        <td>Cuso: </td>
+                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
+                    </tr>
+                    <tr>
+                        <td>Nível: </td>
+                        <td align="left">
+                            <select  name="selectCurso">
+                                <option value="tipo0">Selecione</option>
+                                <option value="tipo1">Bacharelado</option> 
+                                <option value="tipo2">Licenciatura</option>
+                                <option value="tipo3">Tecnólogo</option>
+                                <option value="tipo4">Mestrado</option>
+                                <option value="tipo5">Doutorado</option>
+                                <option value="tipo6">Pós-Graduação</option>
+                            </select>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>Login: </td>
+                        <td><input type="text" placeholder="Ex: aluno@estudante.com"></td>
+                    </tr>
+                    <tr>
+                        <td>Senha: </td>
+                        <td><input type="text" placeholder="123456789"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <input type="button" class="botao2" value="Salvar">
+                <a href="menuADM.html" class="mudarPagina"><input type="button" class="botao2" value="Voltar"></a>
+            </div>
+        </div>
+        <script type="text/javascript" src="cep.js"></script>
+    </body>
+</html>

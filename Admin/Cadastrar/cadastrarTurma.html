@@ -1,0 +1,95 @@
+<html>
+    <head>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <link rel="stylesheet" href="cadastrarTurma.css"></link>
+
+        <title>Cadastrar Turma- InstaCall</title>
+    </head>
+    <header>
+        <div id="topoInstaCall">
+            <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
+        </div>
+    </header>
+    <body >
+        <div class="centralizarTudo">
+            <h1>
+                Cadastrar Turma
+            </h1>
+            <form method="POST" action="../Cadastros/cadastrarTurma.php">
+                <div>
+                    <table class="tabelaPrincipal">
+                        <tr>
+                            <td>ID: </td>
+                            <td><input type="text" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Turno: </td>
+                            <td align="left"><select style="width: 100%;" id="turno" name="turno">
+                                <option value="Selecione">Selecione</option>
+                                <option value="Matutino">Matutino</option> 
+                                <option value="Vespertino">Vespertino</option>
+                                <option value="Noturno">Noturno</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>ID Curso: </td>
+                            <td><input type="text" id="id" name="id"></td>
+                            <td><input type="button" class="botao" value="Buscar" onclick="buscarIdCurso()"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input style="width: 100%;" type="button" value="Listar Cursos" class="botao" onclick=""></div></td>
+                        </tr>
+                        <tr>
+                            <td>Curso: </td>
+                            <td><input type="text" disabled id="curso" name="curso"></td>
+                        </tr>
+                        <tr>
+                            <td>Nível: </td>
+                            <td><input type="text" disabled id="nivel"></td>
+                        </tr>
+                        <tr>
+                            <td>Instituição:</td>
+                            <td><input type="text" maxlength="50" disabled id="nomeInst" name="nomeInst"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">&nbsp;</label></td>
+                        </tr>
+                        <tr>
+                            <td>CEP: </td>
+                            <td><input type="text" disabled id="cep" name="cep"></td>
+                        </tr>
+                        <tr>
+                            <td>UF: </td>
+                            <td><input type="text" id="uf" name="uf" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Cidade: </td>
+                            <td><input type="text" id="cidade" name="cidade" disabled></td>
+                            <td>Bairro: </td>
+                            <td><input type="text" id="bairro" name="bairro" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Logradouro: </td>
+                            <td><input type="text" id="logradouro" name="logradouro" disabled></td>
+                            <td>N°: </td>
+                            <td><input type="text" disabled id="numInst" name="numInst"></td>
+                        </tr> 
+                    </table>
+                </div>
+                    <input type="button" class="botao" value="Salvar" onclick="cadastrarTurma()">
+                    <a href="../menuADM.html" class="mudarPagina"><input type="button" value="Voltar" class="botao"></a>
+            </form>
+        </div>
+    </body>
+</html>

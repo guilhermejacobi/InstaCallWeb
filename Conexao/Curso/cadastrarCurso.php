@@ -1,17 +1,20 @@
 <?php
-require_once "conexao.php";
+require_once "../conexao.php";
 
-$parametros = array(
-  ':curso' => $_POST['curso'],
-  ':nivel' => $_POST['nivel'],
-  ':idInst' => $_POST['idInst']
-);
+try {
+  $sql = ("INSERT INTO curso (idInst, nomeCurso, nivelCurso) VALUES (:idInst, :curso, :nivel)");
 
-$stmt = $conn->prepare("INSERT INTO curso (idInst, nomeCurso, nivelCurso) VALUES (:idInst, :curso, :nivel)");
-$stmt->execute($parametros);
+  $query = $conn->prepare($sql);
 
-$retorno = array(
-  'status' => $stmt,
-);
-echo json_encode(['status'=>true]);
+  $query->bindParam(':idInst',$_POST['idInst']);
+  $query->bindParam(':curso',$_POST['curso']);
+  $query->bindParam(':nivel',$_POST['nivel']);
 
+  $query->execute();
+
+  echo json_encode(['status'=>true]);
+} catch (PDOException $e){
+  echo ("Erro " . $e->getMessage());
+  echo json_encode(['status'=>false]);
+}
+  

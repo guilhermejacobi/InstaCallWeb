@@ -1,24 +1,19 @@
 <?php
-require_once "conexao.php";
+require_once "../conexao.php";
 
-if(isset($_POST['idCurso']) && isset($_POST['turno'])){
-  if($_POST['idCurso'] != "" && $_POST['turno'] !=""){
-    
-    $parametros = array(
-      ':idCurso' => $_POST['idCurso'],
-      ':turno' => $_POST['turno']
-    );
-    
-    $stmt = $conn->prepare("INSERT INTO turma (idCurso, turno) VALUES (:idCurso, :turno)");
-    $stmt->execute($parametros);
+try {
 
-    $retorno = array(
-      'status' => $stmt,
-    );
+  $sql = "INSERT INTO turma (idCurso, turno) VALUES (:id, :turno)";
+  $query = $conn->prepare($sql);
 
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro realizado com sucesso!');location.href='../Admin/menuADM.html';l</SCRIPT>");
+  $query->bindParam(':id', $_POST['id']);
+  $query->bindParam(':turno', $_POST['turno']);
 
-  } else {
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Campos vazios a serem prenchidos');</SCRIPT>");
-  }
+  $query->execute();
+
+  echo json_encode(['status' =>true]);
+
+} catch (PDOException $e){
+  echo ("Erro " . $e->getMessage());
+  echo json_encode(['status' =>false]);
 }

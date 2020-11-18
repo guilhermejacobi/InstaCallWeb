@@ -1,13 +1,15 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="stylesheet" href="admin.css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-        <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-        <script type="text/javascript" src="cadastrar.js"></script>
-        <script type="text/javascript" src="mask.js"></script>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <script type="text/javascript" src="../JS/cep.js"></script>
+        <link rel="stylesheet" href="cadastrarInstituicao.css"></link>
 
         <title>Cadastrar Instituição- InstaCall</title>
 
@@ -31,7 +33,7 @@
                     </tr>
                     <tr>
                         <td>Instituição:</td>
-                        <td><input data-inputmask type="text" placeholder="Ex: SOCIESC" id="nomeInst" name="nomeInst"></td>
+                        <td><input type="text" maxlength="50" placeholder="Ex: SOCIESC" id="nomeInst" name="nomeInst"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
@@ -39,27 +41,27 @@
                     <tr>
                         <td>CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-000" id="cep" name="cep"></td>
-                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botoes" value="Buscar"></div></td>
+                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></div></td>
                     </tr>
                     <tr>
                         <td>UF: </td>
-                        <td><input type="text" placeholder="Ex: Santa Catarina" id="uf" name="uf" disabled></td>
+                        <td><input type="text" id="uf" name="uf" disabled></td>
                     </tr>
                     <tr>
                         <td>Cidade: </td>
-                        <td><input type="text" placeholder="Ex: Joinville" id="cidade" name="cidade" disabled></td>
+                        <td><input type="text" id="cidade" name="cidade" disabled></td>
                         <td>Bairro: </td>
-                        <td><input type="text" placeholder="Ex: Itaum" id="bairro" name="bairro" disabled></td>
+                        <td><input type="text" id="bairro" name="bairro" disabled></td>
                     </tr>
                     <tr>
                         <td>Logradouro: </td>
-                        <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro" disabled></td>
+                        <td><input type="text" id="logradouro" name="logradouro" disabled></td>
                         <td>N°: </td>
                         <td><input type="text" placeholder="Ex: 12345" id="numInst" name="numInst"></td>
                     </tr> 
                 </table>
-                <input type="button" class="botoes" onclick="cadastrarInstituicao()" value="Salvar"></input>
-                <input type="button" class="botoes" value="Voltar"><a href="menuADM.html" class="mudarPagina"></a></input>
+                <input type="button" class="botao" onclick="cadastrarInstituicao()" value="Salvar"></input>
+              <a href="../menuADM.html" class="mudarPagina">  <input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
         

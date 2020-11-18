@@ -13,7 +13,6 @@ function buscaCep(){
     xhr.onreadystatechange = function(){
     if((xhr.readyState == 4) && xhr.status == 200)
         resposta = JSON.parse( xhr.responseText); 
-        console.log(resposta)
         let inputCep = document.querySelector("#cep");
         let inputUf = document.querySelector("#uf");
         let inputCidade = document.querySelector("#cidade");

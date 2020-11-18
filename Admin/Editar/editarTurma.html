@@ -1,0 +1,94 @@
+<html>
+    <head>
+      
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <link rel="stylesheet" href="editarTurma.css">
+          
+        <title>Editar Turma- InstaCall</title>
+    </head>
+    <body >
+        <div id="topoInstaCall">
+            <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
+        </div>
+        <div class="centralizarTudo">
+            <h1>
+                Editar Turma
+            </h1>
+            <div>
+                <table class="tabelaPrincipal">
+                    <tr>
+                        <td>ID: </td>
+                        <td><input type="text"></td>
+                        <td><input type="button" class="botao" value="Buscar ID" onclick=""></td>
+                    </tr>
+                    <tr>
+                        <td>Turno: </td>
+                        <td><select style="width: 100%;" name="selectTurno">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Matutino</option> 
+                            <option value="tipo2">Vespertino</option>
+                            <option value="tipo3">Noturno</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>ID Curso: </td>
+                        <td><input type="text" id="id" name="id"></td>
+                        <td><input type="button" class="botao" value="Buscar" onclick="buscarIdCurso()"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input style="width: 100%;" type="button" value="Listar Cursos" class="botao" onclick=""></div></td>
+                    </tr>
+                    <tr>
+                        <td>Curso: </td>
+                        <td><input type="text" disabled id="curso" name="curso"></td>
+                    </tr>
+                    <tr>
+                        <td>Nível: </td>
+                        <td><input type="text" disabled id="nivel"></td>
+                    </tr>
+                    <tr>
+                        <td>Instituição:</td>
+                        <td><input type="text" maxlength="50" disabled id="nomeInst" name="nomeInst"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>CEP: </td>
+                        <td><input type="text" disabled id="cep" name="cep"></td>
+                    </tr>
+                    <tr>
+                        <td>UF: </td>
+                        <td><input type="text" id="uf" name="uf" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Cidade: </td>
+                        <td><input type="text" id="cidade" name="cidade" disabled></td>
+                        <td>Bairro: </td>
+                        <td><input type="text" id="bairro" name="bairro" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro: </td>
+                        <td><input type="text" id="logradouro" name="logradouro" disabled></td>
+                        <td>N°: </td>
+                        <td><input type="text" disabled id="numInst" name="numInst"></td>
+                    </tr> 
+                </table>
+            </div>
+            <div>
+                <input type="button" class="botao" value="Salvar">
+                <a href="../index.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
+            </div>
+        </div>
+      
+    </body>
+</html>

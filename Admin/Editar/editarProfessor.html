@@ -1,44 +1,44 @@
 <html>
     <head>
-        <link rel="stylesheet" href="admin.css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-        <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-        <script type="text/javascript" src="cadastrar.js"></script>
-        <script type="text/javascript" src="mask.js"></script>
-        <script src="editar.js"></script>
-        
-        <title>Editar Aluno- InstaCall</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <link rel="stylesheet" href="editarProfessor.css">
+
+        <title>Editar Professor- InstaCall</title>
     </head>
     <header>
         <div id="topoInstaCall">
             <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
-        </div> 
-        
+        </div>
     </header>
     <body>
         <div class="centralizarTudo">
             <h1>
-                Editar Matrícula - Aluno
+                Editar Matrícula - Professor
             </h1>
-            <br>
             <div>
                 <table class="tabelaPrincipal">
                     <tr>
                         <td>Matrícula: </td>
-                        <td><input type="text"></td>
-                        <td><button onclick="">Buscar Matrícula</button></td>
+                        <td><input type="text" placeholder="Ex: 000000000"></td>
+                        <td align="left"><input type="button" onclick="" class="botao2" value="Buscar Matrícula"></td>
                     </tr>
                     <tr>
-                        <td>Nome: </td>
+                        <td>Nome:</td>
                         <td><input type="text" placeholder="Nome"></td>
                     </tr>
                     <tr>
-                        <td>CPF: </td>
-                        <td><input type="text" placeholder="Ex: 000.000.000-00"></td>
-                        <td>Nascimento: </td>
-                        <td><input type="text" placeholder="00/00/00"></td>
+                        <td>Data de Nascimento: </td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td>CPF:</td>
+                        <td><input type="text" data-mask="000.000.000-00" data-mask-selectonfocus="true"><br></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
@@ -46,7 +46,7 @@
                     <tr>
                         <td>CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-00" id="cep"></td>
-                        <td><button onclick="buscaCep()">Buscar</button></td>
+                        <td align="left"><input type="button" class="botao" onclick="buscaCep()" value="Buscar"></td>
                     </tr>
                     <tr>
                         <td>UF: </td>
@@ -68,30 +68,22 @@
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td>Turma:</td>
-                        <td><input type="text" placeholder="Ex:1234"></td>
-                        <td><div align="left"><button>Buscar</button></div></td>
+                        <td>Formação/Nivel </td>
+                        <td><input type="text" placeholder="Ex: Sistemas De Informação"><br></td>
+                        <td><select name="selectCurso">
+                            <option value="tipo0">Selecione</option>
+                            <option value="tipo1">Bacharelado</option> 
+                            <option value="tipo2">Licenciatura</option>
+                            <option value="tipo3">Tecnólogo</option>
+                            <option value="tipo4">Mestrado</option>
+                            <option value="tipo5">Doutorado</option>
+                            <option value="tipo6">Pós-Graduação</option>
+                        </select>
+                    </td>
                     </tr>
                     <tr>
-                        <td>Cuso: </td>
-                        <td><input type="text" placeholder="Ex: Sistemas de Informação"></td>
-                    </tr>
-                    <tr>
-                        <td>Nível: </td>
-                        <td>
-                            <select name="selectCurso">
-                                <option value="tipo0">Selecione</option>
-                                <option value="tipo1">Bacharelado</option> 
-                                <option value="tipo2">Licenciatura</option>
-                                <option value="tipo3">Tecnólogo</option>
-                                <option value="tipo4">Mestrado</option>
-                                <option value="tipo5">Doutorado</option>
-                                <option value="tipo6">Pós-Graduação</option>
-                            </select>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">&nbsp;</label></td>
+                        <td>Instituição: </td>
+                        <td><input type="text" placeholder="Ex: UniSociesc"></td>
                     </tr>
                     <tr>
                         <td>Login: </td>
@@ -99,13 +91,13 @@
                     </tr>
                     <tr>
                         <td>Senha: </td>
-                        <td><input type="text" placeholder="123456789"></td>
+                        <td><input type="text" placeholder="Ex: 123456789"></td>
                     </tr>
                 </table>
             </div>
             <div>
-                <button>Salvar</button>
-                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
+                <input type="button" class="botao" value="Salvar">
+                <a href="menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
         <script type="text/javascript" src="cep.js"></script>

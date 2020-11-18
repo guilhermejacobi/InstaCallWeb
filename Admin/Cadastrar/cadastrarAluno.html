@@ -1,12 +1,13 @@
 <html>
     <head>
-        <link rel="stylesheet" href="admin.css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-        <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-        <script type="text/javascript" src="cadastrar.js"></script>
-        <script type="text/javascript" src="mask.js"></script>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <link rel="stylesheet" href="cadastrarAluno.css">
 
         <title>Matricular Aluno- InstaCall</title>
     </head>
@@ -31,13 +32,19 @@
                         </tr>
                         <tr>
                             <td>Nome: </td>
-                            <td><input type="text" placeholder="Nome" id="nome" name="nome"></td>
+                            <td><input type="text" maxlength="50" placeholder="Nome" id="nome" name="nome"></td>
                         </tr>
                         <tr>
                             <td>CPF: </td>
                             <td><input type="text" placeholder="Ex: 000.000.000-00" id="cpf" name="cpf"></td>
                             <td>Nascimento: </td>
-                            <td><input type="text" placeholder="00/00/00" id="nascimento" name="nascimento"></td>
+                            <td><input type="text" placeholder="00/00/0000" id="nascimento" name="nascimento"></td>
+                        </tr>
+                        <tr>
+                            <td>Telefone: </td>
+                            <td><input type="text" placeholder="Ex: (00) 0000-0000" id="telefone"></td>
+                            <td>Celular: </td>
+                            <td><input type="text" placeholder="Ex: (00) 0 0000-0000" id="celular"></td>
                         </tr>
                         <tr>
                             <td><label for="">&nbsp;</label></td>
@@ -45,21 +52,21 @@
                         <tr>
                             <td>CEP: </td>
                             <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                            <td align="left"><input type="button" onclick="buscaCep()" value="Buscar"></input></td>
+                            <td align="left"><input type="button" class="botao" onclick="buscaCep()" value="Buscar"></input></td>
                         </tr>
                         <tr>
                             <td>UF: </td>
-                            <td><input type="text" placeholder="Ex: Santa Catarina" id="uf" name="uf"></td>
+                            <td><input type="text" placeholder="Ex: Santa Catarina" disabled id="uf" name="uf"></td>
                         </tr>
                         <tr>
                             <td>Cidade: </td>
-                            <td><input type="text" placeholder="Ex: Joinville" id="cidade" name="cidade"></td>
+                            <td><input type="text" placeholder="Ex: Joinville" disabled id="cidade" name="cidade"></td>
                             <td>Bairro: </td>
-                            <td><input type="text" placeholder="Ex: Itaum" id="bairro" name="bairro"></td>
+                            <td><input type="text" placeholder="Ex: Itaum" disabled id="bairro" name="bairro"></td>
                         </tr>
                         <tr>
                             <td>Logradouro: </td>
-                            <td><input type="text" placeholder="Ex: Rua Florianópolis" id="logradouro" name="logradouro"></td>
+                            <td><input type="text" placeholder="Ex: Rua Florianópolis" disabled id="logradouro" name="logradouro"></td>
                             <td>Número: </td>
                             <td><input type="text" placeholder="Ex: 1234" id="numero" name="numero"></td>
                         </tr>
@@ -69,11 +76,15 @@
                         <tr>
                             <td>Id Turma:</td>
                             <td><input type="text" placeholder="Ex:1234" id="idTurma" name="idTurma"></td>
-                            <td><div align="left"><button>Buscar</button></div></td>
+                            <td align="left"><input type="button" class="botao" value="Buscar"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input style="width: 100%;" class="botao2" type="button" value="Listar Turmas"></td>
                         </tr>
                         <tr>
                             <td>Cuso: </td>
-                            <td><input type="text" disabled></td>
+                            <td><input type="text" disabled ></td>
                         </tr>
                         <tr>
                             <td>Turno:</td>
@@ -95,10 +106,9 @@
                             <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
                         </tr>
                     </table>
+                    <input type="button" class="botao" value="Salvar">
+                    <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
                 </div>
-                <input type="submit" class="botoes" value="Salvar">
-                <button class="botoes"><a href="menuADM.html" class="mudarPagina">Voltar</a></button>
-
         </div>
         <script type="text/javascript" src="cep.js"></script>
     </body>

@@ -19,6 +19,7 @@ try {
 
     echo json_encode(['status'=>true]);
 
-} catch {
+} catch (PDOException $e){
+    echo ("Erro " . $e->getMessage());
     echo json_encode(['status'=>false]);
 }
