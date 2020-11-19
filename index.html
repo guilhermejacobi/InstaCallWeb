@@ -2,6 +2,7 @@
 
     <link href="styleLogin.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link href="funcoes.js" rel="js">-->
     <!--Dentro do head coloco o título da página-->
    <head>
@@ -9,33 +10,36 @@
        <meta charset="UTF-8">
    </head>
 
-   <body id="fundo">
+    <body id="fundo">
+        <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>     
+                <center><div id="login">
+                    <div class="borda1">
+                        <div class="borda2">
+                            
+                                <div class="informacaoLogin">
+                                <div><img class="logoSociesc" src="Imagens/logo.png"></div>
+                                <br>
+                                Horários | Chamadas
+                                <br>
+                                Frequência | Notas
+                                <br>
+                                Atividades | Material Complementar
+                                
+                            </div>
+                            <div class="inputs">
 
-        <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>
+                                <br>
+                                <input class="inputsLogin" placeholder="Login">
+                                <br>
+                                <input class="inputsLogin" type="password" placeholder="Senha">
+                                <br>
+                                <a class="mudarPagina button" href="Admin/menuADM.html"> <input type="button" class="button" value="Entrar"></a>
+                            </div>
 
-        <div id="login">
-            <div>
-                <figure>
-                    <center><img class="logoSociesc" src="Imagens/logo.png"></center>
-                </figure>
-            </div>
-
-            <br>
-    
-            <div class="informacaoLogin">
-                <center>
-                    Horários | Chamadas<br>
-                    Frequência | Notas<br>
-                    Atividades | Material Complementar
-                </center>
-            </div>
-            <div>
-                <br>
-                <center><input class="form-control inputsLogin" placeholder="Login"></input></center>
-                <br>
-                <center><input class="inputsLogin" type="password" placeholder="Senha"></input></center>
-                <br>
-                <center><button id="button"><a class="mudarPagina" href="Admin/menuADM.html">Entrar</a></button></center>
+                        </div>
+                    </div>
+                </div></center>
             </div>
         </div>
     </body>
+</html>

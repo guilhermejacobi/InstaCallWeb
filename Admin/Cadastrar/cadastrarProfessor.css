@@ -15,7 +15,7 @@
     font-family: 'Cookie', cursive;
 }
 
-#topoInstaCall{
+.topoInstaCall{
     -moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
             -o-transition: all 0.5s ease;
@@ -29,9 +29,6 @@ background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 
                 background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
 
 position: relative;
-top: 0;
-left: 0;
-right: 0;
 height: 55px;
 }
 

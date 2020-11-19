@@ -30,6 +30,10 @@ height: 55px;
     line-height: 60px;
 }
 
+.call{
+    color: black;
+}
+
 #fundoCinza{
     background-color: rgb(240, 240, 240);
 }

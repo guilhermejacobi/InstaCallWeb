@@ -9,7 +9,7 @@
         <script type="text/javascript" src="../JS/cadastrar.js"></script>
         <script type="text/javascript" src="../JS/editar.js"></script>
         <link rel="stylesheet" href="cadastrarTurma.css"></link>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cadastrar Turma- InstaCall</title>
     </head>
     <header>
@@ -32,7 +32,7 @@
                         <tr>
                             <td>Turno: </td>
                             <td align="left"><select style="width: 100%;" id="turno" name="turno">
-                                <option value="Selecione">Selecione</option>
+                                <option value=""></option>
                                 <option value="Matutino">Matutino</option> 
                                 <option value="Vespertino">Vespertino</option>
                                 <option value="Noturno">Noturno</option>
@@ -43,7 +43,7 @@
                         </tr>
                         <tr>
                             <td>ID Curso: </td>
-                            <td><input type="text" id="id" name="id"></td>
+                            <td><input type="text" id="idCurso" name="idCurso"></td>
                             <td><input type="button" class="botao" value="Buscar" onclick="buscarIdCurso()"></td>
                         </tr>
                         <tr>

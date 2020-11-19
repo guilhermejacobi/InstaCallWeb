@@ -23,16 +23,16 @@
                 <table class="tabelaPrincipal">
                     <tr>
                         <td>ID: </td>
-                        <td><input type="text"></td>
-                        <td><input type="button" class="botao" value="Buscar ID" onclick=""></td>
+                        <td><input type="text" id="idTurma" name="idTurma"></td>
+                        <td><input type="button" class="botao" value="Buscar ID" onclick="buscarIdTurma()"></td>
                     </tr>
                     <tr>
                         <td>Turno: </td>
-                        <td><select style="width: 100%;" name="selectTurno">
-                            <option value="tipo0">Selecione</option>
-                            <option value="tipo1">Matutino</option> 
-                            <option value="tipo2">Vespertino</option>
-                            <option value="tipo3">Noturno</option>
+                        <td><select style="width: 100%;" id="turno" name="turno">
+                            <option value=""></option>
+                            <option value="Matutino">Matutino</option> 
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
                         </select></td>
                     </tr>
                     <tr>
@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>ID Curso: </td>
-                        <td><input type="text" id="id" name="id"></td>
+                        <td><input type="text" id="idCurso" name="idCurso"></td>
                         <td><input type="button" class="botao" value="Buscar" onclick="buscarIdCurso()"></td>
                     </tr>
                     <tr>
@@ -85,8 +85,8 @@
                 </table>
             </div>
             <div>
-                <input type="button" class="botao" value="Salvar">
-                <a href="../index.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
+                <input type="button" class="botao" onclick="editarTurma()" value="Salvar">
+                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
       

@@ -2,11 +2,12 @@
 require_once "../conexao.php";
 
 try {
-  $sql = ("INSERT INTO instituicao (nomeInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
+  $sql = ("INSERT INTO instituicao (nomeInst,cnpjInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst,:cnpj, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
 
   $query = $conn->prepare($sql);
   
   $query->bindParam(':nomeInst',$_POST['nomeInst']);
+  $query->bindParam(':cnpj',$_POST['cnpj']);
   $query->bindParam(':cep',$_POST['cep']);
   $query->bindParam(':uf',$_POST['uf']);
   $query->bindParam(':cidade',$_POST['cidade']);

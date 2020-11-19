@@ -5,45 +5,47 @@ cadastro de instituicao
 
 function cadastrarInstituicao(){
     var testeNome = $("#nomeInst").val();
+    var testeCnpj = $('#cnpj').val();
     var testeCep = $("#cep").val();
     var testeUf = $("#uf").val();
     var testeCidade = $("#cidade").val();
     var testeBairro = $("#bairro").val();
     var testeLogradouro = $("#logradouro").val();
     var testeNum = $("#numInst").val();
-
+    
     //verifica se os campos estão vazios
-    if (testeNome != "" && testeCep != "" && testeUf != "" && testeCidade != "" && testeBairro != "" && testeLogradouro != "" && testeNum != ""){
+    if (testeNome != "" && testeCnpj != "" && testeCep != "" && testeUf != "" && testeCidade != "" && testeBairro != "" && testeLogradouro != "" && testeNum != ""){
 
         //teste se já possui uma instituição com mesmo CEP e NUM, pois nõa tem como ter 2 instituições no mesmo lugar de forma literal.
         jQuery.ajax({
             type: 'POST',
             url: '../../Conexao/Instituicao/contarInstituicao.php',
             datatype: 'json',
-            data: {cep: $('#cep').val(), numInst: $('#numInst').val()},
+            data: {cnpj: $('#cnpj').val()},
     
             success: function (result, textstatus) {
                 
                 console.log(result)
                 let resultado = JSON.parse(result);
+                console.log(resultado.total);
+
                 //Se resultado for == 0 no select, não ha isntituição igual, então pode registar essa.
                 if (resultado.total == 0) {
                     jQuery.ajax({
                         type: 'POST',
                         url: '../../Conexao/Instituicao/cadastrarInstituicao.php',
                         datatype: 'json',
-                        data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
+                        data: {nomeInst: $('#nomeInst').val(),cnpj: $('#cnpj').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val()},
                 
                         success: function (result, textstatus) {
                             
-                            console.log(result + "TESTEEEEE");
                             let resultParciado = JSON.parse(result);
-                            console.log(resultParciado.status);
+                            console.log(resultParciado)
                 
-                            if (resultParciado) {
+                            if (resultParciado) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                                 window.alert("Cadastro realizado com sucesso!")
-                                window.location.href= "../menuADM.html";
-                            } else if (!resultParciado == false) {
+                                // window.location.href= "../menuADM.html";
+                            } else if (!resultParciado) {
                                 window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
                             }
                         }
@@ -56,7 +58,7 @@ function cadastrarInstituicao(){
             }
         })
         
-    } else if (testeNome == "" || testeCep == "" || testeNum == ""){
+    } else if (testeNome == "" || testeCep == "" || testeNum == "" || testeCnpj == ""){
         //Se campos que são possiveis digitar estiverem vazios, solicita para prencher
         window.alert("Falha ao cadastrar, campos vazios.");
 
@@ -193,8 +195,11 @@ function cadastrarTurma(){
 /*
 cadastrar professor
 */
-/*
+
 function cadastrarProfessor(){
+    
+
+    
     jQuery.ajax({
         type: 'POST',
         url: '../Conexao/Instituicao/cadastrarInstituicao.php',

@@ -17,36 +17,54 @@
     margin-left: 10px;
     color: rgb(255, 255, 255);
     font-family: 'Cookie', cursive;
-    font-size: 250%;
+    font-size: 50px;
 }
 
 .instaCall2{
     color: rgb(2, 2, 2);
-    font-size: 250%;
     font-family: 'Cookie', cursive;
-}
-
-#login{
-    background-image: url("Imagens/CentroLogin.jpg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 30%;
-    padding: 10%;
+    font-size: 50px;
 }
 
 .logoSociesc{
-    width: 15%;
+    width: 200px;
+    margin-top: 30px;
+}
+
+#login{
+  background-color: white;
+  width: 350px;
+  height: 350px;
+  border-radius:12px;
+  position: center;
+}
+
+.borda1{
+    border: 3px solid;
+    border-radius: 12px;
+    height: 100%;
+    border-top: none;
+    border-left: none;
+    background-color: white;
+}
+
+.borda2{
+    border: 3px solid;
+    border-radius: 12px;
+    height: 100%;
+    border-right: none;
+    border-bottom: none;
+    background-color: white;
 }
 
 .informacaoLogin{
     font-weight: bold;
     font-size: relative;
-    font-size: 120%;
 }
 
 .inputsLogin{
-    width: 20%;
-    height: 2%;
+    width: 300px;
+    height: 30px;
     font-size: 100%;
 }
 
@@ -69,9 +87,9 @@
 
 /* Resolução "HD" */
 
-@media (max-width: 1480px) {
+/* @media (max-width: 1480px) {
     .logoSociesc{
-        width: 15%;
+        
     }
 
     #button{
@@ -120,4 +138,21 @@
                         top:0;
                         left:-320px;
                     }
+/* Resolução "Mobile" */
+       
+    @media (max-width: 480px) { 
+            .informacaoLogin{
+                font-size: 15px;
+            }
+
+            .logoSociesc{
+                width: 100px;
+            }
+
+            #Login{
+                width: 230px;
+            }  
+
+
+/* -------------------------------------------------- */
 /* -------------------------------------------------- */
