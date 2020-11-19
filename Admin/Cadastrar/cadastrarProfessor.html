@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../JS/mask.js"></script>
         <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/cep.js"></script>
         <link rel="stylesheet" href="cadastrarProfessor.css"></link>
 
         <title>Cadastrar Professor- InstaCall</title>
@@ -19,115 +21,111 @@
     </header>
     <body>
         <div class="centralizarTudo">
-          
-            <form method="POST" action="../Cadastros/cadastrarProfessor.php">
-                <h2>
-                    Cadastrar Professor
-                </h2>
-                <div>
-                    <table class="tabelaPrincipal">
-                        <tr>
-                            <td>Matrícula: </td>
-                            <td><input type="text" disabled></td>
-                        </tr>
-                        <tr>
-                            <td>Nome:</td>
-                            <td><input type="text" placeholder="Nome" name="nome"></td>
-                        </tr>
-                        <tr>
-                            <td>Nascimento: </td>
-                            <td><input type="text" placeholder="01/01/2000" name="nascimento" id="nascimento"></td>
-                            <td>CPF:</td>
-                            <td><input type="text" placeholder="Ex: 000.000.000-00" name="cpf" id="cpf"><br></td>
-                        </tr>
-                        <tr>
-                            <td>Telefone: </td>
-                            <td><input type="text" name="telefone" placeholder="Ex: (00) 0000-0000" id="telefone"></td>
-                            <td>Celular: </td>
-                            <td><input type="text" name="celular" placeholder="Ex: (00) 0 0000-0000" id="celular"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr>
-                        <tr>
-                            <td>CEP: </td>
-                            <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                            <td><div align="left"><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></div></td>
-                        </tr>
-                        <tr>
-                            <td>UF: </td>
-                            <td><input type="text" disabled id="uf" name="estado"></td>
-                        </tr>
-                        <tr>
-                            <td>Cidade: </td>
-                            <td><input type="text" disabled id="cidade" name="cidade"></td>
-                            <td>Bairro: </td>
-                            <td><input type="text" disabled id="bairro" name="bairro"></td>
-                        </tr>
-                        <tr>
-                            <td>Logradouro: </td>
-                            <td><input type="text" disabled id="logradouro" name="logradouro"></td>
-                            <td>N°: </td>
-                            <td><input type="text" placeholder="Ex: 1234" name="numero"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr> 
-                        <tr>
-                            <td>Formação: </td>
-                            <td><input type="text" placeholder="Ex: Sistemas de Informação" name="formacao"><br></td>
-                            <td><select name="selectCurso">
-                                <option value=""></option>
-                                <option value="Bacharelado">Bacharelado</option> 
-                                <option value="Licenciatura">Licenciatura</option>
-                                <option value="Tecnólogo">Tecnólogo</option>
-                                <option value="Mestrado">Mestrado</option>
-                                <option value="Doutorado">Doutorado</option>
-                                <option value="Graduação">Pós-Graduação</option>
-                            </select></td>
-                        </tr>
-                        <tr>
-                            <td>Instituição: </td>
-                            <td><input type="text" placeholder="Ex: UniSociesc"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr>
-                        <tr>
-                            <td>Turma:  </td>
-                            <td><input type="text" placeholder="Ex: 1234" name="idTurma"></td>
-                            <td align="left"><input type="button" value="Buscar" class="botao"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input style="width: 100%;" type="button" value="Listar Turmas" class="botao"></td>
-                        </tr>
-                        <tr>
-                            <td>Curso: </td>
-                            <td><input type="text" disabled></td>
-                        </tr>
-                        <tr>
-                            <td>Turno: </td>
-                            <td><input type="text" disabled></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">&nbsp;</label></td>
-                        </tr>
-                        <tr>
-                            <td>Login: </td>
-                            <td><input type="text" placeholder="professor@instituicao.com" id="name" name="email"></td>
-                        </tr>
-                        <tr>
-                            <td>Senha: </td>
-                            <td><input type="text" placeholder="Ex: 123456789" name="senha"></td>
-                        </tr>
-                    </table>
+            <h2>
+                Cadastrar Professor
+            </h2>
+            <div>
+                <table class="tabelaPrincipal">
+                    <tr>
+                        <td>Matrícula: </td>
+                        <td><input type="text" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Nome:</td>
+                        <td><input type="text" placeholder="Nome" id="nome" name="nome"></td>
+                    </tr>
+                    <tr>
+                        <td>Nascimento: </td>
+                        <td><input type="text" placeholder="01/01/2000" name="nascimento" id="nascimento"></td>
+                        <td>CPF:</td>
+                        <td><input type="text" placeholder="Ex: 000.000.000-00" name="cpf" id="cpf"><br></td>
+                    </tr>
+                    <tr>
+                        <td>Telefone: </td>
+                        <td><input type="text" name="telefone" placeholder="Ex: (00) 0000-0000" id="telefone"></td>
+                        <td>Celular: </td>
+                        <td><input type="text" name="celular" placeholder="Ex: (00) 0 0000-0000" id="celular"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>CEP: </td>
+                        <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
+                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></div></td>
+                    </tr>
+                    <tr>
+                        <td>UF: </td>
+                        <td><input type="text" disabled id="uf" name="estado"></td>
+                    </tr>
+                    <tr>
+                        <td>Cidade: </td>
+                        <td><input type="text" disabled id="cidade" name="cidade"></td>
+                        <td>Bairro: </td>
+                        <td><input type="text" disabled id="bairro" name="bairro"></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro: </td>
+                        <td><input type="text" disabled id="logradouro" name="logradouro"></td>
+                        <td>N°: </td>
+                        <td><input type="text" placeholder="Ex: 1234" id="numero" name="numero"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr> 
+                    <tr>
+                        <td>Formação: </td>
+                        <td><input type="text" placeholder="Ex: Sistemas de Informação" name="formacao" id="formacao"><br></td>
+                        <td><select id="nivelProf" name="nivel" name="selectCurso">
+                            <option value=""></option>
+                            <option value="Bacharelado">Bacharelado</option> 
+                            <option value="Licenciatura">Licenciatura</option>
+                            <option value="Tecnólogo">Tecnólogo</option>
+                            <option value="Mestrado">Mestrado</option>
+                            <option value="Doutorado">Doutorado</option>
+                            <option value="Graduação">Pós-Graduação</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Instituição: </td>
+                        <td><input type="text" placeholder="Ex: UniSociesc" id="nomeInst"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>Turma:  </td>
+                        <td><input type="text" placeholder="Ex: 1234" id="idTurma" name="idTurma"></td>
+                        <td align="left"><input type="button" onclick="buscarIdTurma()" value="Buscar" class="botao"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input style="width: 100%;" type="button" value="Listar Turmas" class="botao"></td>
+                    </tr>
+                    <tr>
+                        <td>Curso: </td>
+                        <td><input type="text" disabled id="curso" name="curso"></td>
+                    </tr>
+                    <tr>
+                        <td>Turno: </td>
+                        <td><input type="text" disabled id="turno" name="turno"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td>Login: </td>
+                        <td><input type="text" placeholder="Ex: professor@instituicao.com" id="login" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Senha: </td>
+                        <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
+                    </tr>
+                </table>
 
-                    <input type="submit" class="botao" value="Salvar">
-                    <input type="button" value="Voltar" class="botao"><a href="menuADM.html" class="mudarPagina"></a>
-                </div>
-            </form>
+                <input type="button" class="botao" onclick="cadastrarProfessor()" value="Salvar">
+                <a href="../menuADM.html" class="mudarPagina"><input type="button" value="Voltar" class="botao"></a>
+            </div>
         </div>
-        <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>

@@ -22,6 +22,7 @@ function buscarIdInstituicao(){
                 console.log(resultado);
                 if (resultado) {
                     $('#nomeInst').val(resultado.nomeInst);
+                    $('#cnpj').val(resultado.cnpjInst);
                     $('#cep').val(resultado.cepInst);
                     $('#uf').val(resultado.ufInst);
                     $('#cidade').val(resultado.cidadeInst);
@@ -40,7 +41,7 @@ function buscarIdInstituicao(){
 
 function editarInstituicao() {
     var testeId = $('#idInst').val();
-    var testeCnpj = $('cnpj').val();
+    var testeCnpj = $('#cnpj').val();
     var testeNome = $('#nomeInst').val();
     var testeCep = $('#cep').val();
     var testeUf = $('#uf').val();
@@ -57,20 +58,21 @@ function editarInstituicao() {
             type: 'POST',
             url: '../../Conexao/Instituicao/contarEditInstituicao.php',
             datatype: 'json',
-            data: {},
+            data: {idInst: $('#idInst').val(), cnpj: $('#cnpj').val()},
         
             success: function (result, textstatus) {
                     
                 console.log(result);
                 let resultado = JSON.parse(result);
+                console.log(resultado);
                 //Se resultado for == 0 no select, não ha isntituição igual, então pode registar essa.
-                if (resultado.total == 0 || resultado.total == 1) {
+                if (resultado.total == 0) {
 
                     jQuery.ajax({
                         type: 'POST',
                         url: '../../Conexao/Instituicao/editarInstituicao.php',
                         datatype: 'json',
-                        data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val(), idInst: $('#idInst').val()},
+                        data: {nomeInst: $('#nomeInst').val(), cnpj: $('#cnpj').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val(), idInst: $('#idInst').val()},
                         
                         success: function (result, textstatus) {
 
@@ -85,9 +87,9 @@ function editarInstituicao() {
                         }
                     })
 
-                } else if (resultado.total > 1) {
+                } else if (resultado.total == 1) {
                     //Caso tenha uma ou mais com mesmas informações, deverá ocorrer erro ao registrar.
-                    window.alert("Instituição já existente");
+                    window.alert("CNPJ já registrado");
                 }
             }
         })
@@ -116,11 +118,13 @@ function buscarIdCurso(){
             data: {id: $('#idCurso').val()},
             success: function (result, textstatus) {
                 let resultado = JSON.parse(result);
+                console.log(resultado);
 
                 if (resultado) {
                     $('#curso').val(resultado.nomeCurso);
                     $('#nivel').val(resultado.nivelCurso);
-                    $('#nomeInst').val(resultado.nomeInst);
+                    $('#idInst').val(resultado.idInst);
+                    $('#instituicao').val(resultado.nomeInst);
                     $('#cep').val(resultado.cepInst);
                     $('#uf').val(resultado.ufInst);
                     $('#cidade').val(resultado.cidadeInst);
@@ -140,39 +144,53 @@ function buscarIdCurso(){
 
 
 function editarCurso() {
-    var testeId = $('#idInst').val();
-    var testeNome = $('#nomeInst').val();
-    var testeCep = $('#cep').val();
-    var testeUf = $('#uf').val();
-    var testeCidade = $('#cidade').val();
-    var testeBairro = $('#bairro').val();
-    var testeLogradouro = $('#logradouro').val();
-    var testeNum = $('#numInst').val();
 
-    if (testeId != "" && testeNome != "" && testeCep != "" && testeUf != "" && testeCidade != "" && testeBairro != "" && testeLogradouro != "" && testeNum != ""){
+    var testeIdCurso = $('#idCurso').val();
+    var testeCurso = $('#curso').val();
+    var testeNivel = $('#nivel').val();
+    var testeInst = $('#idInst').val();
+
+    if (testeIdCurso != "" && testeCurso != "" && testeNivel != "" && testeInst != ""){
         jQuery.ajax({
             type: 'POST',
-            url: '../../Conexao/Instituicao/editarInstituicao.php',
+            url: '../../Conexao/Curso/contarCurso.php',
             datatype: 'json',
-            data: {nomeInst: $('#nomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numInst: $('#numInst').val(), idInst: $('#idInst').val()},
+            data: {idCurso: $('#idCurso').val(), curso: $('#curso').val(), nivel: $('#nivel').val(), idInst: $('#idInst').val()},
             
             success: function (result, textstatus) {
+                console.log(result)
+                let resultParciado = JSON.parse(result);
+                console.log(resultParciado);
 
-                resultParciado = JSON.parse(result);
-            
-                if (resultParciado) {
-                    window.alert("Cadastro editado com sucesso!")
-                    window.location.href= "../menuADM.html";
-                } else if (!resultParciado == false) {
+                if (resultParciado.total == 0) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../../Conexao/Curso/editarCurso.php',
+                        datatype: 'json',
+                        data: {idCurso: $('#idCurso').val(), curso: $('#curso').val(), nivel: $('#nivel').val(), idInst: $('#idInst').val()},
+                        
+                        success: function (result, textstatus) {
+                            console.log(result);
+                            let resultParciado = JSON.parse(result);
+                            console.log(resultParciado);
+                            if (resultParciado) {
+                                window.alert("Cadastro editado com sucesso!")
+                                window.location.href= "../menuADM.html";
+                            } else if (!resultParciado == false) {
+                                window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
+                            }
+                        }
+                    })
+                } else if (!resultParciado.total != 0) {
                     window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
                 }
             }
         })
-    } else if(testeId == "" || testeNome == "" || testeCep == "" || testeNum == "") {
+    } else if(testeIdCurso == "" || testeCurso == "" || testeNivel == "" || testeNum == "") {
         window.alert("Falha na operação, campos ainda vazios.");
 
-    } else if(testeUf == "" || testeCidade == "" || testeBairro == "" || testeLogradouro == "") {
-        window.alert("Validação de CEP necessário!");
+    } else if(testeInst == "") {
+        window.alert("Validação de curso necessário!");
     }
 }
 
@@ -200,7 +218,7 @@ function buscarIdTurma(){
                     $('#idCurso').val(resultado.idCurso);
                     $('#curso').val(resultado.nomeCurso);
                     $('#nivel').val(resultado.nivelCurso);
-                    $('#nomeInst').val(resultado.nomeInst);
+                    $('#instituicao').val(resultado.nomeInst);
                     $('#cep').val(resultado.cepInst);
                     $('#uf').val(resultado.ufInst);
                     $('#cidade').val(resultado.cidadeInst);
@@ -225,7 +243,7 @@ function editarTurma() {
     var testeTurno =$('#turno').val();
     var testeCurso =$('#curso').val();
     var testeNivel = $('#nivel').val();
-    var testeNome = $('#nomeInst').val();
+    var testeNome = $('#instituicao').val();
     var testeCep = $('#cep').val();
     var testeUf = $('#uf').val();
     var testeCidade = $('#cidade').val();

@@ -9,6 +9,7 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="../JS/editar.js"></script>
         <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/cep.js"></script>
         <script src="../JS/tabela.js"></script>
         <link rel="stylesheet" href="editarInstituicao.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,15 +44,15 @@
                     </tr>
                     <tr>
                         <td>CNPJ: </td>
-                        <td><input type="text" maxlength="14" placeholder="Ex: 00.000.000/0000" id="cnpj" name="cnpj"></td>
+                        <td><input type="text" maxlength="20" placeholder="Ex: 00.000.000/0000" id="cnpj" name="cnpj"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
                         <td>CEP: </td>
-                        <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></div></td>
+                        <td><input type="text" placeholder="Ex: 00000-000" id="cep" name="cep"></td>
+                        <td><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></td>
                     </tr>
                     <tr>
                         <td>UF: </td>
@@ -72,7 +73,7 @@
                 </table>
 
                 <input type="button" class="botao" value="Salvar" onclick="editarInstituicao()"></input>
-                <input type="button" class="botao" value="Voltar"><a href="menuADM.html" class="mudarPagina"></a>
+                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
 
             </div>
         </div>
@@ -107,7 +108,5 @@
                 <div class="fechar"><a onclick="">X</a></div>
             </div>
         </div>
-
-        <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>

@@ -2,13 +2,12 @@
 
   require_once "../conexao.php";
   
-  $sql = ("SELECT COUNT(*) AS total FROM instituicao WHERE nomeInst = :nomeInst AND cepInst = :cep AND  numInst = :numInst");
+  $sql = ("SELECT COUNT(*) AS total FROM instituicao WHERE cnpjInst = :cnpj AND idInst != :idInst");
 
   $query = $conn->prepare($sql);
 
-  $query->bindParam(':nomeInst',$_POST['nomeInst']);
-  $query->bindParam(':cep',$_POST['cep']);
-  $query->bindParam(':numInst',$_POST['numInst']);
+  $query->bindParam(':idInst',$_POST['idInst']);
+  $query->bindParam(':cnpj',$_POST['cnpj']);
 
   $query->execute();
 

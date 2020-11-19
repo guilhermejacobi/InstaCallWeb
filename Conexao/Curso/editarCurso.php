@@ -1,28 +1,22 @@
 <?php
-require_once "conexao.php";
 
-if(isset($_POST['idInst']) && isset($_POST['curso']) && isset($_POST['nivel']) && isset($_POST['id'])){
-  if($_POST['instituicao'] !=""){
-    
-    $parametros = array(
-      ':id' => $_POST['id'],
-      ':idInst' => $_POST['idInst'],
-      ':curso' => $_POST['curso'],
-      ':nivel' => $_POST['nivel']
-    );
+require_once "../conexao.php";
 
-    $stmt = $conn->prepare("UPDATE curso SET idInst = :idInst, nomeCurso = :curso, nivelCurso = :nivel WHERE idCurso = :id");
-    $stmt->execute($parametros);
+try{
+  $sql = ("UPDATE curso SET idInst = :idInst, nomeCurso = :curso, nivelCurso = :nivel WHERE idCurso = :idCurso");
 
-    $retorno = array(
-      'status' => $stmt,
-    );
+  $query = $conn->prepare($sql);
 
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro editado com sucesso!');location.href='../Admin/menuADM.html';;</SCRIPT>");
-  
-  } else if($_POST['instituicao'] == "" && $_POST['id'] !="") {
+  $query->bindParam(':idInst',$_POST['idInst']);  
+  $query->bindParam(':curso',$_POST['curso']);
+  $query->bindParam(':nivel',$_POST['nivel']);
+  $query->bindParam(':idCurso',$_POST['idCurso']);
+ 
+  $query->execute();
 
-  } else {
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Campos vazios a serem prenchidos');</SCRIPT>");
-  }
+  echo json_encode(['status'=>true]);
+
+} catch (PDOException $e) {
+  echo ("Erro " .$e->getMessage());
+  echo json_encode(['status'=>false]);
 }

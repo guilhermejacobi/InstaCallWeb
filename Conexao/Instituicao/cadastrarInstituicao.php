@@ -2,7 +2,7 @@
 require_once "../conexao.php";
 
 try {
-  $sql = ("INSERT INTO instituicao (nomeInst,cnpjInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst,:cnpj, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
+  $sql = ("INSERT INTO instituicao (nomeInst,cnpjInst, cepInst, ufInst, cidadeInst, bairroInst, logradouroInst, numInst) VALUES (:nomeInst, :cnpj, :cep, :uf, :cidade, :bairro, :logradouro, :numInst)");
 
   $query = $conn->prepare($sql);
   

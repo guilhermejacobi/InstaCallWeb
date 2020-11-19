@@ -2,7 +2,7 @@
 
   require_once "../conexao.php";
   
-  $sql = ("SELECT COUNT(*) AS total FROM instituicao WHERE idInst != :idInst cnpjInst = :cnpj");
+  $sql = ("SELECT COUNT(*) AS total FROM instituicao WHERE cnpjInst = :cnpj");
 
   $query = $conn->prepare($sql);
 

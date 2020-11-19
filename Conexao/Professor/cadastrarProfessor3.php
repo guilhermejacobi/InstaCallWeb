@@ -2,7 +2,7 @@
 require_once "../conexao.php";
 
 try{
-  $sql = ("INSERT INTO professor (nomeProf, cpfProf, nascProf, telProf, celProf, cepProf, ufProf, cidadeProf, bairroProf, logradouroProf, numProf, formacaoProf, nivelProf, instituicaoProf, idTurma, loginProf, senhaProf) VALUES (:nome, :cpf, :nasc, :tel, :cel, :cep, :uf, :cidade, :bairro, :logradouro, :num, :formacao, :nivel, :nomeInst, :idTurma, :loginProf, :senhaProf)");
+  $sql = ("INSERT INTO professor (nomeProf, cpfProf, nascProf, telProf, cepProf, ufProf, cidadeProf, bairroProf, logradouroProf, numProf, formacaoProf, nivelProf, instituicaoProf, idTurma, loginProf, senhaProf) VALUES (:nome, :cpf, :nasc, :tel, :cel, :cep, :uf, :cidade, :bairro, :logradouro, :num, :formacao, :nivel, :nomeInst, :idTurma, :loginProf, :senhaProf)");
 
   $query = $conn->prepare($sql);
 
@@ -10,7 +10,6 @@ try{
   $query->bindParam(':cpf',$_POST['cpf']);
   $query->bindParam(':nasc',$_POST['nascimento']);
   $query->bindParam(':tel',$_POST['telefone']);
-  $query->bindParam(':cel',$_POST['celular']);
   $query->bindParam(':cep',$_POST['cep']);
   $query->bindParam(':uf',$_POST['uf']);
   $query->bindParam(':cidade',$_POST['cidade']);
