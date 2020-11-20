@@ -2,6 +2,7 @@
 require_once "../conexao.php";
 
 try{
+  
   $sql = ("INSERT INTO professor (nomeProf, cpfProf, nascProf, telProf, celProf, cepProf, ufProf, cidadeProf, bairroProf, logradouroProf, numProf, formacaoProf, nivelProf, instituicaoProf, idTurma, loginProf, senhaProf) VALUES (:nome, :cpf, :nasc, :tel, :cel, :cep, :uf, :cidade, :bairro, :logradouro, :num, :formacao, :nivel, :nomeInst, :idTurma, :loginProf, :senhaProf)");
 
   $query = $conn->prepare($sql);

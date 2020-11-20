@@ -8,6 +8,8 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="../JS/mask.js"></script>
         <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/cep.js"></script>
         <link rel="stylesheet" href="cadastrarAluno.css">
 
         <title>Matricular Aluno- InstaCall</title>
@@ -26,7 +28,7 @@
                     <table class="tabelaPrincipal">
                         <tr>
                             <td>Matrícula: </td>
-                            <td><input type="text" disabled></td>
+                            <td><input type="text" id="matricula" name="matricula" disabled></td>
                         </tr>
                         <tr>
                             <td><label for="">&nbsp;</label></td>
@@ -57,17 +59,17 @@
                         </tr>
                         <tr>
                             <td>UF: </td>
-                            <td><input type="text" placeholder="Ex: Santa Catarina" disabled id="uf" name="uf"></td>
+                            <td><input type="text" disabled id="uf" name="uf"></td>
                         </tr>
                         <tr>
                             <td>Cidade: </td>
-                            <td><input type="text" placeholder="Ex: Joinville" disabled id="cidade" name="cidade"></td>
+                            <td><input type="text" disabled id="cidade" name="cidade"></td>
                             <td>Bairro: </td>
-                            <td><input type="text" placeholder="Ex: Itaum" disabled id="bairro" name="bairro"></td>
+                            <td><input type="text" disabled id="bairro" name="bairro"></td>
                         </tr>
                         <tr>
                             <td>Logradouro: </td>
-                            <td><input type="text" placeholder="Ex: Rua Florianópolis" disabled id="logradouro" name="logradouro"></td>
+                            <td><input type="text" disabled id="logradouro" name="logradouro"></td>
                             <td>Número: </td>
                             <td><input type="text" placeholder="Ex: 1234" id="numero" name="numero"></td>
                         </tr>
@@ -77,7 +79,7 @@
                         <tr>
                             <td>Id Turma:</td>
                             <td><input type="text" placeholder="Ex:1234" id="idTurma" name="idTurma"></td>
-                            <td align="left"><input type="button" class="botao" value="Buscar"></td>
+                            <td align="left"><input type="button" onclick="buscarIdTurma2()" class="botao" value="Buscar"></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -85,7 +87,7 @@
                         </tr>
                         <tr>
                             <td>Cuso: </td>
-                            <td><input type="text" disabled ></td>
+                            <td><input type="text" disabled id="curso"></td>
                         </tr>
                         <tr>
                             <td>Turno:</td>
@@ -102,15 +104,14 @@
                         </tr>
                         <tr>
                             <td>Login: </td>
-                            <td><input type="text" placeholder="Ex: aluno@estudante.com" id="email" name="email"></td>
+                            <td><input type="text" placeholder="Ex: aluno@estudante.com" id="login" name="login"></td>
                             <td>Senha: </td>
                             <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
                         </tr>
                     </table>
-                    <input type="button" class="botao" value="Salvar">
+                    <input type="button" class="botao" onclick="cadastrarAluno()" value="Salvar">
                     <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
                 </div>
         </div>
-        <script type="text/javascript" src="cep.js"></script>
     </body>
 </html>

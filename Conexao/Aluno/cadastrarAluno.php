@@ -1,35 +1,31 @@
 <?php
-require_once "conexao.php";
 
-if(isset($_POST['nome']) && isset($_POST['nascimento']) && isset($_POST['cpf']) && isset($_POST['cep']) && isset($_POST['uf']) && isset($_POST['cidade']) && isset($_POST['bairro']) && isset($_POST['logradouro']) && isset($_POST['numero']) && isset($_POST['idTurma']) && isset($_POST['email']) && isset($_POST['senha'])){
-    if($_POST['nome'] != "" && $_POST['nascimento'] != "" && $_POST['cpf'] != "" && $_POST['cep'] != "" && $_POST['uf'] != "" && $_POST['cidade'] != "" && $_POST['bairro'] != "" && $_POST['logradouro'] != "" && $_POST['numero'] != "" && $_POST['idTurma'] != "" && $_POST['email'] != "" && $_POST['senha'] != ""){
-      
-        $parametros = array(
-          ':nome' => $_POST['nome'],
-          ':cpf' => $_POST['cpf'],
-          ':nascimento' => $_POST['nascimento'],
-          ':cep' => $_POST['cep'],
-          ':uf' => $_POST['uf'],
-          ':cidade' => $_POST['cidade'],
-          ':bairro' => $_POST['bairro'],
-          ':logradouro' => $_POST['logradouro'],
-          ':numero' => $_POST['numero'],
-          ':idTurma' => $_POST['idTurma'],
-          ':email' => $_POST['email'],
-          ':senha' => $_POST['senha']
-        );
-        
-        $stmt = $conn->prepare("INSERT INTO aluno (nomeAluno, cpfAluno, nascAluno, cepAluno, ufAluno, cidadeAluno, bairroAluno, logradouroAluno, numAluno, idTurma , loginAluno, senhaAluno)
-                                                VALUES (:nome, :cpf, :nascimento, :cep, :uf, :cidade, :bairro, :logradouro, :numero, :idTurma, :email, :senha)");
-        $stmt->execute($parametros);
+require_once "../conexao.php";
 
-    $retorno = array(
-      'status' => $stmt,
-    );
+try{
+  $sql= "INSERT INTO aluno (nomeAluno, cpfAluno, nascAluno, telAluno, celAluno, cepAluno, ufAluno, cidadeAluno, bairroAluno, logradouroAluno, numAluno, idTurma, loginAluno, senhaAluno) VALUES (:nome, :cpf, :nasc, :tel, :cel, :cep, :uf, :cidade, :bairro, :logradouro, :num, :idTurma, :loginAluno, :senhaAluno)";
 
-    echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Cadastro realizado com sucesso!');</SCRIPT>");
-  
-} else {
-    echo "<script type='text/javascript'>window.alert('Prencher todos os campos');</script>";
-  }
+  $query = $conn->prepare($sql);
+
+  $query->bindParam(':nome',$_POST['nome']);
+  $query->bindParam(':cpf',$_POST['cpf']);
+  $query->bindParam(':nasc',$_POST['nascimento']);
+  $query->bindParam(':tel',$_POST['telefone']);
+  $query->bindParam(':cel',$_POST['celular']);
+  $query->bindParam(':cep',$_POST['cep']);
+  $query->bindParam(':uf',$_POST['uf']);
+  $query->bindParam(':cidade',$_POST['cidade']);
+  $query->bindParam(':bairro',$_POST['bairro']);
+  $query->bindParam(':logradouro',$_POST['logradouro']);
+  $query->bindParam(':num',$_POST['numero']);
+  $query->bindParam(':idTurma',$_POST['idTurma']);
+  $query->bindParam(':loginAluno',$_POST['login']);
+  $query->bindParam(':senhaAluno',$_POST['senha']);
+
+  $query->execute();
+
+  echo json_encode(['status'=>true]);
+} catch (PDOException $e) {
+  echo ("Erro ".$e->getMessage());
+  echo json_encode(['status'=>false]);
 }

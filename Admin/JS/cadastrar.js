@@ -227,95 +227,113 @@ function cadastrarProfessor(){
                 resultParciado = JSON.parse(result);
     
                 if(resultParciado.total == 0) {
-                    var testeTelefone = $('#telefone').val();
-                    var testeCelular = $('#celular').val();
 
-                    if(testeTelefone != "" && testeCelular != "") {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../../Conexao/Professor/contarEmailProf.php',
+                        datatype: 'json',
+                        data: {login: $('#login').val()},
+                
+                        success: function (result, textstatus) {
 
-                        jQuery.ajax({
-                            type: 'POST',
-                            url: '../../Conexao/Professor/cadastrarProfessor.php',
-                            datatype: 'json',
-                            data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
-                    
-                            success: function (result, textstatus) {
+                            let resultParciado = JSON.parse(result);
+                
+                            if(resultParciado.total == 0) {
+                               
+                                var testeTelefone = $('#telefone').val();
+                                var testeCelular = $('#celular').val();
+            
+                                if(testeTelefone != "" && testeCelular != "") {
+            
+                                    jQuery.ajax({
+                                        type: 'POST',
+                                        url: '../../Conexao/Professor/cadastrarProfessor.php',
+                                        datatype: 'json',
+                                        data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                
+                                        success: function (result, textstatus) {
+            
+                                            let resultParciado = JSON.parse(result);
+                                
+                                            if(resultParciado.status) {
+                                                window.alert("Cadastro realizado com sucesso!")
+                                                location.href= "../menuADM.html";
+                                            } else if(!resultParciado.status) {
+                                                window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                            } 
+                                        }
+                                    })
+            
+                                } else if(testeTelefone == "" && testeCelular == ""){
+            
+                                    jQuery.ajax({
+                                        type: 'POST',
+                                        url: '../../Conexao/Professor/cadastrarProfessor1.php',
+                                        datatype: 'json',
+                                        data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                
+                                        success: function (result, textstatus) {
+            
+                                            resultParciado = JSON.parse(result);
+                                
+                                            if(resultParciado.status) {
+                                                window.alert("Cadastro realizado com sucesso!")
+                                                location.href= "../menuADM.html";
+                                            } else if(!resultParciado.status) {
+                                                window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                            } 
+                                        }
+                                    })
+            
+                                } else if(testeTelefone == "" && testeCelular != "") {
+            
+                                    jQuery.ajax({
+                                        type: 'POST',
+                                        url: '../../Conexao/Professor/cadastrarProfessor2.php',
+                                        datatype: 'json',
+                                        data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                
+                                        success: function (result, textstatus) {
+            
+                                            resultParciado = JSON.parse(result);
+                                
+                                            if(resultParciado.status) {
+                                                window.alert("Cadastro realizado com sucesso!")
+                                                location.href= "../menuADM.html";
+                                            } else if(!resultParciado.status) {
+                                                window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                            } 
+                                        }
+                                    })
+                                    
+                                } else if(testeTelefone != "" && testeCelular == "") {
+            
+                                    jQuery.ajax({
+                                        type: 'POST',
+                                        url: '../../Conexao/Professor/cadastrarProfessor3.php',
+                                        datatype: 'json',
+                                        data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                
+                                        success: function (result, textstatus) {
+            
+                                            resultParciado = JSON.parse(result);
+                                
+                                            if(resultParciado.status) {
+                                                window.alert("Cadastro realizado com sucesso!")
+                                                location.href= "../menuADM.html";
+                                            } else if(!resultParciado.status) {
+                                                window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                            } 
+                                        }
+                                    })
+            
+                                }                
 
-                                let resultParciado = JSON.parse(result);
-                    
-                                if(resultParciado.status) {
-                                    window.alert("Cadastro realizado com sucesso!")
-                                    location.href= "../menuADM.html";
-                                } else if(!resultParciado.status) {
-                                    window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
-                                } 
-                            },
-                        });
-
-                    } else if(testeTelefone == "" && testeCelular == ""){
-
-                        jQuery.ajax({
-                            type: 'POST',
-                            url: '../../Conexao/Professor/cadastrarProfessor1.php',
-                            datatype: 'json',
-                            data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
-                    
-                            success: function (result, textstatus) {
-
-                                resultParciado = JSON.parse(result);
-                    
-                                if(resultParciado.status) {
-                                    window.alert("Cadastro realizado com sucesso!")
-                                    location.href= "../menuADM.html";
-                                } else if(!resultParciado.status) {
-                                    window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
-                                } 
-                            },
-                        });
-
-                    } else if(testeTelefone == "" && testeCelular != "") {
-
-                        jQuery.ajax({
-                            type: 'POST',
-                            url: '../../Conexao/Professor/cadastrarProfessor2.php',
-                            datatype: 'json',
-                            data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
-                    
-                            success: function (result, textstatus) {
-
-                                resultParciado = JSON.parse(result);
-                    
-                                if(resultParciado.status) {
-                                    window.alert("Cadastro realizado com sucesso!")
-                                    location.href= "../menuADM.html";
-                                } else if(!resultParciado.status) {
-                                    window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
-                                } 
-                            },
-                        });
-                        
-                    } else if(testeTelefone != "" && testeCelular == "") {
-
-                        jQuery.ajax({
-                            type: 'POST',
-                            url: '../../Conexao/Professor/cadastrarProfessor3.php',
-                            datatype: 'json',
-                            data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
-                    
-                            success: function (result, textstatus) {
-
-                                resultParciado = JSON.parse(result);
-                    
-                                if(resultParciado.status) {
-                                    window.alert("Cadastro realizado com sucesso!")
-                                    location.href= "../menuADM.html";
-                                } else if(!resultParciado.status) {
-                                    window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
-                                } 
-                            },
-                        });
-
-                    }                  
-
+                            } else if(!resultParciado.total != 0) {
+                                window.alert('Login já registrado');
+                            } 
+                        }
+                    })
                 } else if (resultParciado.total != 0){
                     window.alert('CPF já registrado.');
                 } 
@@ -339,26 +357,109 @@ function cadastrarProfessor(){
 /*
 cadastrar aluno
 */
-/*
+
 function cadastrarAluno(){
-    jQuery.ajax({
-        type: 'POST',
-        url: '../Conexao/Instituicao/cadastrarInstituicao.php',
-        datatype: 'json',
-        data: {criarNomeInst: $('#criarNomeInst').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), criarNumInst: $('#criarNumInst').val()},
-
-        success: function (result, textstatus) {
-                //dar JSON parse,e jogar em variável, após verificar a variavel ".status" reesultando true ou false, se vier true dar allert e madnar pro ADM, se false, dar allert de falha. =D
-            resultParciado = JSON.parse(result);
-            console.log(resultParciado.status);
-
-            if(resultParciado) {
-                window.alert("Cadastro realizado com sucesso!")
-                location.href= "menuADM.html";
-            } else {
-                window.alert('Falha ao salvar, favor rever informações.');
-            } 
-        },
-    });
    
-}*/
+    var testeNome = $('#nome').val();
+    var testeNascimento = $('#nascimento').val();
+    var testeCpf = $('#cpf').val();
+    var testeCep = $('#cep').val();
+    var testeUf = $('#uf').val();
+    var testeCidade = $('#cidade').val();
+    var testeBairro = $('#bairro').val();
+    var testeLogradouro = $('#logradouro').val();
+    var testeNum = $('#numero').val();
+    var testeTurma = $('#idTurma').val();
+    var testeCurso = $('#curso').val();
+    var testeTurno = $('#turno').val();
+    var testeNivel = $('#nivel').val();
+    var testeLogin = $('#login').val();
+    var testeSenha = $('#senha').val();
+
+    //teste se campos estiverem vazios
+    if (testeNome != '' && testeNascimento != '' && testeCpf != '' && testeCep != '' && testeUf != '' && testeCidade != '' && testeBairro != '' && testeLogradouro != '' && testeNum != '' && testeTurma != '' && testeCurso != '' && testeTurno != '' && testeNivel != '' && testeLogin != '' && testeSenha != '') {
+
+        //testar quantidade de alunos com esse CPF
+        jQuery.ajax({
+            type: 'POST',
+            url: '../../Conexao/Aluno/contarCpfAluno.php',
+            datatype: 'json',
+            data: {cpf: $('#cpf').val()},
+    
+            success: function (result, textstatus) {
+                console.log(result + "quant cpf");
+                resultParciado = JSON.parse(result);
+                console.log(resultParciado.total);
+    
+                if(resultParciado.total == 0) {
+                   
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../../Conexao/Aluno/contarEmailAluno.php',
+                        datatype: 'json',
+                        data: {login: $('#login').val()},
+                
+                        success: function (result, textstatus) {
+                            console.log(result + "quant email");
+                            resultParciado = JSON.parse(result);
+                            console.log(resultParciado.total);
+                
+                            if(resultParciado.total == 0) {
+                               
+                                var testeTel = $('telefone').val();
+                                var testeCel = $('celular').val();
+
+                                if (testeTel != "" && testeCel != "") {
+
+                                    jQuery.ajax({
+                                        type: 'POST',
+                                        url: '../../Conexao/Aluno/cadastrarAluno.php',
+                                        datatype: 'json',
+                                        data: {nome: $('#nome').val(), nascimento: $('#nascimento').val(), cpf: $('#cpf').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                
+                                        success: function (result, textstatus) {
+                                            
+                                            console.log(result + "Resultado final")
+                                            let resultParciado = JSON.parse(result);
+                                            console.log(resultParciado.status);
+
+                                            if (resultParciado.status) {
+                                                window.alert("Cadastro realizado com sucesso")
+                                                //window.location.href= "../menuADM.html";
+                                            } else if (!resultParciado.status) {
+                                                window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                            }
+                                            
+                                        }
+                                    })
+                                } else if(testeTel == "" && testeCel == "") {
+
+                                } else if(testeTel != "" && testeCel == "") {
+
+                                } else if(testeTel == "" && testeCel != "") {
+
+                                }
+                            } else if (resultParciado.total != 0){
+                                window.alert('Erro! E-mail já cadastrado');
+                            } 
+                        }
+                    })
+                } else if (resultParciado.total != 0){
+                    window.alert('Erro! CPF já cadastrado');
+                } 
+            }
+        })
+    //teste se campos necessários estão prenchidos
+    } else if (testeNome == '' || testeNascimento == '' || testeCpf == '' || testeCep == '' || testeNum == '' || testeLogin == '' || testeSenha == '') {
+        window.alert("Falha ao cadastrar, campos vazios.");
+
+    //teste se campos bloqueados do CEP estão vazios
+    } else if (testeUf == '' || testeCidade == '' || testeBairro == '' || testeLogradouro == '' ) {
+        window.alert('Validação de CEP necessária.');
+
+    //teste se os campos da turma estão bloqueados
+    } else if(testeCurso == '' || testeTurno == '' || testeNivel == '') {
+        window.alert('Validação de Turma necessária')
+    }
+   
+}
