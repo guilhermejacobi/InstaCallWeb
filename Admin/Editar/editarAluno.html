@@ -28,6 +28,11 @@
                     <tr>
                         <td>Matrícula: </td>
                         <td><input type="text" placeholder="Ex: 000000000" id="matricula" name="matricula"></td>
+                        <td><input type="button" class="botao2" value="Buscar" onclick="buscarIdAluno()"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" class="botao" style="width: 100%;" value="Listar Alunos"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
@@ -54,7 +59,7 @@
                     <tr>
                         <td>CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                        <td align="left"><input type="button" class="botao" onclick="buscaCep()" value="Buscar"></input></td>
+                        <td align="left"><input type="button" class="botao2" onclick="buscaCep()" value="Buscar"></input></td>
                     </tr>
                     <tr>
                         <td>UF: </td>
@@ -78,7 +83,7 @@
                     <tr>
                         <td>Id Turma:</td>
                         <td><input type="text" placeholder="Ex:1234" id="idTurma" name="idTurma"></td>
-                        <td align="left"><input type="button" onclick="buscarIdTurma2()" class="botao" value="Buscar"></td>
+                        <td align="left"><input type="button" onclick="buscarIdTurma2()" class="botao2" value="Buscar"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -110,8 +115,8 @@
                 </table>
             </div>
             <div>
-                <input type="button" class="botao2" value="Salvar">
-                <a href="menuADM.html" class="mudarPagina"><input type="button" class="botao2" value="Voltar"></a>
+                <input type="button" class="botao2"  onclick="editarAluno()" value="Salvar">
+                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao2" value="Voltar"></a>
             </div>
         </div>
     </body>

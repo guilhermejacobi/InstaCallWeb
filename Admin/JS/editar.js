@@ -521,3 +521,260 @@ function editarProfessor(){
 /*
 Editar Aluno
 */
+
+function buscarIdAluno(){
+
+    var testeMatricula = $('#matricula').val();
+
+    if (testeMatricula != "") {
+        jQuery.ajax({
+            type: 'POST',
+            url: '../../Conexao/Aluno/buscarIdAluno.php',
+            datatype: 'json',
+            data: {matricula: $('#matricula').val()},
+            success: function (result, textstatus) {
+
+                let resultado = JSON.parse(result);
+                console.log(resultado)
+
+                if (resultado) {
+                    $('#turno').val(resultado.turno);
+                    $('#nome').val(resultado.nomeAluno);
+                    $('#curso').val(resultado.nomeCurso);
+                    $('#nascimento').val(resultado.nascAluno);
+                    $('#telefone').val(resultado.telAluno);
+                    $('#celular').val(resultado.celAluno);
+                    $('#cpf').val(resultado.cpfAluno);
+                    $('#cep').val(resultado.cepAluno);
+                    $('#uf').val(resultado.ufAluno);
+                    $('#cidade').val(resultado.cidadeAluno);
+                    $('#logradouro').val(resultado.logradouroAluno);
+                    $('#bairro').val(resultado.bairroAluno);
+                    $('#numero').val(resultado.numAluno);
+                    $('#formacao').val(resultado.formacaoAluno);
+                    $('#nivel').val(resultado.nivelCurso);
+                    $('#nomeInst').val(resultado.instituicaoAluno);
+                    $('#idTurma').val(resultado.idTurma);
+                    $('#login').val(resultado.loginAluno);
+                    $('#senha').val(resultado.senhaAluno);
+
+                } else if(!resultado) {
+                    window.alert("Aluno não encontrado");
+                }
+            }
+        })
+    } else {
+        window.alert("Campo ID vazio.")
+    }  
+
+}
+
+function editarAluno(){
+   
+    var testeMatricula = $('#matricula').val();
+    var testeNome = $('#nome').val();
+    var testeNascimento = $('#nascimento').val();
+    var testeCpf = $('#cpf').val();
+    var testeCep = $('#cep').val();
+    var testeUf = $('#uf').val();
+    var testeCidade = $('#cidade').val();
+    var testeBairro = $('#bairro').val();
+    var testeLogradouro = $('#logradouro').val();
+    var testeNum = $('#numero').val();
+    var testeTurma = $('#idTurma').val();
+    var testeCurso = $('#curso').val();
+    var testeTurno = $('#turno').val();
+    var testeNivel = $('#nivel').val();
+    var testeLogin = $('#login').val();
+    var testeSenha = $('#senha').val();
+
+    //teste se campos estiverem vazios
+    if (testeMatricula != '' && testeNome != '' && testeNascimento != '' && testeCpf != '' && testeCep != '' && testeUf != '' && testeCidade != '' && testeBairro != '' && testeLogradouro != '' && testeNum != '' && testeTurma != '' && testeCurso != '' && testeTurno != '' && testeNivel != '' && testeLogin != '' && testeSenha != '') {
+
+        //testar quantidade de alunos com esse CPF
+        jQuery.ajax({
+            type: 'POST',
+            url: '../../Conexao/Aluno/contarCpfAluno2.php',
+            datatype: 'json',
+            data: {cpf: $('#cpf').val(), matricula: $('#matricula').val()},
+    
+            success: function (result, textstatus) {
+
+                resultParciado = JSON.parse(result);
+
+    
+                if(resultParciado.total == 0) {
+
+                    //compara CPF com o dos professores
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../../Conexao/Professor/contarCpfProfessor.php',
+                        datatype: 'json',
+                        data: {cpf: $('#cpf').val()},
+                
+                        success: function (result, textstatus) {
+
+                            resultParciado = JSON.parse(result);
+
+                            if(resultParciado.total == 0) {
+
+                                jQuery.ajax({
+                                    type: 'POST',
+                                    url: '../../Conexao/Aluno/contarEmailAluno2.php',
+                                    datatype: 'json',
+                                    data: {login: $('#login').val(), matricula: $('#matricula').val()},
+                            
+                                    success: function (result, textstatus) {
+
+                                        console.log(result + "quant email");
+                                        resultParciado = JSON.parse(result);
+                                        console.log(resultParciado.total);
+                            
+                                        if(resultParciado.total == 0) {
+
+                                            jQuery.ajax({
+                                                type: 'POST',
+                                                url: '../../Conexao/Professor/contarEmailProf.php',
+                                                datatype: 'json',
+                                                data: {login: $('#login').val()},
+                                        
+                                                success: function (result, textstatus) {
+                                                    
+                                                    console.log(result + "quant email");
+                                                    resultParciado = JSON.parse(result);
+                                                    console.log(resultParciado.total);
+                                        
+                                                    if(resultParciado.total == 0) {
+                                           
+                                                        var testeTel = $('telefone').val();
+                                                        var testeCel = $('celular').val();
+                        
+                                                        if (testeTel != "" && testeCel != "") {
+
+                                                            jQuery.ajax({
+
+                                                                type: 'POST',
+                                                                url: '../../Conexao/Aluno/editarAluno.php',
+                                                                datatype: 'json',
+                                                                data: {matricula: $('#matricula').val(), nome: $('#nome').val(), nascimento: $('#nascimento').val(), cpf: $('#cpf').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                                        
+                                                                success: function (result, textstatus) {
+                                                                    
+                                                                    console.log(result + "Resultado final")
+                                                                    let resultParciado = JSON.parse(result);
+                                                                    console.log(resultParciado.status);
+                        
+                                                                    if (resultParciado.status) {
+                                                                        window.alert("Cadastro editado com sucesso")
+                                                                        //window.location.href= "../menuADM.html";
+                                                                    } else if (!resultParciado.status) {
+                                                                        window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                                                    }
+                                                                    
+                                                                }
+                                                            })
+
+                                                        } else if(testeTel == "" && testeCel == "") {
+                        
+                                                            jQuery.ajax({
+                                                                type: 'POST',
+                                                                url: '../../Conexao/Aluno/editarAluno1.php',
+                                                                datatype: 'json',
+                                                                data: {matricula: $('matricula').val(), nome: $('#nome').val(), nascimento: $('#nascimento').val(), cpf: $('#cpf').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                                        
+                                                                success: function (result, textstatus) {
+                                                                    
+                                                                    console.log(result + "Resultado final")
+                                                                    let resultParciado = JSON.parse(result);
+                                                                    console.log(resultParciado.status);
+                        
+                                                                    if (resultParciado.status) {
+                                                                        window.alert("Cadastro editado com sucesso")
+                                                                        //window.location.href= "../menuADM.html";
+                                                                    } else if (!resultParciado.status) {
+                                                                        window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                                                    }
+                                                                    
+                                                                }
+                                                            })
+                                                        } else if(testeTel != "" && testeCel == "") {
+                        
+                                                            jQuery.ajax({
+                                                                type: 'POST',
+                                                                url: '../../Conexao/Aluno/editarAluno2.php',
+                                                                datatype: 'json',
+                                                                data: {matricula: $('#matricula').val(), nome: $('#nome').val(), nascimento: $('#nascimento').val(), cpf: $('#cpf').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                                        
+                                                                success: function (result, textstatus) {
+                                                                    
+                                                                    console.log(result + "Resultado final")
+                                                                    let resultParciado = JSON.parse(result);
+                                                                    console.log(resultParciado.status);
+                        
+                                                                    if (resultParciado.status) {
+                                                                        window.alert("Cadastro editado com sucesso")
+                                                                        //window.location.href= "../menuADM.html";
+                                                                    } else if (!resultParciado.status) {
+                                                                        window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                                                    }
+                                                                    
+                                                                }
+                                                            })
+                        
+                                                        } else if(testeTel == "" && testeCel != "") {
+                        
+                                                            jQuery.ajax({
+                                                                type: 'POST',
+                                                                url: '../../Conexao/Aluno/editarAluno3.php',
+                                                                datatype: 'json',
+                                                                data: {matricula: $('#matricula').val(), nome: $('#nome').val(), nascimento: $('#nascimento').val(), cpf: $('#cpf').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
+                                                        
+                                                                success: function (result, textstatus) {
+                                                                    
+                                                                    console.log(result + "Resultado final")
+                                                                    let resultParciado = JSON.parse(result);
+                                                                    console.log(resultParciado.status);
+                        
+                                                                    if (resultParciado.status) {
+                                                                        window.alert("Cadastro editado com sucesso")
+                                                                        //window.location.href= "../menuADM.html";
+                                                                    } else if (!resultParciado.status) {
+                                                                        window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
+                                                                    }
+                                                                }
+                                                            })
+                                                        }
+                                                    } else if (resultParciado.total != 0){
+                                                        window.alert('Erro! E-mail já cadastrado');
+                                                    } 
+                                                }
+                                            })
+                                        }else if (resultParciado.total != 0){
+                                            window.alert('Erro! E-mail já cadastrado');
+                                        } 
+                                    }
+                                })
+                            } else if(resultParciado.total != 0) {
+                                window.alert("Erro! CPF já cadastrado")
+                            }
+                        }
+                    })
+                 } else if (resultParciado.total != 0){
+                    window.alert('Erro! CPF já cadastrado');
+                } 
+            }
+        })
+    //teste se campos necessários estão prenchidos
+    } else if (testeNome == '' || testeNascimento == '' || testeCpf == '' || testeCep == '' || testeNum == '' || testeLogin == '' || testeSenha == '') {
+        window.alert("Falha ao cadastrar, campos vazios.");
+
+    //teste se campos bloqueados do CEP estão vazios
+    } else if (testeUf == '' || testeCidade == '' || testeBairro == '' || testeLogradouro == '' ) {
+        window.alert('Validação de CEP necessária.');
+
+    //teste se os campos da turma estão bloqueados
+    } else if(testeCurso == '' || testeTurno == '' || testeNivel == '') {
+        window.alert('Validação de Turma necessária')
+    }
+   
+}

@@ -4,7 +4,7 @@ require_once "../conexao.php";
 
 try{
     
-  $sql = ("UPDATE aluno SET nomeAluno = :nome, cpfAluno = :cpf, nascAluno = :nasc, telAluno = :tel, celAluno = :cel, cepAluno = :cep, ufAluno = :uf, cidadeAluno = :cidade, bairroAluno = :bairro, logradouroAluno = :logradouro, numAluno = :num, idTurma = :idTurma, loginAluno = :loginAluno, senhaAluno = :senhaAluno  WHERE idAluno = :matricula");
+  $sql = ("UPDATE aluno SET nomeAluno = :nome, cpfAluno = :cpf, nascAluno = :nasc, cepAluno = :cep, ufAluno = :uf, cidadeAluno = :cidade, bairroAluno = :bairro, logradouroAluno = :logradouro, numAluno = :num, idTurma = :idTurma, loginAluno = :loginAluno, senhaAluno = :senhaAluno  WHERE idAluno = :matricula");
 
   $query = $conn->prepare($sql);
   
@@ -13,8 +13,6 @@ try{
   $query->bindParam(':nome',$_POST['nome']);
   $query->bindParam(':cpf',$_POST['cpf']);
   $query->bindParam(':nasc',$_POST['nascimento']);
-  $query->bindParam(':tel',$_POST['telefone']);
-  $query->bindParam(':cel',$_POST['celular']);
   $query->bindParam(':cep',$_POST['cep']);
   $query->bindParam(':uf',$_POST['uf']);
   $query->bindParam(':cidade',$_POST['cidade']);
