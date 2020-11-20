@@ -25,9 +25,7 @@ function cadastrarInstituicao(){
     
             success: function (result, textstatus) {
                 
-                console.log(result)
                 let resultado = JSON.parse(result);
-                console.log(resultado.total);
 
                 //Se resultado for == 0 no select, não ha isntituição igual, então pode registar essa.
                 if (resultado.total == 0) {
@@ -40,7 +38,6 @@ function cadastrarInstituicao(){
                         success: function (result, textstatus) {
                             
                             let resultParciado = JSON.parse(result);
-                            console.log(resultParciado.status)
                 
                             if (resultParciado.status) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                                 window.alert("Cadastro realizado com sucesso!")
@@ -97,7 +94,7 @@ function cadastrarCurso(){
     
             success: function (result, textstatus) {
                 let resultado = JSON.parse(result);
-                console.log(resultado);
+
                 //verifica se possui cadastro igual
                 if (resultado.total == 0) {
 
@@ -110,7 +107,6 @@ function cadastrarCurso(){
                         success: function (result, textstatus) {
     
                             let resultParciado = JSON.parse(result);
-                            console.log(resultParciado.status);
                             
                             //Se true, cadastro realizado com sucesso, caso false, ocorreu erro no banco
                             if(resultParciado.status) {
@@ -160,6 +156,7 @@ function cadastrarTurma(){
     var testeLogradouro = $('#logradouro').val();
     var testeNumInst = $('#numInst').val();
 
+    //verifica se campos estão vazios
     if (testeTurno != "" && testeIdCurso != "" && testeCurso != "" && testeNivel != "" && testeInst != "" && testeCep != "" && testeUf != "" && testeCidade != "" && testeBairro != "" && testeLogradouro != "" && testeNumInst != "") {
 
         jQuery.ajax({
@@ -169,9 +166,8 @@ function cadastrarTurma(){
             data: {id: $('#idCurso').val(), turno: $('#turno').val()},
     
             success: function (result, textstatus) {
-                console.log(result);
+
                 resultParciado = JSON.parse(result);
-                console.log(resultParciado.status);
     
                 if(resultParciado) {
                     window.alert("Cadastro realizado com sucesso!")
@@ -228,13 +224,12 @@ function cadastrarProfessor(){
             data: {cpf: $('#cpf').val()},
     
             success: function (result, textstatus) {
-                console.log(result);
                 resultParciado = JSON.parse(result);
-                console.log(resultParciado.total);
     
                 if(resultParciado.total == 0) {
                     var testeTelefone = $('#telefone').val();
                     var testeCelular = $('#celular').val();
+
                     if(testeTelefone != "" && testeCelular != "") {
 
                         jQuery.ajax({
@@ -244,14 +239,13 @@ function cadastrarProfessor(){
                             data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
                     
                             success: function (result, textstatus) {
-                                console.log(result);
-                                resultParciado = JSON.parse(result);
-                                console.log(resultParciado);
+
+                                let resultParciado = JSON.parse(result);
                     
-                                if(resultParciado) {
+                                if(resultParciado.status) {
                                     window.alert("Cadastro realizado com sucesso!")
                                     location.href= "../menuADM.html";
-                                } else if(!resultParciado) {
+                                } else if(!resultParciado.status) {
                                     window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                 } 
                             },
@@ -266,9 +260,8 @@ function cadastrarProfessor(){
                             data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
                     
                             success: function (result, textstatus) {
-                                console.log(result);
+
                                 resultParciado = JSON.parse(result);
-                                console.log(resultParciado.status);
                     
                                 if(resultParciado.status) {
                                     window.alert("Cadastro realizado com sucesso!")
@@ -288,9 +281,8 @@ function cadastrarProfessor(){
                             data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), celular: $('#celular').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
                     
                             success: function (result, textstatus) {
-                                console.log(result);
+
                                 resultParciado = JSON.parse(result);
-                                console.log(resultParciado.status);
                     
                                 if(resultParciado.status) {
                                     window.alert("Cadastro realizado com sucesso!")
@@ -310,9 +302,8 @@ function cadastrarProfessor(){
                             data: {nome: $('#nome').val(), cpf: $('#cpf').val(), nascimento: $('#nascimento').val(), telefone: $('#telefone').val(), cep: $('#cep').val(), uf: $('#uf').val(), cidade: $('#cidade').val(), bairro: $('#bairro').val(), logradouro: $('#logradouro').val(), numero: $('#numero').val(), formacao: $('#formacao').val(), nivel: $('#nivelProf').val(), nomeInst: $('#nomeInst').val(), idTurma: $('#idTurma').val(), login: $('#login').val(), senha: $('#senha').val()},
                     
                             success: function (result, textstatus) {
-                                console.log(result);
+
                                 resultParciado = JSON.parse(result);
-                                console.log(resultParciado.status);
                     
                                 if(resultParciado.status) {
                                     window.alert("Cadastro realizado com sucesso!")
