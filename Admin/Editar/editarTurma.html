@@ -7,6 +7,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script type="text/javascript" src="../JS/editar.js"></script>
         <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/tabela.js"></script>
         <link rel="stylesheet" href="editarTurma.css">
           
         <title>Editar Turma- InstaCall</title>
@@ -27,6 +28,10 @@
                         <td><input type="button" class="botao" value="Buscar ID" onclick="buscarIdTurma()"></td>
                     </tr>
                     <tr>
+                        <td></td>
+                        <td><input style="width: 100%;" type="button" value="Listar Turmas" class="abrirModalTurma botao" onclick=""></div></td>
+                    </tr>
+                    <tr>
                         <td>Turno: </td>
                         <td><select style="width: 100%;" id="turno" name="turno">
                             <option value=""></option>
@@ -45,7 +50,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input style="width: 100%;" type="button" value="Listar Cursos" class="botao" onclick=""></div></td>
+                        <td><input type="button" class="abrirModalCurso botao" style="width: 100%;" value="Listar Cursos"></td>
                     </tr>
                     <tr>
                         <td>Curso: </td>
@@ -89,10 +94,11 @@
                 <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
-        <div id="listarTurmaModal" class="Modal">
-            <div class="listarTurmaModalBox">
+
+        <div id="listarCursoModal" class="modalCurso">
+            <div class="listarInstModalBox">
                 <div class="fundoBranco">
-                    <span class="pesquisaLabel">Pesquisar Nome: <input type="text" onkeyup="pesquisarCurso()" id="pesquisarCurso" class="pesquisarCurso" name="pesquisarCurso"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="">
+                    <span class="pesquisaLabel">Pesquisar Nome: <input type="text" onkeyup="pesquisarCurso()" id="pesquisarCurso" class="pesquisarCurso" name="pesquisarCurso"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroCurso()">
                     <br>
                     <br>
                     <div class="overflow">
@@ -114,6 +120,35 @@
                 </div>
                 <div class="fecharCurso"><a onclick="">X</a></div>
             </div>
-        </div>    
+        </div>   
+
+        <div id="listarTurmaModal" class="modalTurma">
+            <div class="listarTurmaModalBox">
+                <div class="fundoBrancoTurma">
+                    <span class="pesquisaLabel">Pesquisar Nome: <input type="text" onkeyup="pesquisarTurma()" id="pesquisarTurma" class="pesquisarCurso" name="pesquisarTurma"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroTurma()">
+                    <br>
+                    <br>
+                    <div class="overflow">
+                        <center>
+                            <table BORDER RULES = ALL class="tableListarTurma" id="tableListarTurma" style="width: 100%;">
+                                <tr>
+                                    <th class="tableModal1">ID</th>
+                                    <th class="tableModal2">Curso</th>
+                                    <th class="tableModal3">Nivel</th>
+                                    <th class="tableModal3">Turno</th>
+                                    <th class="tableModal4">Instituicao</th>
+                                    <th class="tableModal5">Logradouro</th>
+                                    <th class="tableModal6">Bairro</th>
+                                    <th class="tableModal7">Cidade</th>
+                                    <th class="tableModal8">UF</th>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+                <div class="fecharTurma"><a onclick="">X</a></div>
+            </div>
+        </div> 
+        
     </body>
 </html>
