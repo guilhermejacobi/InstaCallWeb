@@ -105,11 +105,6 @@ height: 55px;
     color: white;
 }
 
-#direita{
-    text-align: right;
-    font-size: 16px;
-}
-
 .modal{
     display: none;
     background-color: rgba(0, 0, 0, 0.5);
@@ -165,9 +160,10 @@ height: 55px;
 
 .fundoBranco{
     background-color: white;
-    height: 600px;
+    height: 560px;
     border-radius: 12px;
-    
+    margin-top: 30px;
+    padding: 5px;
 }
 
 .tableListarInst{
@@ -180,43 +176,8 @@ td{
 }
 
 .overflow{
-    height: 33em;
+    height: 500px;
     overflow: scroll;
-}
-
-.tableModal1{
-    width: 70px;
-    align-items: center;
-
-}
-.tableModal2{
-    width: 200px;
-    text-align: center;
-}
-
-.tableModal3{
-    width: 270px;
-
-}
-.tableModal4{
-    width: 100px;
-
-}
-.tableModal5{
-    width: 90px;
-
-}
-.tableModal6{
-    width: 100px;
-
-}
-.tableModal7{
-    width: 50px;
-
-}
-.tableModal8{
-    width: 80px;
-
 }
 
 .pesquisaLabel{
@@ -230,6 +191,7 @@ td{
     margin-right: 10px;
 }
 
-.marginTop2{
-    margin-right:x;
+#direita{
+    text-align: right;
+    font-size: 16px;
 }

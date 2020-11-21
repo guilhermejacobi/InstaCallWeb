@@ -23,7 +23,7 @@
                 <table class="tabelaPrincipal">
                     <tr>
                         <td>ID: </td>
-                        <td><input type="text" id="idTurma" name="idTurma"></td>
+                        <td><input type="text" id="idTurma" name="idTurma" placeholder="Ex: 12345"></td>
                         <td><input type="button" class="botao" value="Buscar ID" onclick="buscarIdTurma()"></td>
                     </tr>
                     <tr>
@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>ID Curso: </td>
-                        <td><input type="text" id="idCurso" name="idCurso"></td>
+                        <td><input type="text" id="idCurso" name="idCurso" placeholder="Ex: 12345"></td>
                         <td><input type="button" class="botao" value="Buscar" onclick="buscarIdCurso()"></td>
                     </tr>
                     <tr>
@@ -89,6 +89,31 @@
                 <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
-      
+        <div id="listarTurmaModal" class="Modal">
+            <div class="listarTurmaModalBox">
+                <div class="fundoBranco">
+                    <span class="pesquisaLabel">Pesquisar Nome: <input type="text" onkeyup="pesquisarCurso()" id="pesquisarCurso" class="pesquisarCurso" name="pesquisarCurso"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="">
+                    <br>
+                    <br>
+                    <div class="overflow">
+                        <center>
+                            <table BORDER RULES = ALL class="tableListarCurso" id="tableListarCurso" style="width: 100%;">
+                                <tr>
+                                    <th class="tableModal1">ID</th>
+                                    <th class="tableModal2">Curso</th>
+                                    <th class="tableModal3">Nivel</th>
+                                    <th class="tableModal4">Instituicao</th>
+                                    <th class="tableModal5">Logradouro</th>
+                                    <th class="tableModal6">Bairro</th>
+                                    <th class="tableModal7">Cidade</th>
+                                    <th class="tableModal8">UF</th>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+                <div class="fecharCurso"><a onclick="">X</a></div>
+            </div>
+        </div>    
     </body>
 </html>

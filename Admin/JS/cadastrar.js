@@ -41,7 +41,7 @@ function cadastrarInstituicao(){
                 
                             if (resultParciado.status) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                                 window.alert("Cadastro realizado com sucesso!")
-                                // window.location.href= "../menuADM.html";
+                                window.location.href= "../menuADM.html";
                             } else if (!resultParciado.status) {
                                 window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
                             }
@@ -489,7 +489,7 @@ function cadastrarAluno(){
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
-                                                                        //window.location.href= "../menuADM.html";
+                                                                        window.location.href= "../menuADM.html";
                                                                     } else if (!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     }
@@ -512,7 +512,7 @@ function cadastrarAluno(){
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
-                                                                        //window.location.href= "../menuADM.html";
+                                                                        window.location.href= "../menuADM.html";
                                                                     } else if (!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     }
@@ -536,7 +536,7 @@ function cadastrarAluno(){
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
-                                                                        //window.location.href= "../menuADM.html";
+                                                                        window.location.href= "../menuADM.html";
                                                                     } else if (!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     }
@@ -560,7 +560,7 @@ function cadastrarAluno(){
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
-                                                                        //window.location.href= "../menuADM.html";
+                                                                        window.location.href= "../menuADM.html";
                                                                     } else if (!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     }
