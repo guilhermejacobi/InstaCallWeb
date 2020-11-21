@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" style="width: 100%;" class="abrirListaInst" id="listarInst" name="listarInst" value="Listar Instituições"></td>
+                        <td><input type="button" style="width: 100%;" class="abrirListaInst botao" id="listarInst" name="listarInst" value="Listar Instituições"></td>
                     </tr>
                     <tr>
                         <td>Instituição:</td>
@@ -78,30 +78,22 @@
             </div>
         </div>
 
-        <div id="editarInstModal" class="editarInstModal">
+        <div id="editarInstModal" class="modal">
             <div class="editarInstModalBox">
                 <div class="fundoBranco">
-                    <span class="topoTabelaEditarInst">Pesquisar Nome: <input type="text" name="pesquisarInst" id="pesquisarInst"></span>
-                    <table class="tabelaEditarInstModal">
+                    <div class="marginTop"><span class="pesquisaLabel">Pesquisar Nome: <input type="text" name="pesquisarInst" id="pesquisarInst" class="pesquisarInst"></span></div>
+                    <br>
+                    <br>
+                    <table class="tableListarInst" id="tableListarInst">
                         <tr>
-                            <th class="tableModal">ID</th>
-                            <th class="tableModal">Nome</th>
-                            <th class="tableModal">Logradouro</th>
-                            <th class="tableModal">N°</th>
-                            <th class="tableModal">Bairro</th>
-                            <th class="tableModal">Cidade</th>
-                            <th class="tableModal">Estado</th>
-                            <th class="tableModal">CEP</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <th class="tableModal1">ID</th>
+                            <th class="tableModal2">Nome</th>
+                            <th class="tableModal3">Logradouro</th>
+                            <th class="tableModal4">N°</th>
+                            <th class="tableModal5">Bairro</th>
+                            <th class="tableModal6">Cidade</th>
+                            <th class="tableModal7">Estado</th>
+                            <th class="tableModal8">CEP</th>
                         </tr>
                     </table>
                 </div>

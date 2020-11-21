@@ -72,8 +72,11 @@ background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 
     border-style: solid;
     border-bottom-width: 80%;
     width: 100%;
-    height: calc(95vh - 150px);
+}
 
+.overflow{
+    height: 50em;
+    overflow: auto;
 }
     
 .bordaFora1{

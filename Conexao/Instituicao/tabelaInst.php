@@ -1,7 +1,10 @@
 <?php
 require_once "../conexao.php";
 
-try {
-    $sql = ("SELECT * FROM instituicao")
-    // $query = $conn->prepare($sql)
-}
+    $sql = ("SELECT * FROM instituicao");
+    $query = $conn->prepare($sql);
+    $query->execute();
+
+    $result = $query->fetchAll();
+  
+    echo json_encode($result);

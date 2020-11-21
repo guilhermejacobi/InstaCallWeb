@@ -101,7 +101,7 @@ height: 55px;
     color: white;
 }
 
-.editarInstModal{
+.modal{
     display: none;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -154,8 +154,52 @@ height: 55px;
     background-color: rgb(255, 0, 0);
 }
 
-.tabelaEditarInstModal, .fundoBranco{
+.fundoBranco{
+    background-color: white;
+    height: 600px;
+    border-radius: 12px;
+    
+}
+
+.tableListarInst{
     background-color: white;
     font-size: 17px;
     border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tableModal1{
+    width: 60px;
+    position: center;
+    align-items: center;
+}
+.tableModal2{
+    width: 100px;
+}
+
+.tableModal3{
+    
+}
+.tableModal4{
+    
+}
+.tableModal5{
+    
+}
+.tableModal6{
+    
+}
+.tableModal7{
+    
+}
+.tableModal8{
+
+}
+.pesquisaLabel{
+    font-size: 20px;
+}
+
+.pesquisarInst{
+    font-size: 20px;
+    width: 400px;
 }
