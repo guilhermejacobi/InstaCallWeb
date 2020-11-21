@@ -10,7 +10,7 @@
         <script type="text/javascript" src="../JS/editar.js"></script>
         <script type="text/javascript" src="../JS/mask.js"></script>
         <script type="text/javascript" src="../JS/cep.js"></script>
-        <script src="../JS/tabela.js"></script>
+        <script type="text/javascript" src="../JS/tabela.js"></script>
         <link rel="stylesheet" href="editarInstituicao.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -28,46 +28,46 @@
             </h2>
             <div>
 
-                <table class="tabelaPrincipal">
+                <table BORDER RULES=NONE class="tabelaPrincipal">
                     <tr>
-                        <td>ID: </td>
+                        <td id="direita">ID: </td>
                         <td><input type="text" placeholder="Ex: 1234" id="idInst" name="idInst"></td>
                         <td><input type="button" onclick="buscarIdInstituicao()" value="Buscar ID" class="botao"></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td id="direita"></td>
                         <td><input type="button" style="width: 100%;" class="abrirListaInst botao" id="listarInst" name="listarInst" value="Listar Instituições"></td>
                     </tr>
                     <tr>
-                        <td>Instituição:</td>
+                        <td id="direita">Instituição:</td>
                         <td><input type="text" maxlength="50" placeholder="Ex: SOCIESC" id="nomeInst" name="nomeInst"></td>
                     </tr>
                     <tr>
-                        <td>CNPJ: </td>
+                        <td id="direita">CNPJ: </td>
                         <td><input type="text" maxlength="20" placeholder="Ex: 00.000.000/0000" id="cnpj" name="cnpj"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
-                    <tr>
-                        <td>CEP: </td>
+                    <tr id="direita">
+                        <td id="direita">CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-000" id="cep" name="cep"></td>
                         <td><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></td>
                     </tr>
                     <tr>
-                        <td>UF: </td>
+                        <td id="direita">UF: </td>
                         <td><input type="text" disabled id="uf" name="uf"></td>
                     </tr>
                     <tr>
-                        <td>Cidade: </td>
+                        <td id="direita">Cidade: </td>
                         <td><input type="text"  disabled id="cidade" name="cidade"></td>
-                        <td>Bairro: </td>
+                        <td id="direita">Bairro: </td>
                         <td><input type="text"  id="bairro" disabled name="bairro"></td>
                     </tr>
                     <tr>
-                        <td>Logradouro: </td>
+                        <td id="direita">Logradouro: </td>
                         <td><input type="text" disabled id="logradouro" name="logradouro"></td>
-                        <td>N°: </td>
+                        <td id="direita">N°: </td>
                         <td><input type="text" placeholder="Ex: 1234" id="numInst" name="numInst"></td>
                     </tr> 
                 </table>
@@ -81,21 +81,23 @@
         <div id="editarInstModal" class="modal">
             <div class="editarInstModalBox">
                 <div class="fundoBranco">
-                    <div class="marginTop"><span class="pesquisaLabel">Pesquisar Nome: <input type="text" name="pesquisarInst" id="pesquisarInst" class="pesquisarInst"></span></div>
+                    <span class="pesquisaLabel">Pesquisar Nome: <input type="text" onkeypress="pesquisarInst()" name="pesquisarInst" id="pesquisarInst" class="pesquisarInst"></span><input type="button" value="Limpar Filtro" class="botao" onclick="limparFiltroInst()">
                     <br>
                     <br>
-                    <table class="tableListarInst" id="tableListarInst">
-                        <tr>
-                            <th class="tableModal1">ID</th>
-                            <th class="tableModal2">Nome</th>
-                            <th class="tableModal3">Logradouro</th>
-                            <th class="tableModal4">N°</th>
-                            <th class="tableModal5">Bairro</th>
-                            <th class="tableModal6">Cidade</th>
-                            <th class="tableModal7">Estado</th>
-                            <th class="tableModal8">CEP</th>
-                        </tr>
-                    </table>
+                    <div class="overflow">
+                        <center><table BORDER RULES= ALL TABLE ALIGN= CENTER class="tableListarInst" id="tableListarInst">
+                            <tr>
+                                <th class="tableModal1">ID</th>
+                                <th class="tableModal2">Instituição</th>
+                                <th class="tableModal3">Logradouro</th>
+                                <th class="tableModal4">N°</th>
+                                <th class="tableModal5">Bairro</th>
+                                <th class="tableModal6">Cidade</th>
+                                <th class="tableModal7">UF</th>
+                                <th class="tableModal8">CEP</th>
+                            </tr>
+                        </table></center>
+                    </div>
                 </div>
                 <div class="fechar"><a onclick="">X</a></div>
             </div>

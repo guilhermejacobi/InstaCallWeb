@@ -42,7 +42,11 @@ height: 55px;
 .tabelaPrincipal{
     margin: 20px auto;
     text-align: right;
-    
+    border: none;
+}
+
+#tabelaNormal{
+    border: none;
 }
 
 .centralizarTudo{
@@ -99,6 +103,11 @@ height: 55px;
 
 .mudarPagina:hover{
     color: white;
+}
+
+#direita{
+    text-align: right;
+    font-size: 16px;
 }
 
 .modal{
@@ -163,43 +172,64 @@ height: 55px;
 
 .tableListarInst{
     background-color: white;
+}
+
+td{
     font-size: 17px;
-    border: 1px solid black;
-    border-collapse: collapse;
+    text-align: center;
+}
+
+.overflow{
+    height: 33em;
+    overflow: scroll;
 }
 
 .tableModal1{
-    width: 60px;
-    position: center;
+    width: 70px;
     align-items: center;
+
 }
 .tableModal2{
-    width: 100px;
+    width: 200px;
+    text-align: center;
 }
 
 .tableModal3{
-    
-}
-.tableModal4{
-    
-}
-.tableModal5{
-    
-}
-.tableModal6{
-    
-}
-.tableModal7{
-    
-}
-.tableModal8{
+    width: 270px;
 
 }
+.tableModal4{
+    width: 100px;
+
+}
+.tableModal5{
+    width: 90px;
+
+}
+.tableModal6{
+    width: 100px;
+
+}
+.tableModal7{
+    width: 50px;
+
+}
+.tableModal8{
+    width: 80px;
+
+}
+
 .pesquisaLabel{
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .pesquisarInst{
-    font-size: 20px;
+    font-size: 15px;
     width: 400px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.marginTop2{
+    margin-right:x;
 }
