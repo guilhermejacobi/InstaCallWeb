@@ -80,7 +80,7 @@
                 
                 </table>
                 <input type="button" class="botao" onclick="cadastrarCurso()" value="Salvar"></input>
-              <a href="../menuADM.html" style="text-decoration: none; color: black;"><input type="button" value="Voltar" class="botao"></a>
+              <a href="../menuADM.php" style="text-decoration: none; color: black;"><input type="button" value="Voltar" class="botao"></a>
             
             </div>
         </div>

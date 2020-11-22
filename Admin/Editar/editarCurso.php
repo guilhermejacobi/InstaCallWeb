@@ -85,7 +85,7 @@
                     </tr> 
                 </table>
                 <input type="button" class="botao" onclick="editarCurso();" value="Salvar">
-                <a href="../menuADM.html"><input type="button" class="botao" class="botoes" value="Voltar"></a>
+                <a href="../menuADM.php"><input type="button" class="botao" class="botoes" value="Voltar"></a>
             </div>
         </div>
                     

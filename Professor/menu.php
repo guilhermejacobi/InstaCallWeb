@@ -14,7 +14,7 @@
         <div class="centralizarTudo">
             <table id="boxMenu">
                 <tr>
-                    <td><input type="button" value="Atividade" class="botoesMenu"></td>
+                    <td><a href="atividades.php"><input type="button" value="Atividade" class="botoesMenu"></a></td>
                     <td><input type="button" value="Notas" class="botoesMenu"></td>
                     <td><input type="button" value="Material Complementar" class="botoesMenu"></td>
                 </tr>

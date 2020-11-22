@@ -5,35 +5,31 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <meta charset="utf-8">
-        <script type="text/javascript" src="../JS/editar.js"></script>
-        <script type="text/javascript" src="../JS/mask.js"></script>
-        <script type="text/javascript" src="../JS/cep.js"></script>
-        <script type="text/javascript" src="../JS/tabela.js"></script>
-        <link rel="stylesheet" href="editarProfessor.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Editar Professor- InstaCall</title>
+        <script type="text/javascript" src="../JS/mask.js"></script>
+        <script type="text/javascript" src="../JS/cadastrar.js"></script>
+        <script type="text/javascript" src="../JS/editar.js"></script>
+        <script type="text/javascript" src="../JS/tabela.js"></script>
+        <script type="text/javascript" src="../JS/cep.js"></script>
+        <link rel="stylesheet" href="cadastrarProfessor.css"></link>
+
+        <title>Cadastrar Professor- InstaCall</title>
     </head>
     <header>
-        <div id="topoInstaCall">
+        <div class="topoInstaCall">
             <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
         </div>
     </header>
     <body>
-        <div class="centralizarTudo" style="margin-top: 30px;">
+        <div class="centralizarTudo">
             <h1>
-                Editar Matrícula - Professor
+                Cadastrar Professor
             </h1>
             <div>
                 <table class="tabelaPrincipal">
                     <tr>
                         <td id="direita">Matrícula: </td>
-                        <td><input type="text" placeholder="Ex: 000000000" id="matricula" class="matricula"></td>
-                        <td><div align="left"><input type="button" class="botao" value="Buscar" onclick="buscarIdProfessor()"></div></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="button" class="abrirModalProfessor botao" style="width: 100%;" value="Buscar Professor"></td>
+                        <td><input type="text" disabled></td>
                     </tr>
                     <tr>
                         <td id="direita">Nome:</td>
@@ -101,7 +97,7 @@
                     <tr>
                         <td id="direita">Turma:  </td>
                         <td><input type="text" placeholder="Ex: 1234" id="idTurma" name="idTurma"></td>
-                        <td><div align="left"><input type="button" onclick="buscarIdTurma2()" value="Buscar" class="botao"></div></td>
+                        <td align="left"><input type="button" onclick="buscarIdTurma2()" value="Buscar" class="botao"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -125,37 +121,9 @@
                         <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
                     </tr>
                 </table>
-            </div>
-            <div>
-                <input type="button" class="botao" onclick="editarProfessor()" value="Salvar">
-                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
-            </div>
-        </div>
-        <div id="listarProfessorModal" class="modalProfessor">
-            <div class="listarProfessorModalBox">
-                <div class="fundoBrancoProfessor">
-                    <span class="pesquisaLabel">Pesquisar CPF: <input type="text" onkeyup="pesquisarProfessor()" id="pesquisarProfessor" class="cpf pesquisarProfessor" name="pesquisarProfessor"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroProfessor()">
-                    <br>
-                    <br>
-                    <div class="overflow">
-                        <center>
-                            <table BORDER RULES = ALL class="tableListarProfessor" id="tableListarProfessor" style="width: 100%;">
-                                <tr>
-                                    <th class="tableModal1">Matrícula</th>
-                                    <th class="tableModal2">Nome</th>
-                                    <th class="tableModal3">CPF</th>
-                                    <th class="tableModal3">Nascimento</th>
-                                    <th class="tableModal4">Logradouro</th>
-                                    <th class="tableModal5">N°</th>
-                                    <th class="tableModal6">Bairro</th>
-                                    <th class="tableModal7">Cidade</th>
-                                    <th class="tableModal8">UF</th>
-                                </tr>
-                            </table>
-                        </center>
-                    </div>
-                </div>
-                <div class="fecharProfessor"><a onclick="">X</a></div>
+
+                <input type="button" class="botao" onclick="cadastrarProfessor()" value="Salvar">
+                <a href="../menuADM.php" class="mudarPagina"><input type="button" value="Voltar" class="botao"></a>
             </div>
         </div>
         <div id="listarTurmaModal" class="modalTurma">

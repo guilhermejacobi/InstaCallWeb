@@ -17,7 +17,8 @@ function loginADM() {
                 let resultParciado = JSON.parse(result);
 
                 if (resultParciado.total == 1) {
-                    window.location.href= "Admin/menuADM.html";
+                    pegarDadosAdm();
+                    window.location.href= "Admin/menuADM.php";
                 } else if(resultParciado.total != 1){
                     jQuery.ajax({
                         type: 'POST',
@@ -31,6 +32,7 @@ function loginADM() {
                 
                             if (resultParciado.total == 1) {
                                 //PROFESSOR LOGOU
+                                pegarDadosProfessor();
                                 jQuery.ajax({
                                     type: 'POST',
                                     url: './QuantidadeAcesso/fezLogin.php',
@@ -43,8 +45,7 @@ function loginADM() {
                                         
                                     }
                                 })
-
-                                window.location.href= "Professor/menu.html";
+                                window.location.href= "Professor/menu.php";
                             } else {
                                 jQuery.ajax({
                                     type: 'POST',
@@ -58,6 +59,7 @@ function loginADM() {
                             
                                         if (resultParciado.total == 1) {
                                             //ALUNO LOGOU
+                                            pegarDadosAluno();
                                             jQuery.ajax({
                                                 type: 'POST',
                                                 url: './QuantidadeAcesso/fezLogin.php',
@@ -70,7 +72,7 @@ function loginADM() {
                                                     
                                                 }
                                             })
-                                            window.location.href= "Estudante/menu.html";
+                                            window.location.href= "Estudante/menu.php";
                                         } else {
                                             window.alert("Falha ao entrar\nLogin ou senha inválidos")
                                         }
@@ -86,3 +88,48 @@ function loginADM() {
         window.alert("Campos vazios.");
     }
  }
+
+function pegarDadosAluno(){
+    var aluno = "aluno";
+
+    jQuery.ajax({
+        type: 'POST',
+        url: './logarSessao.php',
+        datatype: 'json',
+        data: {loginMenu: $('#loginMenu').val(), senhaMenu: $('#senhaMenu').val(), tipo: aluno},
+        
+        success: function (result, textstatus) { 
+
+        }
+    })
+}
+
+function pegarDadosProfessor(){
+    var professor = "professor";
+
+    jQuery.ajax({
+        type: 'POST',
+        url: './logarSessao.php',
+        datatype: 'json',
+        data: {loginMenu: $('#loginMenu').val(), senhaMenu: $('#senhaMenu').val(), tipo: professor},
+        
+        success: function (result, textstatus) { 
+
+        }
+    })
+}
+
+function pegarDadosAdm(){
+    var adm = "admin";
+
+    jQuery.ajax({
+        type: 'POST',
+        url: './logarSessao.php',
+        datatype: 'json',
+        data: {loginMenu: $('#loginMenu').val(), senhaMenu: $('#senhaMenu').val(), tipo: adm},
+        
+        success: function (result, textstatus) { 
+
+        }
+    })
+}

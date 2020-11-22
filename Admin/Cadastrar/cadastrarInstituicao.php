@@ -65,7 +65,7 @@
                     </tr> 
                 </table>
                 <input type="button" class="botao" onclick="cadastrarInstituicao()" value="Salvar"></input>
-              <a href="../menuADM.html" class="mudarPagina"> <input type="button" class="botao" value="Voltar"></a>
+              <a href="../menuADM.php" class="mudarPagina"> <input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
     </body>

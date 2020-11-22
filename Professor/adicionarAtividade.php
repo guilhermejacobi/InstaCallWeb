@@ -6,6 +6,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
+    <script src="../Admin/JS/atividade.js"></script>
+    <script src="../Admin/JS/buscaProf.js"></script>
+    <script src="../Admin/JS/buscaProf.js"></script>
+    <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>
         
@@ -16,11 +20,6 @@
         </div>
     </header>
     <body id="fundoCinza">
-        <script>
-            function conta(){
-                document.forms[0].caracteres.value=document.forms[0].texto.value.length
-            }
-        </script>
         </script>
         <center><div class="margem1">
             <font class="fonteAddAtividade">Adicionar Atividades:</font>
@@ -28,8 +27,31 @@
         <center><div class="margem2">
             <table>
                 <tr>
+                    <td id="direita">ID:</td>
+                    <td><input type="text" disabled id="idProf" class="idProf"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Professor: </td>
+                    <td><input type="text" disabled id="nomeProf" class="nomeProf"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Turma: </td>
+                    <td><input type="text" disabled id="turma" class="turma"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Curso: </td>
+                    <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Turno: </td>
+                    <td><input type="text" disabled id="turno" class="turno"></td>
+                </tr>
+                <tr>
+                    <td><label for="">&nbsp;</label></td>
+                </tr>
+                <tr>
                     <td id="direita">ID: </td>
-                    <td><input type="text" disabled></td>
+                    <td><input type="text" id="idAtividade" class="idAtividade" disabled></td>
                 </tr>
                 <tr>
                     <td id="direita">Nome: </td>
@@ -37,7 +59,7 @@
                 </tr>
                 <tr>
                     <td id="direita">Descrição: </td>
-                    <td><textarea maxlength="1000" onkeyDown="conta()" placeholder="Descrição da atividade" onkeyup="conta()" class="descricao" id="descricao"></textarea>
+                    <td><textarea maxlength="1000" placeholder="Descrição da atividade" class="descricao" id="descricao"></textarea>
                 </tr>
                 <tr>
                     <td id="direita">Data Final: </td>
@@ -45,8 +67,8 @@
                 </tr>
             </table>
             <br>
-            <input type="button" class="botao botaoCriarAtividade" value="Adicionar Atividade"></a>
-            <a href="atividades.html"><input type="button" class="botao2" value="Voltar"></a>
+            <input type="button" class="botao botaoCriarAtividade" onclick="cadastrarAtividade()" value="Adicionar Atividade"></a>
+            <a href="atividades.php"><input type="button" class="botao2" value="Voltar"></a>
         </div></center>
     </body>
 </html>

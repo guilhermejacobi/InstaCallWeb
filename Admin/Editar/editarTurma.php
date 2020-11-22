@@ -91,7 +91,7 @@
             </div>
             <div>
                 <input type="button" class="botao" onclick="editarTurma()" value="Salvar">
-                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
+                <a href="../menuADM.php" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
 

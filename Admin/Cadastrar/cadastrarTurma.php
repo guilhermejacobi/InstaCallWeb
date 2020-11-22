@@ -89,7 +89,7 @@
                     </table>
                 </div>
                     <input type="button" class="botao" value="Salvar" onclick="cadastrarTurma()">
-                    <a href="../menuADM.html" class="mudarPagina"><input type="button" value="Voltar" class="botao"></a>
+                    <a href="../menuADM.php" class="mudarPagina"><input type="button" value="Voltar" class="botao"></a>
             </form>
         </div>
         <div id="listarCursoModal" class="Modal">

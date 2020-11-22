@@ -21,36 +21,36 @@
                     <table class="">
                     
                     <tr>
-                        <td><a href="../Admin/Cadastrar/cadastrarInstituicao.html" class="mudarPagina"><input type="button" value="Cadastrar Instituição" class="botoesMenu"></a></td>
-                        <td><a href="../Admin/Editar/editarInstituicao.html" class="mudarPagina"><input type="button" value ="Editar Instituição" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Cadastrar/cadastrarInstituicao.php" class="mudarPagina"><input type="button" value="Cadastrar Instituição" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Editar/editarInstituicao.php" class="mudarPagina"><input type="button" value ="Editar Instituição" class="botoesMenu"></a></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin/Cadastrar/cadastrarCurso.html" class="mudarPagina"><input type="button" value ="Cadastrar Curso" class="botoesMenu"></a></td>
-                        <td><a href="../Admin/Editar/editarCurso.html" class="mudarPagina"><input type="button" value ="Editar curso" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Cadastrar/cadastrarCurso.php" class="mudarPagina"><input type="button" value ="Cadastrar Curso" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Editar/editarCurso.php" class="mudarPagina"><input type="button" value ="Editar curso" class="botoesMenu"></a></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin/Cadastrar/cadastrarTurma.html" class="mudarPagina"><input type="button" value ="Cadastrar turma" class="botoesMenu"></a></td>
-                        <td><a href="../Admin/Editar/editarTurma.html" class="mudarPagina"><input type="button" value ="Editar Turma" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Cadastrar/cadastrarTurma.php" class="mudarPagina"><input type="button" value ="Cadastrar turma" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Editar/editarTurma.php" class="mudarPagina"><input type="button" value ="Editar Turma" class="botoesMenu"></a></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin/Cadastrar/cadastrarProfessor.html" class="mudarPagina"><input type="button" value ="Cadastrar Professor" class="botoesMenu"></a></td>
-                        <td><a href="../Admin/Editar/editarProfessor.html" class="mudarPagina"><input type="button" value ="Editar Professor" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Cadastrar/cadastrarProfessor.php" class="mudarPagina"><input type="button" value ="Cadastrar Professor" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Editar/editarProfessor.php" class="mudarPagina"><input type="button" value ="Editar Professor" class="botoesMenu"></a></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin/Cadastrar/cadastrarAluno.html" class="mudarPagina"><input type="button" value ="Cadastrar Aluno" class="botoesMenu"></a></td>
-                        <td><a href="../Admin/Editar/editarAluno.html" class="mudarPagina"><input type="button" value ="Editar Aluno" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Cadastrar/cadastrarAluno.php" class="mudarPagina"><input type="button" value ="Cadastrar Aluno" class="botoesMenu"></a></td>
+                        <td><a href="../Admin/Editar/editarAluno.php" class="mudarPagina"><input type="button" value ="Editar Aluno" class="botoesMenu"></a></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>

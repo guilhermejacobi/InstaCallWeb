@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 #topoInstaCall{
     -moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
@@ -34,20 +37,24 @@ height: 55px;
 
 #fundoCinza{
     background-color: rgb(240, 240, 240);
-    margin-top: 60px;
+    
 }
-.logoTabela{
-    width: 200px;
+.logoSociesc{
+    width: 160px;
+    margin-top: 10px;
     position: fixed;
 }
 
 .fonteAtividade{
     font-size: 45px;
-    position: static;
-    left: 90px;
+    top: 30px;
+    font-family: 'Cookie', cursive;
+    position: relative;
+    left: 120px;
 }
 
 .botao{
+    top: 40px;
     width: 160px;
     border-radius: 12px;
     border: 1px solid lightgrey;
@@ -167,5 +174,24 @@ height: 55px;
     width: 200px;
     text-align: right;
     font-size: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+.bordaFora4{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(240, 240, 240);
+}
+
+.tabelaNome{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
     background-color: rgb(240, 240, 240);
 }

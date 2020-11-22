@@ -9,51 +9,47 @@
         <script type="text/javascript" src="../JS/mask.js"></script>
         <script type="text/javascript" src="../JS/cep.js"></script>
         <script type="text/javascript" src="../JS/tabela.js"></script>
-        <link rel="stylesheet" href="editarAluno.css"> 
+        <link rel="stylesheet" href="editarProfessor.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Editar Aluno- InstaCall</title>
+        
+        <title>Editar Professor- InstaCall</title>
     </head>
     <header>
         <div id="topoInstaCall">
             <h1 class="insta"><font >Insta</font><font class="call">Call&copy;</font></h1>
-        </div> 
-        
+        </div>
     </header>
     <body>
-        <div class="centralizarTudo">
+        <div class="centralizarTudo" style="margin-top: 30px;">
             <h1>
-                Editar Matrícula - Aluno
+                Editar Matrícula - Professor
             </h1>
             <div>
                 <table class="tabelaPrincipal">
                     <tr>
                         <td id="direita">Matrícula: </td>
-                        <td><input type="text" placeholder="Ex: 000000000" id="matricula" name="matricula"></td>
-                        <td><input type="button" class="botao2" value="Buscar" onclick="buscarIdAluno()"></td>
+                        <td><input type="text" placeholder="Ex: 000000000" id="matricula" class="matricula"></td>
+                        <td><div align="left"><input type="button" class="botao" value="Buscar" onclick="buscarIdProfessor()"></div></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" id="abrirModalAluno" class="botao" style="width: 100%;" value="Listar Alunos"></td>
+                        <td><input type="button" class="abrirModalProfessor botao" style="width: 100%;" value="Buscar Professor"></td>
                     </tr>
                     <tr>
-                        <td><label for="">&nbsp;</label></td>
+                        <td id="direita">Nome:</td>
+                        <td><input type="text" placeholder="Ex: Nome" id="nome" name="nome"></td>
                     </tr>
                     <tr>
-                        <td id="direita">Nome: </td>
-                        <td><input type="text" maxlength="50" placeholder="Ex: Joao" id="nome" name="nome"></td>
-                    </tr>
-                    <tr>
-                        <td id="direita">CPF: </td>
-                        <td><input type="text" placeholder="Ex: 000.000.000-00" id="cpf" name="cpf"></td>
                         <td id="direita">Nascimento: </td>
-                        <td><input type="text" placeholder="00/00/0000" id="nascimento" name="nascimento"></td>
+                        <td><input type="text" placeholder="01/01/2000" name="nascimento" id="nascimento"></td>
+                        <td id="direita">CPF:</td>
+                        <td><input type="text" placeholder="Ex: 000.000.000-00" name="cpf" id="cpf"><br></td>
                     </tr>
                     <tr>
                         <td id="direita">Telefone: </td>
-                        <td><input type="text" placeholder="Ex: (00) 0000-0000" id="telefone"></td>
+                        <td><input type="text" name="telefone" placeholder="Ex: (00) 0000-0000" id="telefone"></td>
                         <td id="direita">Celular: </td>
-                        <td><input type="text" placeholder="Ex: (00) 0 0000-0000" id="celular"></td>
+                        <td><input type="text" name="celular" placeholder="Ex: (00) 0 0000-0000" id="celular"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
@@ -61,11 +57,11 @@
                     <tr>
                         <td id="direita">CEP: </td>
                         <td><input type="text" placeholder="Ex: 00000-00" id="cep" name="cep"></td>
-                        <td align="left"><input type="button" class="botao2" onclick="buscaCep()" value="Buscar"></input></td>
+                        <td><div align="left"><input type="button" onclick="buscaCep()" class="botao" value="Buscar"></div></td>
                     </tr>
                     <tr>
                         <td id="direita">UF: </td>
-                        <td><input type="text" disabled id="uf" name="uf"></td>
+                        <td><input type="text" disabled id="uf" name="estado"></td>
                     </tr>
                     <tr>
                         <td id="direita">Cidade: </td>
@@ -76,60 +72,74 @@
                     <tr>
                         <td id="direita">Logradouro: </td>
                         <td><input type="text" disabled id="logradouro" name="logradouro"></td>
-                        <td id="direita">Número: </td>
+                        <td id="direita">N°: </td>
                         <td><input type="text" placeholder="Ex: 1234" id="numero" name="numero"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">&nbsp;</label></td>
+                    </tr> 
+                    <tr>
+                        <td id="direita">Formação: </td>
+                        <td><input type="text" placeholder="Ex: Sistemas de Informação" name="formacao" id="formacao"><br></td>
+                        <td><select id="nivelProf" name="nivel" name="selectCurso">
+                            <option value=""></option>
+                            <option value="Bacharelado">Bacharelado</option> 
+                            <option value="Licenciatura">Licenciatura</option>
+                            <option value="Tecnólogo">Tecnólogo</option>
+                            <option value="Mestrado">Mestrado</option>
+                            <option value="Doutorado">Doutorado</option>
+                            <option value="Graduação">Pós-Graduação</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td id="direita">Instituição: </td>
+                        <td><input type="text" placeholder="Ex: UniSociesc" id="nomeInst"></td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
-                        <td id="direita">Id Turma:</td>
-                        <td><input type="text" placeholder="Ex:1234" id="idTurma" name="idTurma"></td>
-                        <td align="left"><input type="button" onclick="buscarIdTurma2()" class="botao2" value="Buscar"></td>
+                        <td id="direita">Turma:  </td>
+                        <td><input type="text" placeholder="Ex: 1234" id="idTurma" name="idTurma"></td>
+                        <td><div align="left"><input type="button" onclick="buscarIdTurma2()" value="Buscar" class="botao"></div></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input style="width: 100%;" class="abrirModalTurma botao2" type="button" value="Listar Turmas"></td>
+                        <td><input style="width: 100%;" type="button" value="Listar Turmas" class="abrirModalTurma botao"></td>
                     </tr>
                     <tr>
-                        <td id="direita">Cuso: </td>
-                        <td><input type="text" disabled id="curso"></td>
+                        <td id="direita">Curso: </td>
+                        <td><input type="text" disabled id="curso" name="curso"></td>
                     </tr>
                     <tr>
-                        <td id="direita">Turno:</td>
+                        <td id="direita">Turno: </td>
                         <td><input type="text" disabled id="turno" name="turno"></td>
-                    </tr>
-                    <tr>
-                        <td id="direita">Nível: </td>
-                        <td align="left">
-                            <input type="text" disabled name="nivel" id="nivel">
-                        </td>
                     </tr>
                     <tr>
                         <td><label for="">&nbsp;</label></td>
                     </tr>
                     <tr>
                         <td id="direita">Login: </td>
-                        <td><input type="text" placeholder="Ex: aluno@estudante.com" id="login" name="login"></td>
+                        <td><input type="text" placeholder="Ex: professor@instituicao.com" id="login" name="email"></td>
                         <td id="direita">Senha: </td>
                         <td><input type="text" placeholder="Ex: 123456789" id="senha" name="senha"></td>
                     </tr>
                 </table>
             </div>
             <div>
-                <input type="button" class="botao2"  onclick="editarAluno()" value="Salvar">
-                <a href="../menuADM.html" class="mudarPagina"><input type="button" class="botao2" value="Voltar"></a>
+                <input type="button" class="botao" onclick="editarProfessor()" value="Salvar">
+                <a href="../menuADM.php" class="mudarPagina"><input type="button" class="botao" value="Voltar"></a>
             </div>
         </div>
-        <div id="listarAlunoModal" class="modalAluno">
-            <div class="listarAlunoModalBox">
-                <div class="fundoBrancoAluno">
-                    <span class="pesquisaLabel">Pesquisar CPF: <input type="text" onkeyup="pesquisarAluno()" id="pesquisarAluno" class="cpf pesquisarAluno" name="pesquisarAluno"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroAluno()">
+        <div id="listarProfessorModal" class="modalProfessor">
+            <div class="listarProfessorModalBox">
+                <div class="fundoBrancoProfessor">
+                    <span class="pesquisaLabel">Pesquisar CPF: <input type="text" onkeyup="pesquisarProfessor()" id="pesquisarProfessor" class="cpf pesquisarProfessor" name="pesquisarProfessor"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroProfessor()">
                     <br>
                     <br>
                     <div class="overflow">
                         <center>
-                            <table BORDER RULES = ALL class="tableListarAluno" id="tableListarAluno" style="width: 100%;">
+                            <table BORDER RULES = ALL class="tableListarProfessor" id="tableListarProfessor" style="width: 100%;">
                                 <tr>
                                     <th class="tableModal1">Matrícula</th>
                                     <th class="tableModal2">Nome</th>
@@ -145,7 +155,7 @@
                         </center>
                     </div>
                 </div>
-                <div class="fecharAluno"><a onclick="">X</a></div>
+                <div class="fecharProfessor"><a onclick="">X</a></div>
             </div>
         </div>
         <div id="listarTurmaModal" class="modalTurma">
@@ -158,7 +168,7 @@
                         <center>
                             <table BORDER RULES = ALL class="tableListarTurma" id="tableListarTurma" style="width: 100%;">
                                 <tr>
-                                    <th class="tableModal1">Matrícula</th>
+                                    <th class="tableModal1">ID</th>
                                     <th class="tableModal2">Curso</th>
                                     <th class="tableModal3">Nivel</th>
                                     <th class="tableModal3">Turno</th>
