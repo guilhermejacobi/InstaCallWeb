@@ -104,6 +104,18 @@
     font-size: 100%;
 }
 
+.contagem{
+    background-color: white;
+    border-radius:12px;
+    border: 2px solid black;
+    width: 160px;
+    position: absolute;
+    left: 90%;
+    top: 3%;
+    margin-left: -60;
+    margin-top: -15;
+    padding: 12px;    
+}
 /* Resolução "HD" */
 
 /* @media (max-width: 1480px) {
