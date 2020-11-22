@@ -2,7 +2,7 @@
 
 require_once "../conexao.php";
 
-$sql = ("SELECT COUNT(*) AS total FROM adm WHERE loginProf = :email AND senhaProf = :senha");
+$sql = ("SELECT COUNT(*) AS total FROM professor WHERE loginProf = :email AND senhaProf = :senha");
 
 $query = $conn->prepare($sql);
 

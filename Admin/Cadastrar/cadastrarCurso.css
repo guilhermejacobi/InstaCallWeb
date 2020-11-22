@@ -177,41 +177,6 @@ td{
     overflow: scroll;
 }
 
-.tableModal1{
-    width: 70px;
-    align-items: center;
-
-}
-.tableModal2{
-    width: 200px;
-    text-align: center;
-}
-
-.tableModal3{
-    width: 270px;
-
-}
-.tableModal4{
-    width: 100px;
-
-}
-.tableModal5{
-    width: 90px;
-
-}
-.tableModal6{
-    width: 100px;
-
-}
-.tableModal7{
-    width: 50px;
-
-}
-.tableModal8{
-    width: 80px;
-
-}
-
 .pesquisaLabel{
     font-size: 17px;
 }

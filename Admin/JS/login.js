@@ -1,14 +1,13 @@
-/*
-Função para saber qual página irá, usando dados do login, seja ADM/Professor/Aluno
-*/
 function login(){
+   loginADM();
+}
 
-    var loginMenu = $('#loginMenu').val();
-    var senhaMenu = $('#senhaMenu').val();
-    console.log(loginMenu);
-    console.log(senhaMenu);
+function loginADM() {
 
-    if (loginMenu != "" && senhaMenu != ""){
+    var testeEmail = $('#loginMenu').val();
+    var testeSenha = $('senhaMenu').val();
+
+    if (testeEmail != "" && testeSenha != "") {
 
         jQuery.ajax({
             type: 'POST',
@@ -18,29 +17,26 @@ function login(){
     
             success: function (result, textstatus) {
                 
-                console.log(result)
                 let resultParciado = JSON.parse(result);
-                console.log(resultParciado.total);
+                console.log(resultParciado.total + " TESTE ADM");
     
                 if (resultParciado.total == 1) {
                     window.location.href= "Admin/menuADM.html";
-                } else if (resultParciado.total =! 1) {
-                    
+                } else if(resultParciado.total != 1){
                     jQuery.ajax({
                         type: 'POST',
-                        url: './Conexao/Login/loginProfessor.php',
+                        url: './Conexao/Login/loginProf.php',
                         datatype: 'json',
                         data: {loginMenu: $('#loginMenu').val(), senhaMenu: $('#senhaMenu').val()},
                 
                         success: function (result, textstatus) {
                             
-                            console.log(result)
                             let resultParciado = JSON.parse(result);
-                            console.log(resultParciado.total);
+                            console.log(resultParciado.total + " Teste Prof");
                 
                             if (resultParciado.total == 1) {
                                 window.location.href= "Professor/menu.html";
-                            } else if (resultParciado.total =! 1) {
+                            } else {
                                 jQuery.ajax({
                                     type: 'POST',
                                     url: './Conexao/Login/loginEstudante.php',
@@ -51,27 +47,22 @@ function login(){
                                         
                                         console.log(result)
                                         let resultParciado = JSON.parse(result);
-                                        console.log(resultParciado.total);
+                                        console.log(resultParciado.total + " Teste Estudante");
                             
                                         if (resultParciado.total == 1) {
                                             window.location.href= "Estudante/menu.html";
-                                        } else if (resultParciado.total =! 1) {
-                                            window.alert('Login ou Senha não correspondem.')
+                                        } else {
+                                            window.alert("Falha ao entrar\nLogin ou senha inválidos")
                                         }
-                                        
                                     }
                                 })
                             }
-                            
                         }
                     })
-                }                
+                }
             }
         })
-
-    } else if (loginMenu == "" || senhaMenu == ""){
-        window.alert("Login/Senha sem informações Prencha os campos vazios.");
+    } else if(testeEmail == "" || testeSenha == "") {
+        window.alert("Campos vazios.");
     }
-    
-    
-}
+ }

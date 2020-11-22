@@ -3,22 +3,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <meta charset="UTF-8">
         <link href="styleLogin.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="Admin/JS/login.js"></script>
 
        <title>InstaCall - Unisociesc</title>
-       <meta charset="UTF-8">
 
    </head>
-
     <body id="fundo">
         <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>     
              <div id="login" class="fora">
                     <div class="borda1">
                         <div class="borda2">
-                            
-                         
                             <center><div><img class="logoSociesc" src="Imagens/logo.png"></div>
                             <div class="informacaoLogin">
                                 <br>
