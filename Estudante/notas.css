@@ -1,0 +1,111 @@
+#topoInstaCall{
+    -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+font-size:1.2em;
+background:rgb(30, 160, 219);
+background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 255));
+    background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219), rgb(142, 56, 253));
+        background-image: -o-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+            background-image: -ms-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+                background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
+
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 55px;
+}
+.insta{
+    color: rgb(255, 255, 255);
+    font-family: 'Cookie', cursive;
+    font-size: 200%;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.call{
+    color: rgb(0, 0, 0);
+    font-family: 'Cookie', cursive;
+}
+#fundoCinza{
+    background-color: rgb(240, 240, 240);
+}
+.tabela{
+    margin: 75px 20px 20px 20px;
+}
+
+.table1{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 10%;
+}
+
+.table2{
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    width: 83%;
+}
+
+.table3{
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;    
+}
+
+.table4{
+    text-align: left;
+    border-style: solid;
+    border-bottom-width: 80%;
+    width: 100%;
+    height: calc(95vh - 150px);
+
+}
+.logoTabela{
+    width: 100%;
+}
+.tabelaDentro{
+    width: 100%;
+    border-radius: 10px;
+}
+.bordaFora1{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: white;
+}
+.bordaFora2{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: white;
+}
+
+
+.bordaFora3{
+    width: 150px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-top: none;
+    border-left: none;
+    background-color: white;
+}
+
+
+.tabelaId{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: white;
+}
