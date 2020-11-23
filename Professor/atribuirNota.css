@@ -1,6 +1,3 @@
-*{
-    margin: 0;
-}
 #topoInstaCall{
     -moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
@@ -14,7 +11,7 @@ background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 
             background-image: -ms-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
                 background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
 
-position: relative;
+position: absolute;
 top: 0;
 left: 0;
 right: 0;
@@ -25,7 +22,7 @@ height: 55px;
     color: rgb(255, 255, 255);
     font-family: 'Cookie', cursive;
     font-size: 200%;
-    position: absolute;
+    position: relative;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -37,28 +34,59 @@ height: 55px;
 
 #fundoCinza{
     background-color: rgb(240, 240, 240);
-    
+    margin-top: 60px;
+}
+.logoTabela{
+    width: 200px;
+    position: fixed;
 }
 
-.fonteAtividade{
-    font-size: 45px;
+.fonteAddAtividade{
+    font-size: 55px;
     font-family: 'Cookie', cursive;
     position: relative;
+}
 
+.margem1{
+    position: relative;
+    top: 10px;
+}
+
+.margem2{
+    position: relative;
+    top: 10px;
+}
+
+.centralizarTudo{
+    
+    border-radius:12px;
+    height: 590px;
+    width: 490px;
+    position: absolute;
+    left: 48%;
+    top: 33%;
+    margin-left: -220px;
+    margin-top: -150px;
+}
+
+.descricao{
+    width: 400px;
+    height: 160px;
 }
 
 .botao{
-
-    width: 177;
+    width: 160px;
     border-radius: 12px;
     border: 1px solid lightgrey;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    font-size: 17px;
+    font-size: 16px;
     position: relative;
-
 }
 
+.nomeprof, .turma, .nomeCurso, .turno, .nomeatividade{
+    width: 400px;
+}
 
 .botao:hover{
     color: white;
@@ -72,22 +100,47 @@ height: 55px;
                 background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
                     background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
                         background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-    
+}
+
+.botao2{
+    width: 100px;
+    border-radius: 12px;
+    border: 1px solid lightgrey;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    font-size: 16px;
+    position: relative;
+}
+
+.botao2:hover{
+    color: white;
+    -moz-transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+        -o-transition: all 1.5s ease;
+            transition: all 1.5s ease;
+    background:rgba(30, 159, 219, 0.5);
+        background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+            background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                    background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+                        background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+}
+
+.dataFinal{
+    width: 100px;
 }
 
 #direita{
     text-align: right;
+    font-size: 16px;
 }
 
-.centralizarTudo{
-    border-radius:12px;
-    height: 500px;
-    width: 300px;
-    position: absolute;
-    left: 48%;
-    top: 50%;
-    margin-left: -135px;
-    margin-top: -150px;
+.botao3{
+    width: 177px;
+}
+
+.botao4{
+    width: 177px;
 }
 /*
 Modal Aluno
@@ -178,4 +231,7 @@ td{
 #direita{
     text-align: right;
     font-size: 16px;
+}
+#esquerda{
+    text-align: left;
 }
