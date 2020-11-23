@@ -30,6 +30,12 @@ $(document).ready( function (e) {
   $('.fecharAluno').click(function(){
     $('#listarAlunoModal').fadeOut(500)
   })
+  $('#abrirAlunoChamada').click(function(){
+    $('#listarAlunoModal').fadeIn(500);
+  })
+  $('.fecharAluno').click(function(){
+    $('#listarAlunoModal').fadeOut(500)
+  })
   if ($('#pesquisarInst').val() == "") {
     listarInst();
   }
@@ -44,6 +50,9 @@ $(document).ready( function (e) {
   }
   if ($('#pesquisarAluno').val() == "") {
     listarAluno();
+  }
+  if ($('#pesquisarAlunoChamada').val() == "") {
+    listarAlunoChamada();
   }
 
 })
@@ -434,4 +443,82 @@ function pesquisarAluno(){
 function limparFiltroAluno(){
   deletarTabelaAluno();
   listarAluno();
+}
+
+/*
+Modal Aluno Chamada
+*/
+function listarAlunoChamada(){
+  jQuery.ajax({
+    type: 'GET',
+    url: '../Conexao/Pesquisa/ADWADWDWAtabelaAluno.php',
+    datatype: 'json',
+    data: {},
+
+    success: function (result, textstatus) {
+        
+        console.log(result);
+        let dados = JSON.parse(result);
+        dados.forEach(d => criarLinhasAlunoChamada(d));
+        console.log(dados);
+        //Como forEach trabalha? funcoinamento etc...
+    }
+  })
+}
+
+function criarLinhasAlunoChamada(dados){
+  var table = document.getElementById("tableListarAluno");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
+  var cell9 = row.insertCell(8);
+
+  cell1.innerHTML = dados.idAluno;
+  cell2.innerHTML = dados.nomeAluno;
+  cell3.innerHTML = dados.cpfAluno;
+  cell4.innerHTML = dados.nascAluno;
+  cell5.innerHTML = dados.logradouroAluno;
+  cell6.innerHTML = dados.numAluno;
+  cell7.innerHTML = dados.bairroAluno;
+  cell8.innerHTML = dados.cidadeAluno;
+  cell9.innerHTML = dados.ufAluno;
+
+}
+
+function deletarTabelaAlunoChamada(){
+  var table = document.getElementById("tableListarAluno");
+  while (table.rows.length > 1){
+  	document.getElementById("tableListarAluno").deleteRow(-1);
+  }
+}
+
+function pesquisarAlunoChamada(){
+  deletarTabelaAlunoChamada();
+  console.log("%"+$('#pesquisarAluno').val()+"%");
+  jQuery.ajax({
+    type: 'POST',
+    url: '../Conexao/Pesquisa/filtroAlunoCPF.php',
+    datatype: 'json',
+    data: {cpf: "%"+$('#pesquisarAluno').val()+"%"},
+
+    success: function (result, textstatus) {
+        
+        console.log(result);
+        let dados = JSON.parse(result);
+        dados.forEach(d => criarLinhasAlunoChamada(d));
+
+        //Como forEach trabalha? funcoinamento etc...
+    }
+  })
+}
+
+function limparFiltroAlunoChamada(){
+  deletarTabelaAlunoChamada();
+  listarAlunoChamada();
 }
