@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <meta charset="utf-8"
     <head>
-        <title>Menu- UniSociesc</title>
+        <title>Menu-UniSociesc</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body id="topoInstaCall">

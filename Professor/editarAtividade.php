@@ -5,11 +5,7 @@ $sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descric
 ?>
 <html>
   <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="adicionaratividade.css"></link>
-=======
-    <link rel="stylesheet" href="editarAtividade.css"></link>
->>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
@@ -30,15 +26,9 @@ $sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descric
     <body id="fundoCinza">
         </script>
         <center><div class="margem1">
-<<<<<<< HEAD
-            <font class="fonteAddAtividade">Adicionar Atividades:</font>
-=======
-<<<<<<<< HEAD:Professor/editarAtividade.html
+
             <font class="fonteAddAtividade">Editar Atividades:</font>
-========
-            <font class="fonteAddAtividade">Concluir Atividade</font>
->>>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd:Professor/concluirAtividade.html
->>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
+
         </div></center>
         <center><div class="margem2">
             <table>
@@ -70,13 +60,6 @@ $sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descric
                     <td><input type="text" id="idAtividade" class="idAtividade" disabled></td>
                 </tr>
                 <tr>
-<<<<<<< HEAD
-=======
-                    <td></td>
-                    <td><input type="button" class="botao2 botao3" value="Buscar"></td>
-                </tr>
-                <tr>
->>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
                     <td id="direita">Nome: </td>
                     <td><input type="text" maxlength="100" placeholder="Ex: Pesquisar sobre..." class="nomeAtividade" id="nomeAtividade"></td>
                 </tr>

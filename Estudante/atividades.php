@@ -8,7 +8,7 @@
     <script src="../Admin/JS/buscarAtividades.js"></script>
     <script src="../Admin/JS/buscaAlunoAtividade.js"></script>
 
-        <title>Atividades-Professor-UniSociesc</title>
+        <title>Atividades-Estudante-UniSociesc</title>
         
     </head>
     <header>

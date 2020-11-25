@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         
     </head>
-    <title> Menu-Unisociesc</title>
+    <title> Frequência-Estudante-Unisociesc</title>
     <body id="topoInstaCall"></body>
         <div>
             <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>
