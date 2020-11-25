@@ -81,7 +81,11 @@ height: 55px;
 
 .centralizarTudo{
     border-radius:12px;
+<<<<<<< HEAD
+    height: 270px;
+=======
     height: 500px;
+>>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
     width: 300px;
     position: absolute;
     left: 48%;

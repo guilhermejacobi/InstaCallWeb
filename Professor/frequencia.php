@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link href="frequencia.css" rel="stylesheet">
+    <link href="atividades.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <meta charset="utf-8">
 
@@ -25,7 +25,9 @@
             <input type="button" class="botao" value="Encerrar Chamada">
             <br>
             <br>
+
             <a href="editarChamada.php"><input type="button" class="botao" value="Editar Presença"></a>
+            <input type="button" class="botao" value="Editar Presença">
             <br>
             <br>
             <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
