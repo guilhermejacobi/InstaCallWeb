@@ -42,7 +42,12 @@ height: 55px;
 }
 
 .fonteAddAtividade{
+<<<<<<< HEAD
     font-size: 45px;
+=======
+    font-size: 55px;
+    font-family: 'Cookie', cursive;
+>>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
     position: relative;
 }
 
@@ -119,4 +124,11 @@ height: 55px;
 #direita{
     text-align: right;
     font-size: 16px;
+<<<<<<< HEAD
+=======
+}
+
+.botao3{
+    width: 177px;
+>>>>>>> 8e02ce9f230d7c442c41810bc0e2b16f8b001bfd
 }

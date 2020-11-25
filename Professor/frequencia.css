@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 #topoInstaCall{
     -moz-transition: all 0.5s ease;
         -webkit-transition: all 0.5s ease;
@@ -11,7 +14,7 @@ background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219), rgb(255, 255, 
             background-image: -ms-linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
                 background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
 
-position: absolute;
+position: relative;
 top: 0;
 left: 0;
 right: 0;
@@ -22,7 +25,7 @@ height: 55px;
     color: rgb(255, 255, 255);
     font-family: 'Cookie', cursive;
     font-size: 200%;
-    position: relative;
+    position: absolute;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -34,45 +37,35 @@ height: 55px;
 
 #fundoCinza{
     background-color: rgb(240, 240, 240);
-    margin-top: 60px;
+    
 }
-.logoTabela{
-    width: 200px;
+.logoSociesc{
+    width: 160px;
+    margin-top: 10px;
     position: fixed;
 }
 
-.fonteAddAtividade{
+.fonteAtividade{
     font-size: 45px;
+    top: 30px;
+    font-family: 'Cookie', cursive;
     position: relative;
-}
-
-.margem1{
-    position: relative;
-    top: 50px;
-}
-
-.margem2{
-    position: relative;
-    top: 60px;
-}
-.descricao{
-    width: 400px;
-    height: 160px;
+    left: 120px;
 }
 
 .botao{
+    top: 40px;
     width: 160px;
     border-radius: 12px;
     border: 1px solid lightgrey;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    font-size: 16px;
+    font-size: 17px;
     position: relative;
+    left: 110px;
+    font-weight: 100px;
 }
 
-.nomeprof, .turma, .nomeCurso, .turno, .nomeatividade{
-    width: 400px;
-}
 
 .botao:hover{
     color: white;
@@ -86,24 +79,34 @@ height: 55px;
                 background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
                     background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
                         background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+    
 }
 
-.botao2{
-    width: 100px;
-    border-radius: 12px;
-    border: 1px solid lightgrey;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    font-size: 16px;
-    position: relative;
+.borda{
+    border: 1px solid black;
+    height: 590px;
+    width: 1000px;
+    left: 315px;
+    top: 60px;
+    position: fixed;
+    overflow: scroll;
 }
 
-.botao2:hover{
-    color: white;
-    -moz-transition: all 1.5s ease;
-    -webkit-transition: all 1.5s ease;
-        -o-transition: all 1.5s ease;
-            transition: all 1.5s ease;
+.tabela{
+    margin-top: 30px;
+}
+
+.tabelaDentro{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tabelaDentro:hover{
+    color: rgb(0, 0, 0);
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
     background:rgba(30, 159, 219, 0.5);
         background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
             background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
@@ -112,11 +115,83 @@ height: 55px;
                         background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
 }
 
-.dataFinal{
-    width: 100px;
+.bordaFora1{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(240, 240, 240);
 }
 
-#direita{
+
+.bordaFora2{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(240, 240, 240);
+}
+
+
+.bordaFora3{
+    width: 150px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-top: none;
+    border-left: none;
+    background-color: rgb(240, 240, 240);
+}
+
+.tabelaId{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+.tabelaDesc{
+    width: 800px;
+    font-size: 20px;
+    width: 100%;
+    border-style: solid;
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    background-color: rgb(240, 240, 240);
+}
+
+.tabelaData{
+    border-style: solid;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 10px;
+    width: 200px;
     text-align: right;
-    font-size: 16px;
+    font-size: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+.bordaFora4{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(240, 240, 240);
+}
+
+.tabelaNome{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
 }
