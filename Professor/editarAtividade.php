@@ -1,8 +1,3 @@
-<?php
-
-$sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descricaoAtividade, atividade.dataLimite FROM atividade WHERE "
-
-?>
 <html>
   <head>
     <link rel="stylesheet" href="adicionaratividade.css"></link>
@@ -27,7 +22,11 @@ $sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descric
         </script>
         <center><div class="margem1">
 
+            <font class="fonteAddAtividade">Adicionar Atividades:</font>
+
             <font class="fonteAddAtividade">Editar Atividades:</font>
+
+            <font class="fonteAddAtividade">Concluir Atividade</font>
 
         </div></center>
         <center><div class="margem2">

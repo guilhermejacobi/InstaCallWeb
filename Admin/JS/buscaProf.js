@@ -20,6 +20,7 @@ $(document).ready(function(){
 
                 } else if(!resultado) {
                     window.alert("Professor não encontrado")
+                    window.location.href="../index.php";
                 }
             }
         })

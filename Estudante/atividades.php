@@ -2,11 +2,13 @@
   <head>
     <link href="atividades.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
     <script src="../Admin/JS/atividade.js"></script>
     <script src="../Admin/JS/buscarAtividades.js"></script>
-    <script src="../Admin/JS/buscaAlunoAtividade.js"></script>
+    <script src="../Admin/JS/buscarAlunoAtividade.js"></script>
 
         <title>Atividades-Estudante-UniSociesc</title>
         
@@ -27,25 +29,25 @@
         </div>
         <table class="tabelaAluno">
                 <tr>
-                    <td id="direita">ID:</td>
-                    <td><input type="text" disabled id="idAluno" class="idProf"></td>
+                    <td id="direita"style="display: none;">ID:</td>
+                    <td><input type="text" disabled style="display: none;" id="idAluno" class="idProf"></td>
                 </tr>
                 <tr>
-                    <td id="direita">Aluno: </td>
-                    <td><input type="text" disabled id="nomeAluno" class="nomeProf"></td>
+                    <td id="direita" style="display: none;">Aluno: </td>
+                    <td><input type="text" disabled style="display: none;" id="nomeAluno" class="nomeProf"></td>
                 </tr>
                 <tr>
-                    <td id="direita">Turma: </td>
-                    <td><input type="text" disabled id="turma" class="turma"></td>
+                    <td id="direita" style="display: none;">Turma: </td>
+                    <td><input type="text" disabled style="display: none;" id="turma" class="turma"></td>
                 </tr>
                 <tr>
-                    <td id="direita">Curso: </td>
-                    <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
+                    <td id="direita" style="display: none;">Curso: </td>
+                    <td><input type="text" disabled style="display: none;" id="nomeCurso" class="nomeCurso"></td>
                 </tr>
             </table>
         <div class="borda">
-            <table class="tabelaDentro" style="border: 1px solid black">
-                <tr>
+            <table class="tabelaDentro" id="tabelaDeAtividades" style="border: 1px solid black">
+                <!-- <tr>
                     <td>
                         <table class='bordaFora1'>
                             <tr>
@@ -80,7 +82,7 @@
                             <td class="tabelaData">Data de entrega:<br>10/10/2010</td>
                         </table>
                     </td>
-                </tr>
+                </tr> -->
             </table>
         </div>
     </body>

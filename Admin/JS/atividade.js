@@ -19,7 +19,7 @@ function cadastrarAtividade() {
 
                 if (resultParciado.status) {
                     window.alert("Atividade postada com sucesso!");
-                    window.location.href= "Professor/menu.php";
+                    window.location.href= "menu.php";
                 } else if (!resultParciado.status){
                     window.alert("Houve um erro ao inserir atividades\nCaso o erro persista, informe um Administrador.")
                 }
