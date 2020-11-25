@@ -74,11 +74,15 @@
 }
 
 .informacaoLogin{
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: relative;
     top: 30%;
     left: 27%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
+label{
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .inputsLogin{

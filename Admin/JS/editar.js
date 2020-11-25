@@ -421,7 +421,7 @@ function editarProfessor(){
 
                                             if(resultParciado.status) {
                                                 window.alert("Cadastro realizado com sucesso!")
-                                                location.href= "../menuADM.php";
+                                                window.location.href= "../menuADM.php";
                                             } else if(!resultParciado.status) {
                                                 window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                             } 
@@ -442,7 +442,7 @@ function editarProfessor(){
                                 
                                             if(resultParciado.status) {
                                                 window.alert("Cadastro realizado com sucesso!")
-                                                location.href= "../menuADM.php";
+                                                window.location.href= "../menuADM.php";
                                             } else if(!resultParciado.status) {
                                                 window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                             } 
@@ -463,7 +463,7 @@ function editarProfessor(){
                                 
                                             if(resultParciado.status) {
                                                 window.alert("Cadastro realizado com sucesso!")
-                                                location.href= "../menuADM.php";
+                                                window.ion.href= "../menuADM.php";
                                             } else if(!resultParciado.status) {
                                                 window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                             } 
@@ -483,7 +483,7 @@ function editarProfessor(){
                                             resultParciado = JSON.parse(result);
                                             if(resultParciado.status) {
                                                 window.alert("Cadastro realizado com sucesso!")
-                                                location.href= "../menuADM.php";
+                                                window.location.href= "../menuADM.php";
                                             } else if(!resultParciado.status) {
                                                 window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                             } 

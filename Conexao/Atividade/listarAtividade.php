@@ -1,13 +1,13 @@
 <?php
 require "../conexao.php";
 
-$sql = ("SELECT atividade.idAtividade, atividade.nomeAtividade, atividade.DescricaoAtividade, atividade.dataLimite FROM turma, curso, instituicao WHERE idTurma = :idTurma AND turma.idCurso = curso.idCurso AND curso.idInst = instituicao.IdInst");
+$sql = ("SELECT atividade.idAtividade, atividade.nomeAtividade, atividade.descricaoAtividade, atividade.dataLimite, curso.nomeCurso, professor.nomeProf FROM professor, atividade, curso, turma WHERE turma.idTurma = :idTurma AND turma.idCurso = curso.idCurso AND professor.idTurma = turma.idTurma");
 $query = $conn->prepare($sql);
-
-$query->bindParam(':idTurma',$_POST['idTurma']);
+// var_dump($_GET['idTurma']);
+$query->bindParam(':idTurma',$_GET['idTurma']);
 
 $query->execute();
 
-$result = $query->fetchObject();
+$result = $query->fetchAll();
 
-echo json_encode($result);0
+echo json_encode($result);

@@ -195,3 +195,13 @@ height: 55px;
     border-radius: 10px;
     background-color: rgb(240, 240, 240);
 }
+
+.emDia p{
+    font-weight: bolder;
+    color: green;
+}
+
+.emAtraso p{
+    font-weight: bolder;
+    color: red;
+}

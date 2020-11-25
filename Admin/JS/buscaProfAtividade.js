@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var testeMatricula = $('#matricula').val();
 
-    if (testeMatricula != "") {
         jQuery.ajax({
             type: 'POST',
             url: '../Conexao/Professor/buscarProfessor.php',
@@ -13,18 +12,15 @@ $(document).ready(function(){
                 
                 if (resultado) {
                     $('#idProf').val(resultado.idProf);
-                    $('#turno').val(resultado.turno);
                     $('#nomeProf').val(resultado.nomeProf);
                     $('#nomeCurso').val(resultado.nomeCurso);
                     $('#turma').val(resultado.idTurma);
+                    listarAtividades(resultado.idTurma);
+                    console.log(resultado)
 
                 } else if(!resultado) {
                     window.alert("Professor não encontrado")
                 }
             }
         })
-    } else {
-        window.alert("Campo ID vazio.")
-        window.location.href="../index.php";
-    }  
 });

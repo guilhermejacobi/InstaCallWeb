@@ -1,43 +1,40 @@
-$(document).ready(function(){
-    listarInst();
-});
+function listarAtividades(idTurma){
 
-function listarInst(){
-    jQuery.ajax({
-        type: 'GET',
-        url: '../../Conexao/Atividade/listarAtividade.php',
-        datatype: 'json',
-        data: {},
-    
-        success: function (result, textstatus) {
-            
-            let dados = JSON.parse(result);
-            dados.forEach(d => criarLinhaInst(d));
+    if (idTurma != "") {
 
-            //Como forEach trabalha? funcoinamento etc...
-        }
-    })
+        jQuery.ajax({
+            type: 'GET',
+            url: '../Conexao/Atividade/listarAtividade.php',
+            datatype: 'json',
+            data: {idTurma: idTurma},
+
+            success: function (result, textstatus) {
+
+                let dados = JSON.parse(result);
+
+                dados.forEach(d => criarLinhaInst(d));
+
+                //Como forEach trabalha? funcoinamento etc...
+            }
+        })
+    } else {
+        window.alert("Erro de autenticação")
+        window.location.href="../index.php"
+    }
+}
+
+function retornaLinhaTabela(_id, _desc, _curso, _data){
+var html = '<div class="tabelaId">'+ _id +'</div> <div class="tabelaDesc">'+_desc+'</div> <div class="tabelaNome">'+_curso+'</div> <div class="tabelaData">Data Limite:<br>'+_data+'</div>';
+
+return html;
+
 }
 
 function criarLinhaInst(dados){
-  var table = document.getElementById("tableListarInst");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var cell7 = row.insertCell(6);
-  var cell8 = row.insertCell(7);
+var table = document.getElementById("tabelaDeAtividades");
+var row = table.insertRow(-1);
+var cell1 = row.insertCell(0);
 
-  cell1.innerHTML = dados.idInst, "teste";
-  cell2.innerHTML = dados.nomeInst;
-  cell3.innerHTML = dados.logradouroInst;
-  cell4.innerHTML = dados.numInst;
-  cell5.innerHTML = dados.bairroInst;
-  cell6.innerHTML = dados.cidadeInst;
-  cell7.innerHTML = dados.ufInst;
-  cell8.innerHTML = dados.cepInst;
+cell1.innerHTML = retornaLinhaTabela(dados.idAtividade, dados.descricaoAtividade, dados.nomeCurso, dados.dataLimite);
 
 }

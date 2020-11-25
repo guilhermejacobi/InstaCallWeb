@@ -1,3 +1,8 @@
+<?php
+
+$sql = "SELECT atividade.idAtividade, atividade.nomeProfessor, atividade.descricaoAtividade, atividade.dataLimite FROM atividade WHERE "
+
+?>
 <html>
   <head>
     <link rel="stylesheet" href="editarAtividade.css"></link>
@@ -7,7 +12,6 @@
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
     <script src="../Admin/JS/atividade.js"></script>
-    <script src="../Admin/JS/buscaProf.js"></script>
     <script src="../Admin/JS/buscaProf.js"></script>
     <script></script>
 

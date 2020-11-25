@@ -5,11 +5,6 @@ function cadastrarAtividade() {
     var testeNome = $('#nomeAtividade').val();
     var testeDesc = $('#descricao').val();
     var testeFinal = $('#dataFinal').val();
-    console.log(testeIdTurma);
-    console.log(testeIdProf);
-    console.log(testeNome);
-    console.log(testeDesc);
-    console.log(testeFinal);
 
     if (testeIdTurma != '' && testeIdProf != '' && testeNome != "" && testeDesc != "" && testeFinal != "") {
         jQuery.ajax({

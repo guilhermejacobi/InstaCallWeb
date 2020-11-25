@@ -15,7 +15,7 @@
             <div id="boxMenu">
                 <a href="atividades.php"><input style="margin-top: 0px;" type="button" value="Atividade" class="botoesMenu"></a></td>
                 <br>
-                <a href="frequencia.html"><input type="button" value="Frequência" class="botoesMenu"></a></td>
+                <a href="frequencia.php"><input type="button" value="Frequência" class="botoesMenu"></a></td>
                 <br>
                 <a href="../index.php"><input type="button" value="Sair" class="botoesMenu"></a></td>
             </div>

@@ -111,7 +111,7 @@ function cadastrarCurso(){
                             //Se true, cadastro realizado com sucesso, caso false, ocorreu erro no banco
                             if(resultParciado.status) {
                                 window.alert("Cadastro realizado com sucesso!")
-                                location.href= "../menuADM.php";
+                                window.location.href= "../menuADM.php";
                             } else  if(!resultParciado.status){
                                 window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
                             } 
@@ -171,7 +171,7 @@ function cadastrarTurma(){
     
                 if(resultParciado) {
                     window.alert("Cadastro realizado com sucesso!")
-                    location.href= "../menuADM.php";
+                    window.location.href= "../menuADM.php";
                 } else {
                     window.alert('Falha ao conectar ao banco!/nContacte um Administrador');
                 } 
@@ -280,7 +280,7 @@ function cadastrarProfessor(){
                                                         
                                                                     if(resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso!")
-                                                                        location.href= "../menuADM.php";
+                                                                        window.location.href= "../menuADM.php";
                                                                     } else if(!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     } 
@@ -301,7 +301,7 @@ function cadastrarProfessor(){
                                                         
                                                                     if(resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso!")
-                                                                        location.href= "../menuADM.php";
+                                                                        window.location.href= "../menuADM.php";
                                                                     } else if(!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     } 
@@ -322,7 +322,7 @@ function cadastrarProfessor(){
                                                         
                                                                     if(resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso!")
-                                                                        location.href= "../menuADM.php";
+                                                                        window.location.href= "../menuADM.php";
                                                                     } else if(!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     } 
@@ -343,7 +343,7 @@ function cadastrarProfessor(){
                                                         
                                                                     if(resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso!")
-                                                                        location.href= "../menuADM.php";
+                                                                        window.location.href= "../menuADM.php";
                                                                     } else if(!resultParciado.status) {
                                                                         window.alert('Falha ao registrar no banco!/nSe o erro persistir, informe um administrador.');
                                                                     } 
@@ -426,7 +426,6 @@ function cadastrarAluno(){
 
                 resultParciado = JSON.parse(result);
 
-    
                 if(resultParciado.total == 0) {
 
                     //compara CPF com o dos professores
@@ -450,9 +449,7 @@ function cadastrarAluno(){
                             
                                     success: function (result, textstatus) {
 
-                                        console.log(result + "quant email");
                                         resultParciado = JSON.parse(result);
-                                        console.log(resultParciado.total);
                             
                                         if(resultParciado.total == 0) {
 
@@ -464,9 +461,7 @@ function cadastrarAluno(){
                                         
                                                 success: function (result, textstatus) {
                                                     
-                                                    console.log(result + "quant email");
                                                     resultParciado = JSON.parse(result);
-                                                    console.log(resultParciado.total);
                                         
                                                     if(resultParciado.total == 0) {
                                            
@@ -483,9 +478,7 @@ function cadastrarAluno(){
                                                         
                                                                 success: function (result, textstatus) {
                                                                     
-                                                                    console.log(result + "Resultado final")
                                                                     let resultParciado = JSON.parse(result);
-                                                                    console.log(resultParciado.status);
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
@@ -506,9 +499,7 @@ function cadastrarAluno(){
                                                         
                                                                 success: function (result, textstatus) {
                                                                     
-                                                                    console.log(result + "Resultado final")
                                                                     let resultParciado = JSON.parse(result);
-                                                                    console.log(resultParciado.status);
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
@@ -530,9 +521,7 @@ function cadastrarAluno(){
                                                         
                                                                 success: function (result, textstatus) {
                                                                     
-                                                                    console.log(result + "Resultado final")
                                                                     let resultParciado = JSON.parse(result);
-                                                                    console.log(resultParciado.status);
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")
@@ -554,9 +543,7 @@ function cadastrarAluno(){
                                                         
                                                                 success: function (result, textstatus) {
                                                                     
-                                                                    console.log(result + "Resultado final")
                                                                     let resultParciado = JSON.parse(result);
-                                                                    console.log(resultParciado.status);
                         
                                                                     if (resultParciado.status) {
                                                                         window.alert("Cadastro realizado com sucesso")

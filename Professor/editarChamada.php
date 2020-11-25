@@ -21,7 +21,7 @@
     <body id="fundoCinza">
         <div class="centralizarTudo">
 
-            <center><font class="fonteAtividade">Frequência:</font>
+            <center><font class="fonteAtividade">Chamadas:</font>
                 <table>
                     <tr>
                         <td id="direita">Matrícula:</td>
@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><a href="menu.php"><input type="button" class="botao" value="Voltar"></a></td>
+                        <td><a href="frequencia.php"><input type="button" class="botao" value="Voltar"></a></td>
                     </tr>
                 </table>
             </center>

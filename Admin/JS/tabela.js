@@ -431,7 +431,25 @@ function pesquisarAluno(){
 
     success: function (result, textstatus) {
         
-        console.log(result);
+        let dados = JSON.parse(result);
+        dados.forEach(d => criarLinhasAluno(d));
+
+        //Como forEach trabalha? funcoinamento etc...
+    }
+  })
+}
+
+function pesquisarAlunoNota(){
+  deletarTabelaAluno();
+  console.log("%"+$('#pesquisarAluno').val()+"%");
+  jQuery.ajax({
+    type: 'POST',
+    url: '../Conexao/Pesquisa/filtroAlunoCPF.php',
+    datatype: 'json',
+    data: {cpf: "%"+$('#pesquisarAlunoChamada').val()+"%"},
+
+    success: function (result, textstatus) {
+        
         let dados = JSON.parse(result);
         dados.forEach(d => criarLinhasAluno(d));
 
@@ -451,16 +469,14 @@ Modal Aluno Chamada
 function listarAlunoChamada(){
   jQuery.ajax({
     type: 'GET',
-    url: '../Conexao/Pesquisa/ADWADWDWAtabelaAluno.php',
+    url: '../Conexao/Pesquisa/tabelaAluno.php',
     datatype: 'json',
     data: {},
 
     success: function (result, textstatus) {
-        
-        console.log(result);
+
         let dados = JSON.parse(result);
         dados.forEach(d => criarLinhasAlunoChamada(d));
-        console.log(dados);
         //Como forEach trabalha? funcoinamento etc...
     }
   })
@@ -503,9 +519,9 @@ function pesquisarAlunoChamada(){
   console.log("%"+$('#pesquisarAluno').val()+"%");
   jQuery.ajax({
     type: 'POST',
-    url: '../Conexao/Pesquisa/filtroAlunoCPF.php',
+    url: '../Conexao/Pesquisa/filtroAlunoCpfCurso.php',
     datatype: 'json',
-    data: {cpf: "%"+$('#pesquisarAluno').val()+"%"},
+    data: {cpf: "%"+$('#pesquisarAluno').val()+"%", idTurma: $('#idTurma').val()},
 
     success: function (result, textstatus) {
         

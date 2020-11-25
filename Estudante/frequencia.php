@@ -14,14 +14,15 @@
             <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>
         </div>
         <div class="centralizarTudo">
-            <table id="boxMenu">
-                <tr>
-                   <td><input type="button" value="Chamada" class="botoesMenu botaoChamada" onclick=""></td>
-                </tr>
-                <tr>
-                    <td><input type="button" class="botoesMenu" value="Frequência"></td>
-                </tr>
-            </table>
+            <div id="boxMenu">
+            
+                <input type="button" value="Chamada" class="botoesMenu botaoChamada" onclick="">
+                <br>
+                <input type="button" class="botoesMenu" value="Frequência">
+                <br>
+                <a href="menu.php"><input type="button" class="botoesMenu" value="Sair"></a>
+               
+            </div>
         </div>
         <div id="chamadaModal" class="chamadaModal">
             <div class="modalBox" id="fundoCinza">

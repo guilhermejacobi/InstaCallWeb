@@ -4,7 +4,7 @@ $(document).ready(function(){
     if (testeMatricula != "") {
         jQuery.ajax({
             type: 'POST',
-            url: '../Conexao/Professor/buscarProfessor.php',
+            url: '../Conexao/Aluno/buscarAluno.php',
             datatype: 'json',
             data: {},
             success: function (result, textstatus) {
@@ -12,11 +12,11 @@ $(document).ready(function(){
                 let resultado = JSON.parse(result);
                 
                 if (resultado) {
-                    $('#idProf').val(resultado.idProf);
-                    $('#turno').val(resultado.turno);
-                    $('#nomeProf').val(resultado.nomeProf);
+                    $('#idAluno').val(resultado.idAluno);
+                    $('#nomeAluno').val(resultado.nomeAluno);
                     $('#nomeCurso').val(resultado.nomeCurso);
                     $('#turma').val(resultado.idTurma);
+                    listarAtividades(resultado.idTurma);
 
                 } else if(!resultado) {
                     window.alert("Professor não encontrado")
@@ -25,6 +25,5 @@ $(document).ready(function(){
         })
     } else {
         window.alert("Campo ID vazio.")
-        window.location.href="../index.php";
     }  
 });

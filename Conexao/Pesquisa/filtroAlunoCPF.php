@@ -5,6 +5,7 @@ require_once "../conexao.php";
     $query = $conn->prepare($sql);
 
     $query->bindParam(':cpf',$_POST['cpf']);
+    
 
     $query->execute();
 

@@ -1,8 +1,12 @@
 <html>
   <head>
-    <link href="frequencia.css" rel="stylesheet">
+    <link href="atividades.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <meta charset="utf-8">
+    <script src="../Admin/JS/mask.js"></script>
+    <script src="../Admin/JS/atividade.js"></script>
+    <script src="../Admin/JS/buscarAtividades.js"></script>
+    <script src="../Admin/JS/buscaAlunoAtividade.js"></script>
 
         <title>Atividades-Professor-UniSociesc</title>
         
@@ -16,20 +20,29 @@
         <div>
             <img class="logoSociesc" src="../Imagens/Logo.png" alt="">
             <br>
-            <font class="fonteAtividade">Frequência:</font>
+            <font class="fonteAtividade">Atividades:</font>
             <br>
             <br>
-            <a href="adicionarAtividade.php"><input type="button" class="botao botaoCriarAtividade" value="Iniciar Chamada"></a>
-            <br>
-            <br>
-            <input type="button" class="botao" value="Encerrar Chamada">
-            <br>
-            <br>
-            <a href="editarChamada.html"><input type="button" class="botao" value="Editar Presença"></a>
-            <br>
-            <br>
-            <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
+            <a href="menu.php"><input type="button" class="botao botaoCriarAtividade" value="Voltar"></a>
         </div>
+        <table class="tabelaAluno">
+                <tr>
+                    <td id="direita">ID:</td>
+                    <td><input type="text" disabled id="idAluno" class="idProf"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Aluno: </td>
+                    <td><input type="text" disabled id="nomeAluno" class="nomeProf"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Turma: </td>
+                    <td><input type="text" disabled id="turma" class="turma"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Curso: </td>
+                    <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
+                </tr>
+            </table>
         <div class="borda">
             <table class="tabelaDentro" style="border: 1px solid black">
                 <tr>

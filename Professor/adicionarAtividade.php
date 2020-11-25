@@ -8,7 +8,6 @@
     <script src="../Admin/JS/mask.js"></script>
     <script src="../Admin/JS/atividade.js"></script>
     <script src="../Admin/JS/buscaProf.js"></script>
-    <script src="../Admin/JS/buscaProf.js"></script>
     <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>

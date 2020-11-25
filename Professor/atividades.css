@@ -101,7 +101,7 @@ height: 55px;
     border-radius: 10px;
 }
 
-.tabelaDentro:hover{
+.tabelaDentro tr:hover{
     color: rgb(0, 0, 0);
     -moz-transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
@@ -194,4 +194,24 @@ height: 55px;
     font-size: 20px;
     border-radius: 10px;
     background-color: rgb(240, 240, 240);
+}
+
+.tabelaProf{
+    position: relative;
+    top: 60px;
+    left: 30px;
+}
+
+#direita{
+    text-align: right;
+}
+
+.emDia p{
+    font-weight: bolder;
+    color: green;
+}
+
+.emAtraso p{
+    font-weight: bolder;
+    color: red;
 }

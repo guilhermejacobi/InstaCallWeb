@@ -6,6 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
+    <script src="../Admin/JS/tabela.js"></script>
+    <script src="../Admin/JS/atividade.js"></script>
+    <script src="../Admin/JS/buscaProfAtividade.js"></script>
     <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>
@@ -22,6 +25,9 @@
                 <center><font class="fonteAddAtividade">Atribuir Nota</font>
                 </div></center>
                <div class="margem2">
+                   
+                    <label style="display: none" id="idTurma">Turma: </label>
+            
                     <table >
                         <tr>
                             <td id="direita">Matrícula:</td>
@@ -80,7 +86,7 @@
         <div id="listarAlunoModal" class="modalAluno">
             <div class="listarAlunoModalBox">
                 <div class="fundoBrancoAluno">
-                    <span class="pesquisaLabel">Pesquisar CPF: <input type="text" onkeyup="pesquisarAluno()" id="pesquisarAlunoChamada" class="cpf pesquisarAluno" name="pesquisarAluno"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroAluno()">
+                    <span class="pesquisaLabel">Pesquisar CPF: <input type="text" onkeyup="pesquisarAlunoNota()" on ="pesquisarAluno()" id="pesquisarAlunoNota()" class="cpf pesquisarAluno" name="pesquisarAluno"></span><input type="button" value="Limpar Filtro" style="width: 100px;" class="botao" onclick="limparFiltroAluno()">
                     <br>
                     <br>
                     <div class="overflow">

@@ -15,11 +15,9 @@
                 
                     <a href="atividades.php"><input type="button" value="Atividades" class="botoesMenu"></a>
                     <br>
-                    <a href="notas.html"><input type="button" value="Notas" class="botoesMenu"></a>
+                    <a href="notas.php"><input type="button" value="Notas" class="botoesMenu"></a>
                     <br>
-                    <a href="materialComplementar.html"></a><input type="button" value="Material Complementar" class="botoesMenu">
-                    <br>              
-                    <a href="frequencia.css"><input type="button" value="Fraquência" class="botoesMenu"></a>
+                    <a href="frequencia.php"><input type="button" value="Fraquência" class="botoesMenu"></a>
                     <br>
                     <a href="../index.php"><input type="button" value="Sair" class="botoesMenu"></a>
             </div>

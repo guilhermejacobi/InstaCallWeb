@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link href="atividades.css" rel="stylesheet">
+    <link href="frequencia.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <meta charset="utf-8">
 
@@ -16,11 +16,19 @@
         <div>
             <img class="logoSociesc" src="../Imagens/Logo.png" alt="">
             <br>
-            <font class="fonteAtividade">Atividades:</font>
+            <font class="fonteAtividade">Frequência:</font>
             <br>
             <br>
-            <a href="menu.php"><input type="button" class="botao botaoCriarAtividade" value="Voltar"></a>
-
+            <input type="button" class="botao botaoCriarAtividade" value="Iniciar Chamada">
+            <br>
+            <br>
+            <input type="button" class="botao" value="Encerrar Chamada">
+            <br>
+            <br>
+            <a href="editarChamada.php"><input type="button" class="botao" value="Editar Presença"></a>
+            <br>
+            <br>
+            <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
         </div>
         <div class="borda">
             <table class="tabelaDentro" style="border: 1px solid black">
