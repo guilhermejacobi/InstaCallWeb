@@ -28,24 +28,27 @@
             <a href="atividadesEncerradas.php"><input type="button" class="botao botaoCriarAtividade" value="Atividades Encerradas"></a>
             <br>
             <br>
+            <a href="notas.php"><input type="button" class="botao botaoCriarAtividade" value="Notas"></a>
+            <br>
+            <br>
             <a href="menu.php"><input type="button" class="botao botaoCriarAtividade" value="Voltar"></a>
         </div>
-        <table class="tabelaAluno">
+        <table style="display: none;" class="tabelaAluno">
                 <tr>
-                    <td id="direita"style="display: none;">ID:</td>
-                    <td><input type="text" disabled style="display: none;" id="idAluno" class="idProf"></td>
+                    <td id="direita">ID:</td>
+                    <td><input type="text" disabled  id="idAluno" class="idProf"></td>
                 </tr>
                 <tr>
-                    <td id="direita" style="display: none;">Aluno: </td>
-                    <td><input type="text" disabled style="display: none;" id="nomeAluno" class="nomeProf"></td>
+                    <td id="direita" >Aluno: </td>
+                    <td><input type="text" disabled  id="nomeAluno" class="nomeProf"></td>
                 </tr>
                 <tr>
-                    <td id="direita" style="display: none;">Turma: </td>
-                    <td><input type="text" disabled style="display: none;" id="turma" class="turma"></td>
+                    <td id="direita" >Turma: </td>
+                    <td><input type="text" disabled id="turma" class="turma"></td>
                 </tr>
                 <tr>
-                    <td id="direita" style="display: none;">Curso: </td>
-                    <td><input type="text" disabled style="display: none;" id="nomeCurso" class="nomeCurso"></td>
+                    <td id="direita" >Curso: </td>
+                    <td><input type="text" disabled  id="nomeCurso" class="nomeCurso"></td>
                 </tr>
             </table>
         <div class="borda">

@@ -3,7 +3,7 @@
 require_once "../conexao.php";
 session_start();
 
-$sql = ("SELECT professor.idProf, professor.nomeProf, professor.cpfProf, professor.nascProf, professor.telProf, professor.celProf, professor.cepProf, professor.ufProf, professor.cidadeProf, professor.bairroProf, professor.logradouroProf, professor.numProf, professor.formacaoProf, professor.nivelProf, professor.instituicaoProf, professor.idTurma, curso.nomeCurso, turma.turno, professor.loginProf, professor.senhaProf FROM professor, curso, turma, aluno WHERE loginAluno = :email AND senhaAluno = :senha AND turma.idturma = professor.idTurma AND curso.IdCurso = turma.idCurso");
+$sql = ("SELECT a.idAluno, a.nomeAluno, a.idTurma, c.nomeCurso FROM aluno a, curso c, turma WHERE a.loginAluno = :email AND senhaAluno = :senha AND turma.idturma = a.idTurma AND c.IdCurso = turma.idCurso;");
 
 $query = $conn->prepare($sql);
 

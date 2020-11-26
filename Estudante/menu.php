@@ -12,14 +12,11 @@
         </div>
         <div class="centralizarTudo">
             <div id="boxMenu">
-                
-                    <a href="atividades.php"><input type="button" value="Atividades" class="botoesMenu"></a>
-                    <br>
-                    <a href="notas.php"><input type="button" value="Notas" class="botoesMenu"></a>
-                    <br>
-                    <a href="frequencia.php"><input type="button" value="Fraquência" class="botoesMenu"></a>
-                    <br>
-                    <a href="../index.php"><input type="button" value="Sair" class="botoesMenu"></a>
+                <a href="atividades.php"><input type="button" style="margin-top: 0px;" value="Atividades" class="botoesMenu"></a>
+                <br>
+                <a href="frequencia.php"><input type="button" value="Fraquência" class="botoesMenu"></a>
+                <br>
+                <a href="../index.php"><input type="button" value="Sair" class="botoesMenu"></a>
             </div>
         </div>
     </body>

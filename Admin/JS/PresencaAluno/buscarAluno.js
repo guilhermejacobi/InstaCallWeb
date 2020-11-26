@@ -7,18 +7,17 @@ $(document).ready(function(){
         data: {},
         success: function (result, textstatus) {
 
+            console.log(result);
             let resultado = JSON.parse(result);
-            console.log(resultado);
+            
             if (resultado) {
                 $('#idAluno').val(resultado.idAluno);
                 $('#nomeAluno').val(resultado.nomeAluno);
                 $('#nomeCurso').val(resultado.nomeCurso);
                 $('#turma').val(resultado.idTurma);
-                listarAtividades(resultado.idTurma);
-
             } else if(!resultado) {
                 window.alert("Aluno não encontrado");
-                // window.location.href="../index.php"
+                window.location.href="../index.php"
             }
         }
     })

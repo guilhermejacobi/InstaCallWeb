@@ -3,16 +3,11 @@
     border: 1px solid black;
     margin: 20px auto;
     text-align: right;
+    width: 300px;
     padding: 30px;
     border-radius: 45px;
 }
-.centralizarTudo{
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
+
 .instaCall{
     margin-left: 10px;
     color: rgb(255, 255, 255);
@@ -47,9 +42,10 @@ height: 55px;
 }
 
 .botoesMenu{
+    margin-top: 15px;
     width: 300px;
-    height: 75px;
-    font-size: 20px;
+    height: 50px;
+    font-size: 25px;
     border-radius: 12px;
     border: 1px solid black;
     -webkit-transition-duration: 0.4s;

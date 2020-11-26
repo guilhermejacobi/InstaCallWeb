@@ -1,5 +1,5 @@
 <?php
-require "../conexao.php";
+require_once "../conexao.php";
 
 $sql = ("SELECT * FROM atividade WHERE idTurma = :idTurma AND idAtividade = :idAtividade");
 $query = $conn->prepare($sql);
