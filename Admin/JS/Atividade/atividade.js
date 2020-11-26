@@ -19,14 +19,14 @@ function cadastrarAtividade() {
 
                 if (resultParciado.status) {
                     window.alert("Atividade postada com sucesso!");
-                    window.location.href= "menu.php";
+                    window.location.href= "atividades.php";
                 } else if (!resultParciado.status){
                     window.alert("Houve um erro ao inserir atividades\nCaso o erro persista, informe um Administrador.")
                 }
             }
         })
     } else if (testeIdProf == '') {
-        window.alert("Errou de autenticação");
+        window.alert("Erro de autenticação");
         window.location.href="../index.php"
     } else if (testeNome == "" || testeDesc == "" || testeFinal == ""){
         window.alert("Prencha todos os campos")

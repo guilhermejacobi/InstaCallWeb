@@ -36,6 +36,12 @@ $(document).ready( function (e) {
   $('.fecharAluno').click(function(){
     $('#listarAlunoModal').fadeOut(500)
   })
+  $('#abrirAlunoNota').click(function(){
+    $('#listarAlunoModal').fadeIn(500);
+  })
+  $('.fecharAlunoNota').click(function(){
+    $('#listarAlunoModal').fadeOut(500)
+  })
   if ($('#pesquisarInst').val() == "") {
     listarInst();
   }
@@ -53,6 +59,9 @@ $(document).ready( function (e) {
   }
   if ($('#pesquisarAlunoChamada').val() == "") {
     listarAlunoChamada();
+  }
+  if ($('#pesquisarAlunoNota').val() == "") {
+    listarAlunoNota();
   }
 
 })
@@ -439,25 +448,6 @@ function pesquisarAluno(){
   })
 }
 
-function pesquisarAlunoNota(){
-  deletarTabelaAluno();
-  console.log("%"+$('#pesquisarAluno').val()+"%");
-  jQuery.ajax({
-    type: 'POST',
-    url: '../Conexao/Pesquisa/filtroAlunoCPF.php',
-    datatype: 'json',
-    data: {cpf: "%"+$('#pesquisarAlunoChamada').val()+"%"},
-
-    success: function (result, textstatus) {
-        
-        let dados = JSON.parse(result);
-        dados.forEach(d => criarLinhasAluno(d));
-
-        //Como forEach trabalha? funcoinamento etc...
-    }
-  })
-}
-
 function limparFiltroAluno(){
   deletarTabelaAluno();
   listarAluno();
@@ -537,4 +527,85 @@ function pesquisarAlunoChamada(){
 function limparFiltroAlunoChamada(){
   deletarTabelaAlunoChamada();
   listarAlunoChamada();
+}
+
+/*
+listar Aluno Nota
+*/
+
+/*
+modalAluno
+*/
+
+function listarAlunoNota(){
+  jQuery.ajax({
+    type: 'GET',
+    url: '../Conexao/Pesquisa/tabelaAluno.php',
+    datatype: 'json',
+    data: {},
+
+    success: function (result, textstatus) {
+        
+        let dados = JSON.parse(result);
+        dados.forEach(d => criarLinhasAlunoNota(d));
+
+        //Como forEach trabalha? funcoinamento etc...
+    }
+  })
+}
+
+function criarLinhasAlunoNota(dados){
+  var table = document.getElementById("tableListarAluno");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
+  var cell9 = row.insertCell(8);
+
+  cell1.innerHTML = dados.idAluno;
+  cell2.innerHTML = dados.nomeAluno;
+  cell3.innerHTML = dados.cpfAluno;
+  cell4.innerHTML = dados.nascAluno;
+  cell5.innerHTML = dados.logradouroAluno;
+  cell6.innerHTML = dados.numAluno;
+  cell7.innerHTML = dados.bairroAluno;
+  cell8.innerHTML = dados.cidadeAluno;
+  cell9.innerHTML = dados.ufAluno;
+
+}
+
+function deletarTabelaAlunoNota(){
+  var table = document.getElementById("tableListarAluno");
+  while (table.rows.length > 1){
+  	document.getElementById("tableListarAluno").deleteRow(-1);
+  }
+}
+
+function pesquisarAlunoNota(){
+  deletarTabelaAlunoNota();
+  console.log("%"+$('#pesquisarAluno').val()+"%");
+  jQuery.ajax({
+    type: 'POST',
+    url: '../Conexao/Pesquisa/filtroAlunoCPF.php',
+    datatype: 'json',
+    data: {cpf: "%"+$('#pesquisarAluno').val()+"%"},
+
+    success: function (result, textstatus) {
+        
+        let dados = JSON.parse(result);
+        dados.forEach(d => criarLinhasAluno(d));
+
+        //Como forEach trabalha? funcoinamento etc...
+    }
+  })
+}
+
+function limparFiltroAlunoNota(){
+  deletarTabelaAlunoNota();
+  listarAlunoNota();
 }

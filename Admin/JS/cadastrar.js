@@ -168,7 +168,7 @@ function cadastrarTurma(){
             success: function (result, textstatus) {
 
                 resultParciado = JSON.parse(result);
-    
+                
                 if(resultParciado) {
                     window.alert("Cadastro realizado com sucesso!")
                     window.location.href= "../menuADM.php";

@@ -6,8 +6,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
-    <script src="../Admin/JS/atividade.js"></script>
-    <script src="../Admin/JS/buscaProf.js"></script>
+    <script src="../Admin/JS/Atividade/atividade.js"></script>
+    <script src="../Admin/JS/Atividade/buscarProf.js"></script>
     <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>
@@ -63,6 +63,10 @@
                 <tr>
                     <td id="direita">Data Final: </td>
                     <td><input type="text" id="dataFinal" name="dataFinal" class="dataFinal"></td>
+                </tr>
+                <tr>
+                    <td id="direita">Aberta: 0/N 1/S </td>
+                    <td><input type="text" id="teste" name="teste" class="dataFinal"  disabled value="1"></td>
                 </tr>
             </table>
             <br>

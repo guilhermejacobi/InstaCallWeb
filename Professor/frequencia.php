@@ -19,7 +19,7 @@
             <font class="fonteAtividade">Frequência:</font>
             <br>
             <br>
-            <input type="button" class="botao botaoCriarAtividade" value="Iniciar Chamada">
+            <input type="button" class="botao botaoCriarAtividade" onclick="iniciarChamada()" value="Iniciar Chamada">
             <br>
             <br>
             <input type="button" class="botao" value="Encerrar Chamada">
@@ -32,7 +32,7 @@
             <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
         </div>
         <div class="borda">
-            <table class="tabelaDentro" style="border: 1px solid black">
+            <!-- <table class="tabelaDentro" style="border: 1px solid black">
                 <tr>
                     <td>
                         <table class='bordaFora1'>
@@ -69,7 +69,7 @@
                         </table>
                     </td>
                 </tr>
-            </table>
+            </table> -->
         </div>
     </body>
 </html>

@@ -27,10 +27,6 @@ function retornaLinhaTabela(_id, _desc,_nomeProf, _curso, _data){
     
     var emAtraso = diaAtual - dataLimite > 0;
 
-    // console.log(dataLimite.getDate());
-    // console.log(dataLimite.getMonth());
-    // console.log(dataLimite.getFullYear());
-
     var html = `<div class="tabelaId">${_id}</div><div class="tabelaId">${_nomeProf}</div><div class="tabelaDesc">${_desc}</div> <div class="tabelaNome">${_curso}</div> <div class="tabelaData ${emAtraso?"emAtraso":"emDia"}"><p>Data Limite:<br>${_data}</p></div>`;
 
     return html;

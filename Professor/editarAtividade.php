@@ -6,8 +6,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
-    <script src="../Admin/JS/atividade.js"></script>
-    <script src="../Admin/JS/buscaProf.js"></script>
+    <script src="../Admin/JS/Atividade/buscaProf.js"></script>
+    <script src="../Admin/JS/editarAtividade.js"></script>
     <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>
@@ -22,11 +22,7 @@
         </script>
         <center><div class="margem1">
 
-            <font class="fonteAddAtividade">Adicionar Atividades:</font>
-
             <font class="fonteAddAtividade">Editar Atividades:</font>
-
-            <font class="fonteAddAtividade">Concluir Atividade</font>
 
         </div></center>
         <center><div class="margem2">
@@ -56,7 +52,8 @@
                 </tr>
                 <tr>
                     <td id="direita">ID: </td>
-                    <td><input type="text" id="idAtividade" class="idAtividade" disabled></td>
+                    <td><input type="text" id="idAtividade" class="idAtividade"><input type="button" onclick="buscarIdAtividade()" class="botao2" value="Buscar"></td>
+
                 </tr>
                 <tr>
                     <td id="direita">Nome: </td>
@@ -70,9 +67,13 @@
                     <td id="direita">Data Final: </td>
                     <td><input type="text" id="dataFinal" name="dataFinal" class="dataFinal"></td>
                 </tr>
+                <tr>
+                    <td id="direita">Aberta: 0/N 1/S </td>
+                    <td><input type="text" id="teste" name="teste" class="dataFinal"></td>
+                </tr>
             </table>
             <br>
-            <input type="button" class="botao botaoCriarAtividade" onclick="cadastrarAtividade()" value="Adicionar Atividade"></a>
+            <input type="button" class="botao botaoCriarAtividade" onclick="editarAtividade()" value="Editar Atividade"></a>
             <a href="atividades.php"><input type="button" class="botao2" value="Voltar"></a>
         </div></center>
     </body>

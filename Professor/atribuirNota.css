@@ -75,7 +75,7 @@ height: 55px;
 }
 
 .botao{
-    width: 160px;
+    width: 177px;
     border-radius: 12px;
     border: 1px solid lightgrey;
     -webkit-transition-duration: 0.4s;
@@ -88,7 +88,7 @@ height: 55px;
     width: 400px;
 }
 
-.botao:hover{
+.botao:hover, .botao2:hover{
     color: white;
     -moz-transition: all 1.5s ease;
     -webkit-transition: all 1.5s ease;
@@ -112,21 +112,11 @@ height: 55px;
     position: relative;
 }
 
-.botao2:hover{
-    color: white;
-    -moz-transition: all 1.5s ease;
-    -webkit-transition: all 1.5s ease;
-        -o-transition: all 1.5s ease;
-            transition: all 1.5s ease;
-    background:rgba(30, 159, 219, 0.5);
-        background-image: -moz-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-            background-image: -webkit-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-                background-image: -o-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-                    background-image: -ms-linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
-                        background-image: linear-gradient(135deg, rgb(30, 160, 219, 0.5), rgb(142, 56, 253, 0.5));
+.dataFinal{
+    width: 100px;
 }
 
-.dataFinal{
+.nota {
     width: 100px;
 }
 
@@ -136,11 +126,11 @@ height: 55px;
 }
 
 .botao3{
-    width: 164px;
+    width: 177px;
 }
 
 .botao4{
-    width: 164px;
+    width: 177px;
 }
 /*
 Modal Aluno
@@ -181,7 +171,7 @@ Modal Aluno
                                 background-image: linear-gradient(135deg,  rgb(30, 160, 219), rgb(142, 56, 253));
 }
 
-.fecharAluno{
+.fecharAlunoNota{
     background-color: rgba(255, 255, 255, 0.623);
     padding: 5px 10px;
     border: 2px solid rgba(41, 41, 41);

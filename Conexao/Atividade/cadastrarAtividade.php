@@ -2,7 +2,7 @@
 require_once "../conexao.php";
 
 try {
-  $sql = ("INSERT INTO atividade (idTurma, idProf, nomeAtividade, descricaoAtividade, dataLimite) VALUES (:turma, :idProf, :nome, :descAtiv, :dataFinal)");
+  $sql = ("INSERT INTO atividade (idTurma, idProf, nomeAtividade, descricaoAtividade, dataLimite, teste) VALUES (:turma, :idProf, :nome, :descAtiv, :dataFinal, 1)");
 
   $query = $conn->prepare($sql);
 

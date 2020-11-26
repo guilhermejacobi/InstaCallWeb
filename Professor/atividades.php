@@ -6,10 +6,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
-    <script src="../Admin/JS/atividade.js"></script>
-    <script src="../Admin/JS/buscaProf.js"></script>
-    <script src="../Admin/JS/buscarAtividades.js"></script>
-    <script src="../Admin/JS/buscaProfAtividade.js"></script>
+    <script src="../Admin/JS/Atividade/atividade.js"></script>
+    <script src="../Admin/JS/Atividade/buscaProf.js"></script>
+    <script src="../Admin/JS/Atividade/buscarAtividades.js"></script>
+    <script src="../Admin/JS/Atividade/buscaProfAtividade.js"></script>
 
 
     <title>Atividades-Professor-UniSociesc</title>
@@ -33,12 +33,18 @@
             <a href="atribuirNota.php"><input type="button" class="botao botaoCriarAtividade" value="Atribuir Nota"></a>
             <br>
             <br>
+            <a href="atividadesEncerradas.php"><input type="button" class="botao botaoCriarAtividade" value="Atividade Encerrada"></a>
+            <br>
+            <br>
+            <a href="editarAtividade.php"><input type="button" class="botao botaoCriarAtividade" value="Editar Atividades"></a>
+            <br>
+            <br>
             <a href="menu.php"><input type="button" class="botao botaoCriarAtividade" value="Voltar"></a>
             <br>
-            <table class="tabelaProf">
+            <table style="display: none;" class="tabelaProf">
                 <tr>
                     <td id="direita">ID:</td>
-                    <td><input type="text" disabled id="idProf" class="idProf"></td>
+                    <td><input type="text" disabled   id="idProf" class="idProf"></td>
                 </tr>
                 <tr>
                     <td id="direita">Professor: </td>

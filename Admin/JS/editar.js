@@ -568,6 +568,38 @@ function buscarIdAluno(){
     }  
 
 }
+//buscar aluno para professor
+function buscarIdAlunoProf(){
+
+    var testeMatricula = $('#matricula').val();
+
+    if (testeMatricula != "") {
+        jQuery.ajax({
+            type: 'POST',
+            url: '../Conexao/Aluno/buscarIdAluno.php',
+            datatype: 'json',
+            data: {matricula: $('#matricula').val()},
+            success: function (result, textstatus) {
+
+                let resultado = JSON.parse(result);
+                console.log(resultado)
+
+                if (resultado) {
+                    $('#turno').val(resultado.turno);
+                    $('#nome').val(resultado.nomeAluno);
+                    $('#curso').val(resultado.nomeCurso);
+                    $('#turma').val(resultado.idTurma);
+
+                } else if(!resultado) {
+                    window.alert("Aluno não encontrado");
+                }
+            }
+        })
+    } else {
+        window.alert("Campo ID vazio.")
+    }  
+
+}
 
 function editarAluno(){
    
