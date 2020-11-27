@@ -1,26 +1,72 @@
 function iniciarChamda(){
-    var data = new Date();
-    console.log(data);
-    jQuery.ajax({
-        type: 'POST',
-        url: '../Conexao/Chamada/insertChamada.php',
-        datatype: 'json',
-        data: {idTurma: $("#turmaProf").val(), data: data=new Date()},
-        success: function (result, textstatus) {
+    if ($("#data").val() != "") {
 
-            let resultado = JSON.parse(result);
-            console.log(resultado);
-            if (resultado) {
-                $('#idProf').val(resultado.idProf);
-                $('#nomeProf').val(resultado.nomeProf);
-                $('#nomeCurso').val(resultado.nomeCurso);
-                $('#turmaProf').val(resultado.idTurma);
-                $('#turno').val(resultado.turno);
-
-            } else if(!resultado) {
-                window.alert("Professor não encontrado")
-                window.location.href="../index.php";
+        jQuery.ajax({
+            type: 'POST',
+            url: '../Conexao/Chamada/countChamada.php',
+            datatype: 'json',
+            data: {idTurma: $("#turmaProf").val(), data: $("#data").val()},
+            success: function (result, textstatus) {
+                console.log(result);
+                let resultado = JSON.parse(result);
+                   
+                if (resultado.total == 0) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../Conexao/Chamada/insertChamada.php',
+                        datatype: 'json',
+                        data: {idTurma: $("#turmaProf").val(), data: $("#data").val()},
+                        success: function (result, textstatus) {
+                            if (result) {
+                                window.alert("chamada aberta.")
+                            } else {
+                                window.alert("Erro inexperado\nCaso o erro persista, chame um Administrador.")
+                            }
+                        }
+                    })
+                } else {
+                    window.alert("Chamada já existente")
+                }
             }
-        }
-    })
+        })
+    } else {
+        window.alert("Favor inserir data para inciar chamada.")
+    }
+}
+
+function encerrarChamada(){
+    if ($("#data").val() != "") {
+
+        jQuery.ajax({
+            type: 'POST',
+            url: '../Conexao/Chamada/countFechada.php',
+            datatype: 'json',
+            data: {idTurma: $("#turmaProf").val(), data: $("#data").val()},
+            success: function (result, textstatus) {
+                let teste = JSON.parse(result);
+            
+                if (teste.total == 1) {
+
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: '../Conexao/Chamada/fecharChamada.php',
+                        datatype: 'json',
+                        data: {idTurma: $("#turmaProf").val(), data: $("#data").val()},
+                        success: function (result, textstatus) {
+                            console.log(result);
+                            if (result) {
+                                window.alert("Chamada encerrada.")
+                            } else {
+                                window.alert("Erro inexperado\nCaso o erro persista, chame um Administrador.")
+                            }
+                        }
+                    })
+                } else {
+                    window.alert("Chamada não aberta, ou inexistente.")
+                }
+            }
+        })
+    } else {
+        window.alert("Favor inserir data para inciar chamada.")
+    }
 }

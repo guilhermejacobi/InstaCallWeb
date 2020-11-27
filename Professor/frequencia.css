@@ -53,8 +53,16 @@ height: 55px;
     left: 120px;
 }
 
+.tamanho{
+    font-size: 17px;
+   width: 160px;
+   position: relative;
+   left: 110px;
+   font-weight: 100px;
+}
+
 .botao{
-    top: 40px;
+   
     width: 160px;
     border-radius: 12px;
     border: 1px solid lightgrey;

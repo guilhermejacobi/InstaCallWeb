@@ -1,13 +1,13 @@
 <html>
   <head>
-    <link href="atividades.css" rel="stylesheet">
+    <link href="frequencia.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
+    <script type="text/javascript" src="../Admin/JS/mask.js"></script>
     <script type="text/javascript" src="../Admin/JS/chamada/buscaProf.js"></script>
     <script type="text/javascript" src="../Admin/JS/chamada/iniciarChamada.js"></script>
-
         <title>Atividades-Professor-UniSociesc</title>
         
     </head>
@@ -23,10 +23,13 @@
             <font class="fonteAtividade">Frequência:</font>
             <br>
             <br>
+            <br>
+            <input type="text" id="data" placeholder="Ex: 10/10/2050" class="tamanho">
+            <br>
             <input type="button" class="botao botaoCriarAtividade" onclick="iniciarChamda()" value="Iniciar Chamada">
             <br>
             <br>
-            <input type="button" class="botao" value="Encerrar Chamada">
+            <input type="button" class="botao" onclick="encerrarChamada()" value="Encerrar Chamada">
             <br>
             <br>
 
@@ -35,7 +38,7 @@
             <br>
             <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
         </div>
-        <table  style="display:none" class="tabelaProf">
+        <table style="display: none;" class="tabelaProf">
                         <tr>
                             <td id="direita">ID:</td>
                             <td><input type="text" disabled id="idProf" class="idProf"></td>
@@ -58,8 +61,8 @@
                         </tr>
                     </table>
         <div class="borda">
-            <!-- <table class="tabelaDentro" style="border: 1px solid black">
-                <tr>
+            <table class="tabelaProfChamada" id="tabelaProfChamada" style="border: 1px solid black">
+                <!-- <tr>
                     <td>
                         <table class='bordaFora1'>
                             <tr>
@@ -94,8 +97,8 @@
                             <td class="tabelaData">Data de entrega:<br>10/10/2010</td>
                         </table>
                     </td>
-                </tr>
-            </table> -->
+                </tr> -->
+            </table>
         </div>
     </body>
 </html>

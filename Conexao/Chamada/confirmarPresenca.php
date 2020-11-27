@@ -3,11 +3,12 @@
 require_once "../conexao.php";
 
 try {
-    $sql = ("INSERT INTO testechamada (idturma, dia, teste) VALUES (:idTurma, :dia, 1)");
+    $sql = ("INSERT INTO chamada (idTurma, idAluno, diaChamada, presenca) VALUES (:idTurma, :idAluno, :diaChamada, 1)");
     $query = $conn->prepare($sql);
     
     $query->bindParam(':idTurma',$_POST['idTurma']);
-    $query->bindParam(':dia',$_POST['data']);
+    $query->bindParam(':idAluno',$_POST['idAluno']);
+    $query->bindParam(':diaChamada',$_POST['data']);
     
     $query->execute();
     
