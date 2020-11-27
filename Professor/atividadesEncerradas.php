@@ -46,6 +46,10 @@
                     <td id="direita">Curso: </td>
                     <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
                 </tr>
+                <tr>
+                    <td id="direita">Turno: </td>
+                    <td><input type="text" disabled id="turno" class="nomeCurso"></td>
+                </tr>
             </table>
         </div>
 <!--  -->

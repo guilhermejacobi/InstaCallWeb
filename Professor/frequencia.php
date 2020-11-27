@@ -2,7 +2,11 @@
   <head>
     <link href="atividades.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta charset="utf-8">
+    <script type="text/javascript" src="../Admin/JS/chamada/buscaProf.js"></script>
+    <script type="text/javascript" src="../Admin/JS/chamada/iniciarChamada.js"></script>
 
         <title>Atividades-Professor-UniSociesc</title>
         
@@ -19,7 +23,7 @@
             <font class="fonteAtividade">Frequência:</font>
             <br>
             <br>
-            <input type="button" class="botao botaoCriarAtividade" onclick="iniciarChamada()" value="Iniciar Chamada">
+            <input type="button" class="botao botaoCriarAtividade" onclick="iniciarChamda()" value="Iniciar Chamada">
             <br>
             <br>
             <input type="button" class="botao" value="Encerrar Chamada">
@@ -31,6 +35,28 @@
             <br>
             <a href="menu.php"><input type="button" class="botao" value="Voltar"></a>
         </div>
+        <table  style="display:none" class="tabelaProf">
+                        <tr>
+                            <td id="direita">ID:</td>
+                            <td><input type="text" disabled id="idProf" class="idProf"></td>
+                        </tr>
+                        <tr>
+                            <td id="direita">Professor: </td>
+                            <td><input type="text" disabled id="nomeProf" class="nomeProf"></td>
+                        </tr>
+                        <tr>
+                            <td id="direita">Turma: </td>
+                            <td><input type="text" disabled id="turmaProf" class="turma"></td>
+                        </tr>
+                        <tr>
+                            <td id="direita">Curso: </td>
+                            <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
+                        </tr>
+                        <tr>
+                            <td id="direita">Turno: </td>
+                            <td><input type="text" disabled id="turno" class="nomeCurso"></td>
+                        </tr>
+                    </table>
         <div class="borda">
             <!-- <table class="tabelaDentro" style="border: 1px solid black">
                 <tr>
