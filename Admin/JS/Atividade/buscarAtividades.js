@@ -9,7 +9,6 @@ function listarAtividades(idTurma){
         data: {idTurma: idTurma},
     
         success: function (result, textstatus) {
-
             let dados = JSON.parse(result);
 
             dados.forEach(d => criarLinhaInst(d));
