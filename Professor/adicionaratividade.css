@@ -120,3 +120,12 @@ height: 55px;
     text-align: right;
     font-size: 16px;
 }
+/* Resolução "Mobile" */
+       
+@media (max-width: 480px) { 
+    .fonteAddAtividade{
+        font-size: 120%;
+    } 
+    .nomeprof, .turma, .nomeCurso, .turno, .nomeatividade, .descricao{
+        width: 100%;
+}

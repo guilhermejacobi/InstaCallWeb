@@ -176,16 +176,9 @@ label{
 /* Resolução "Mobile" */
        
     @media (max-width: 480px) { 
-            .informacaoLogin{
-                font-size: 15px;
-            }
-
-            .logoSociesc{
-                width: 100px;
-            }
-
-            #Login{
-                width: 230px;
+            .contagem{
+                width: 100%;
+                font-size: 90%;
             }  
         }
 
