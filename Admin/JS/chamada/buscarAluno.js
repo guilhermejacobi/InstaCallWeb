@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     jQuery.ajax({
         type: 'POST',
@@ -14,24 +14,24 @@ $(document).ready(function(){
                 $('#nomeCurso').val(resultado.nomeAluno);
                 $('#Turma').val(resultado.idAluno);
                 listarChamadas();
-            } else if(!resultado) {
+            } else if (!resultado) {
                 window.alert("Aluno não encontrado")
-                window.location.href="../index.php";
+                window.location.href = "../index.php";
             }
         }
     })
 });
-function listarChamadas(){
-    
+function listarChamadas() {
+
     //tratar
-   
+
 
     jQuery.ajax({
         type: 'GET',
         url: '../Conexao/Chamada/buscarListaChamadaAluno.php',
         datatype: 'json',
-        data: {idTurma: $("#Turma").val()},
-    
+        data: { idTurma: $("#Turma").val() },
+
         success: function (result, textstatus) {
             console.log(result);
             let dados = JSON.parse(result);
@@ -43,7 +43,7 @@ function listarChamadas(){
     })
 }
 
-function retornaLinhaTabela(_id, _dia,_teste, _curso){
+function retornaLinhaTabela(_id, _dia, _teste, _curso) {
 
     if (_teste == 1) {
         _teste = 'Liberado';
@@ -51,20 +51,28 @@ function retornaLinhaTabela(_id, _dia,_teste, _curso){
     if (_teste == 0) {
         _teste = 'Encerrado';
     }
-    var html = `<div class="tabelaId">${_id}</div><div class="tabelaId">${_dia}</div><div class="tabelaDesc">${_teste}</div> <div class="tabelaNome">${_curso}</div>`;
+    var html = `
+    <tr>
+    <td class="tabelaId">${_id}</td>
+    <td class="tabelaId">${_dia}</td>
+    <td class="tabelaDesc">${_teste}</td> 
+    <td class="tabelaNome">${_curso}</td>
+    </tr>
+    `;
 
     return html;
 
 }
 
-function criarLinhaInst(dados){
-    var table = document.getElementById("tabelaDeChamada");
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    
-    cell1.innerHTML = retornaLinhaTabela(dados.idTurma, dados.dia,dados.teste, dados.nomeCurso);
-    
-  }
+function criarLinhaInst(dados) {
+    var html = retornaLinhaTabela(
+        dados.idTurma,
+        dados.dia, dados.teste,
+        dados.nomeCurso
+    );
+
+    $("#tabelaDeChamada").append(html);
+}
 
 function confirmarPresenca() {
 
@@ -73,7 +81,7 @@ function confirmarPresenca() {
             type: 'POST',
             url: '../Conexao/chamada/contarRegistro.php',
             datatype: 'json',
-            data: {idTurma:  $('#idAluno').val(), idTurma: $('#Turma').val(), data: $("#data").val()},
+            data: { idTurma: $('#idAluno').val(), idTurma: $('#Turma').val(), data: $("#data").val() },
             success: function (result, textstatus) {
 
                 let resultado = JSON.parse(result);
@@ -82,26 +90,26 @@ function confirmarPresenca() {
                         type: 'POST',
                         url: '../Conexao/chamada/confirmarPresenca.php',
                         datatype: 'json',
-                        data: {idAluno:  $('#idAluno').val(), idTurma: $('#Turma').val(), data: $("#data").val()},
+                        data: { idAluno: $('#idAluno').val(), idTurma: $('#Turma').val(), data: $("#data").val() },
                         success: function (result, textstatus) {
-            
+
                             let resultado = JSON.parse(result);
                             if (resultado) {
                                 window.alert("Registro feito com sucesso!")
-                            } else if(!resultado) {
+                            } else if (!resultado) {
                                 window.alert("Falha ao registrar presença")
-                                window.location.href="../index.php";
+                                window.location.href = "../index.php";
                             }
                         }
                     })
                 } else {
                     window.alert("Presença já confirmada")
-                    window.location.href="../index.php";
+                    window.location.href = "../index.php";
                 }
             }
         })
-        
-        
+
+
     } else {
         window.alert("Campos vazios");
     }

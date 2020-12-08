@@ -33,15 +33,13 @@ function retornaLinhaTabela(_id, _desc, _nomeProf, _curso, _data) {
   <td class="tabelaData ${
     emAtraso ? "emAtraso" : "emDia"
   }"><p>Data Limite:<br>${_data}</p></td>
-  <tr>
+  </tr>
   `;
 
   return html;
 }
 
 function criarLinhaInst(dados) {
-  var table = document.getElementById("tabelaDeAtividades");
-
   var html = retornaLinhaTabela(
     dados.idAtividade,
     dados.descricaoAtividade,
