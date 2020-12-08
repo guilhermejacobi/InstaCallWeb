@@ -8,11 +8,11 @@
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
     <script src="../Admin/JS/Atividade/atividade.js"></script>
-    <script src="../Admin/JS/Atividade/buscarProf.js"></script>
+    <script src="../Admin/JS/Atividade/buscaProf.js"></script>
     <script></script>
 
         <title>Atividades-Professor-UniSociesc</title>
-        
+
     </head>
     <header>
         <div id="topoInstaCall">

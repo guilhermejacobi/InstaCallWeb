@@ -1,8 +1,8 @@
 <?php
-	$dsn = "mysql:dbname=controleacesso;host=localhost";
+	$dsn = "mysql:dbname=controleacesso;host=localhost:8889";
 	$dbuser = "root";
-	$dbpass = "";
-	
+	$dbpass = "root";
+
 	try{
 		$pdo = new PDO($dsn,$dbuser,$dbpass);
 

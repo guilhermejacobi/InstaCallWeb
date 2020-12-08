@@ -12,7 +12,7 @@
     <script src="../Admin/JS/Atividade/buscarAlunoAtividade.js"></script>
 
         <title>Atividades-Estudante-UniSociesc</title>
-        
+
     </head>
     <header>
         <div id="topoInstaCall">
@@ -66,7 +66,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class="bordaFora2">
@@ -75,7 +75,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class='bordaFora4'>

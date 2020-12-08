@@ -14,7 +14,7 @@
 
 
     <title>Atividades-Professor-UniSociesc</title>
-        
+
     </head>
     <header>
         <div id="topoInstaCall">
@@ -33,9 +33,9 @@
             <br>
             <a href="atribuirNota.php"><input type="button" class="botao botaoCriarAtividade" value="Atribuir Nota"></a>
             <br>
-            <br>
-            <a href="atividadesEncerradas.php"><input type="button" class="botao botaoCriarAtividade" value="Atividade Encerrada"></a>
-            <br>
+            <!-- <br>
+            <a href="atividadesEncerradas.php"><input type="button" class="botao botaoCriarAtividade" value="Atividade Encerrada"></a> -->
+            <!-- <br> -->
             <br>
             <a href="editarAtividade.php"><input type="button" class="botao botaoCriarAtividade" value="Editar Atividades"></a>
             <br>
@@ -77,7 +77,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class="bordaFora2">
@@ -86,7 +86,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class='bordaFora4'>

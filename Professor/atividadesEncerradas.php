@@ -8,13 +8,13 @@
     <meta charset="utf-8">
     <script src="../Admin/JS/mask.js"></script>
     <script src="../Admin/JS/Atividade/atividade.js"></script>
-    <script src="../Admin/JS/Atividade/buscarProf.js"></script>
+    <script src="../Admin/JS/Atividade/buscaProf.js"></script>
     <script src="../Admin/JS/AtividadeEncerrada/buscaProfAtividade.js"></script>
     <script src="../Admin/JS/AtividadeEncerrada/buscarAtividades.js"></script>
 
 
     <title>Atividades-Professor-UniSociesc</title>
-        
+
     </head>
     <header>
         <div id="topoInstaCall">
@@ -30,38 +30,15 @@
             <br>
             <a href="atividades.php"><input type="button" class="botao botaoCriarAtividade" value="Voltar"></a>
             <br>
-            <table style="display: none;" class="tabelaProf">
-                <tr>
-                    <td id="direita">ID:</td>
-                    <td><input type="text" disabled id="idProf" class="idProf"></td>
-                </tr>
-                <tr>
-                    <td id="direita">Professor: </td>
-                    <td><input type="text" disabled id="nomeProf" class="nomeProf"></td>
-                </tr>
-                <tr>
-                    <td id="direita">Turma: </td>
-                    <td><input type="text" disabled id="turma" class="turma"></td>
-                </tr>
-                <tr>
-                    <td id="direita">Curso: </td>
-                    <td><input type="text" disabled id="nomeCurso" class="nomeCurso"></td>
-                </tr>
-                <tr>
-                    <td id="direita">Turno: </td>
-                    <td><input type="text" disabled id="turno" class="nomeCurso"></td>
-                </tr>
-            </table>
-        </div>
-<!--  -->
 
+        </div>
         <div class="borda">
             <table class="tabelaDentro" id="tabelaDeAtividades" style="border: 1px solid black">
-                <!-- <tr>
+                <tr>
                     <td>
                         <table class='bordaFora1'>
                             <tr>
-                                <td class="tabelaId">12345</td>
+                                <td class="idProf"><input id="idProf"></td>
                             </tr>
                         </table>
                     </td>
@@ -69,7 +46,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class="bordaFora2">
@@ -78,7 +55,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td></td>
                     <td>
                         <table class='bordaFora4'>
@@ -92,7 +69,7 @@
                             <td class="tabelaData">Data de entrega:<br>10/10/2010</td>
                         </table>
                     </td>
-                </tr> -->
+                </tr>
             </table>
         </div>
     </body>

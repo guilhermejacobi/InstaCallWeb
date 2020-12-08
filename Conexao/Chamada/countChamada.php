@@ -2,7 +2,7 @@
 
 require_once "../conexao.php";
 
-$sql = ("SELECT COUNT(*) AS total FROM testechamada WHERE idTurma = :idTurma AND dia = :dia");
+$sql = ("SELECT COUNT(*) AS total FROM testechamada WHERE idTurma = :idTurma AND diaChamada = :dia");
 $query = $conn->prepare($sql);
 
 $query->bindParam(':idTurma',$_POST['idTurma']);

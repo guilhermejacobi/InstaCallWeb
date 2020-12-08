@@ -1,3 +1,6 @@
+<?php
+error_reporting(1);
+?>
 <html>
    <head>
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -19,7 +22,7 @@
 
    </head>
     <body id="fundo">
-        <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>     
+        <h1><font class="instaCall">Insta</font><font class="instaCall2">Call&copy;</font></h1>
         <div class="contagem">
             <span>Logins Aluno: <?php require 'QuantidadeAcesso/dao/getacesso.php'; echo getAcessosAluno(); ?></span><label for=""></label>
             <br>
@@ -36,7 +39,7 @@
                         Frequência | Notas
                         <br>
                         Atividades | Material Complementar
-                    </div>    
+                    </div>
                     <br>
                     <br>
                     <br>
