@@ -1,13 +1,13 @@
-function listarAtividades(idTurma){
-    
+function listarAtividades(idTurma) {
+
     //tratar
 
     jQuery.ajax({
         type: 'GET',
         url: '../Conexao/Atividade/listarAtividadeEncerrada.php',
         datatype: 'json',
-        data: {idTurma: idTurma},
-    
+        data: { idTurma: idTurma },
+
         success: function (result, textstatus) {
 
             let dados = JSON.parse(result);
@@ -19,25 +19,35 @@ function listarAtividades(idTurma){
     })
 }
 
-function retornaLinhaTabela(_id, _desc,_nomeProf, _curso, _data){
+function retornaLinhaTabela(_id, _desc, _nomeProf, _curso, _data) {
 
     var dataBD = _data.split("/");
-    var dataLimite = new Date(dataBD[2],dataBD[1]-1,dataBD[0],0,0,0,0);
+    var dataLimite = new Date(dataBD[2], dataBD[1] - 1, dataBD[0], 0, 0, 0, 0);
     var diaAtual = new Date();
-    
+
     var emAtraso = diaAtual - dataLimite > 0;
 
-    var html = `<div class="tabelaId">${_id}</div><div class="tabelaId">${_nomeProf}</div><div class="tabelaDesc">${_desc}</div> <div class="tabelaNome">${_curso}</div> <div class="tabelaData ${emAtraso?"emAtraso":"emDia"}"><p>Data Limite:<br>${_data}</p></div>`;
+    var html = `
+    <tr>
+    <td class="tabelaId">${_id}</td>
+    <td class="tabelaId">${_nomeProf}</td>
+    <td class="tabelaDesc">${_desc}</td> 
+    <td class="tabelaNome">${_curso}</td> 
+    <td class="tabelaData ${emAtraso ? "emAtraso" : "emDia"}"><p>Data Limite:<br>${_data}</p></td>
+    </tr> 
+    `;
 
     return html;
-
 }
 
-function criarLinhaInst(dados){
-    var table = document.getElementById("tabelaDeAtividades");
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    
-    cell1.innerHTML = retornaLinhaTabela(dados.idAtividade, dados.descricaoAtividade,dados.nomeProf, dados.nomeCurso, dados.dataLimite);
-    
-  }
+function criarLinhaInst(dados) {
+    var html = retornaLinhaTabela(
+        dados.idAtividade,
+        dados.descricaoAtividade,
+        dados.nomeProf,
+        dados.nomeCurso,
+        dados.dataLimite
+    );
+
+    $("#tabelaDeAtividades").append(html);
+}

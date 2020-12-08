@@ -1,2 +1,2 @@
 <?php
-        $conn = new PDO ('mysql:host=localhost:8889;dbname=instacall','root','root');
+        $conn = new PDO ('mysql:host=127.0.0.1;dbname=instacall','root','');
