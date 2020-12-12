@@ -51,17 +51,28 @@ function retornaLinhaTabela(_id,_nAluno, _dia,_teste, _curso){
     if (_teste == 0) {
         _teste = 'Faltou';
     }
-    var html = `<div class="tabelaId">${_id}</div><div class="tabelaId">${_nAluno}</div><div class="tabelaId">${_dia}</div><div class="tabelaDesc">${_teste}</div> <div class="tabelaNome">${_curso}</div>`;
+    var html = `
+    <tr>
+    <td class="tabelaId">${_id}</td>
+    <td class="tabelaId">${_nAluno}</td>
+    <td class="tabelaId">${_dia}</td>
+    <td class="tabelaDesc">${_teste}</td> 
+    <td class="tabelaNome">${_curso}</td>
+    </tr> 
+    `;
 
     return html;
 
 }
 
 function criarLinhaInst(dados){
-    var table = document.getElementById("tabelaFrequencia");
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    
-    cell1.innerHTML = retornaLinhaTabela(dados.idTurma,dados.nomeAluno, dados.diaChamada,dados.presenca, dados.nomeCurso);
+    var html = retornaLinhaTabela(
+        dados.idTurma,
+        dados.nomeAluno, 
+        dados.diaChamada,
+        dados.presenca,
+        dados.nomeCurso
+    );
+    $ ("#tabelaFrequencia").append(html);
     
   }
